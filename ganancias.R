@@ -1,9 +1,10 @@
 ganancia.ternaria = function( data, lev = NULL, model = NULL ){
   suma = 0 ;
-  largo = length( clases ) ;
+  
+  
   
   #todo !
-  for( i in 1:largo )
+  for( i in 1:length(data) )
   {
     if( probs[ i, "BAJA+2"]  > ( 250/8000)   ){ suma <- suma + if( clases[i]=="BAJA+2" ) { 7750 } else { -250 }  
     } ;
