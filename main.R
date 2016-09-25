@@ -87,6 +87,9 @@ for ( vcp in vcpValues ) {
 #  trainingList = c(trainingList, createDataPartition( abril_dataset$clase, p = .70))
 #}
 ?"%dopar%"
+
+
+
 #aca poner bien los parámetros
 paramsGrid = expand.grid( cp = c(0, 0.0001, 0.001),
                           #minsplit = c(20,50,200),
