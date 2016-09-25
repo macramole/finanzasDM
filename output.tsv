@@ -1,338 +1,398 @@
-fecha	archivo	algoritmo	cp	minsplit	minbucket	maxdepth	ganancia_promedio	tiempo_promedio	ganancias		
-20160919 005222	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	20	2	5	1170833	40.47309	1170833		
-20160919 005342	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	20	2	10	995833.3	80.25454	995833.3		
-20160919 005619	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	20	2	20	927500	156.2928	927500		
-20160919 005707	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	20	5	5	1170833	47.16098	1170833		
-20160919 005832	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	20	5	10	1096667	84.72392	1096667		
-20160919 010109	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	20	5	20	944166.7	155.8046	944166.7		
-20160919 010148	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	200	2	5	1105833	38.69104	1105833		
-20160919 010306	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	200	2	10	1193333	77.75032	1193333		
-20160919 010554	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	200	2	20	1144167	166.8837	1144167		
-20160919 010637	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	200	5	5	598333.3	42.95217	598333.3		
-20160919 010802	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	200	5	10	598333.3	83.65419	598333.3		
-20160919 011055	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	200	5	20	598333.3	172.7873	598333.3		
-20160919 011139	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	1000	2	5	992500	43.21296	992500		
-20160919 011258	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	1000	2	10	992500	78.42489	992500		
-20160919 011532	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	1000	2	20	992500	153.6244	992500		
-20160919 011538	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	1000	5	5	0	5.233174	0		
-20160919 011547	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	1000	5	10	0	9.097228	0		
-20160919 011604	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	1000	5	20	0	16.84775	0		
-20160919 011643	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	3000	2	5	992500	38.02456	992500		
-20160919 011758	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	3000	2	10	992500	74.93879	992500		
-20160919 012023	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	3000	2	20	992500	144.1882	992500		
-20160919 012029	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	3000	5	5	0	5.55058	0		
-20160919 012038	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	3000	5	10	0	8.874577	0		
-20160919 012055	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	3000	5	20	0	15.97019	0		
-20160919 012134	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	20	2	5	598333.3	38.87799	598333.3		
-20160919 012252	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	20	2	10	598333.3	77.50095	598333.3		
-20160919 012507	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	20	2	20	598333.3	133.706	598333.3		
-20160919 012546	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	20	5	5	598333.3	39.06163	598333.3		
-20160919 012704	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	20	5	10	598333.3	76.91261	598333.3		
-20160919 012928	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	20	5	20	598333.3	144.1147	598333.3		
-20160919 013008	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	200	2	5	598333.3	39.04385	598333.3		
-20160919 013133	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	200	2	10	598333.3	84.67804	598333.3		
-20160919 013400	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	200	2	20	598333.3	145.8326	598333.3		
-20160919 013443	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	200	5	5	598333.3	42.62443	598333.3		
-20160919 013603	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	200	5	10	598333.3	79.45635	598333.3		
-20160919 013821	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	200	5	20	598333.3	137.1356	598333.3		
-20160919 013827	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	1000	2	5	0	6.213673	0		
-20160919 013837	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	1000	2	10	0	9.117401	0		
-20160919 013852	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	1000	2	20	0	14.33308	0		
-20160919 013858	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	1000	5	5	0	5.431787	0		
-20160919 013908	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	1000	5	10	0	9.967633	0		
-20160919 013923	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	1000	5	20	0	14.49922	0		
-20160919 013929	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	3000	2	5	0	5.370491	0		
-20160919 013939	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	3000	2	10	0	9.989823	0		
-20160919 013954	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	3000	2	20	0	14.37588	0		
-20160919 014000	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	3000	5	5	0	5.398408	0		
-20160919 014009	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	3000	5	10	0	9.041599	0		
-20160919 014024	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	3000	5	20	0	14.18118	0		
-20160919 014106	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.01	20	2	5	598333.3	41.81141	598333.3		
-20160919 014249	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.01	20	2	10	598333.3	101.6887	598333.3		
-20160919 014509	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.01	20	2	20	598333.3	139.1951	598333.3		
-20160919 014601	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.01	20	5	5	598333.3	51.29932	598333.3		
-20160919 014741	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.01	20	5	10	598333.3	99.53604	598333.3		
-20160919 015001	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.01	20	5	20	598333.3	139.8596	598333.3		
-20160919 015053	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.01	200	2	5	598333.3	51.85008	598333.3		
-20160919 015236	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.01	200	2	10	598333.3	101.5608	598333.3		
-20160919 015456	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.01	200	2	20	598333.3	139.6222	598333.3		
-20160919 015548	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.01	200	5	5	598333.3	50.99831	598333.3		
-20160919 015727	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.01	200	5	10	598333.3	98.27881	598333.3		
-20160919 015943	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.01	200	5	20	598333.3	136.3015	598333.3		
-20160919 015951	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.01	1000	2	5	0	6.80287	0		
-20160919 020002	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.01	1000	2	10	0	11.40578	0		
-20160919 020018	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.01	1000	2	20	0	14.65139	0		
-20160919 020025	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.01	1000	5	5	0	6.601847	0		
-20160919 020037	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.01	1000	5	10	0	11.23415	0		
-20160919 020051	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.01	1000	5	20	0	14.36681	0		
-20160919 020058	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.01	3000	2	5	0	6.630241	0		
-20160919 020110	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.01	3000	2	10	0	11.07931	0		
-20160919 020125	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.01	3000	2	20	0	14.24977	0		
-20160919 020132	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.01	3000	5	5	0	6.777368	0		
-20160919 020144	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.01	3000	5	10	0	11.42085	0		
-20160919 020159	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.01	3000	5	20	0	14.28925	0		
-20160919 020206	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.1	20	2	5	0	6.399479	0		
-20160919 020213	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.1	20	2	10	0	6.955401	0		
-20160919 020220	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.1	20	2	20	0	6.662568	0		
-20160919 020228	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.1	20	5	5	0	6.56253	0		
-20160919 020235	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.1	20	5	10	0	6.650204	0		
-20160919 020242	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.1	20	5	20	0	6.694686	0		
-20160919 020249	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.1	200	2	5	0	6.573767	0		
-20160919 020257	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.1	200	2	10	0	7.038728	0		
-20160919 020303	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.1	200	2	20	0	6.057199	0		
-20160919 020309	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.1	200	5	5	0	5.392359	0		
-20160919 020315	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.1	200	5	10	0	5.420315	0		
-20160919 020321	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.1	200	5	20	0	5.472365	0		
-20160919 020327	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.1	1000	2	5	0	5.517886	0		
-20160919 020332	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.1	1000	2	10	0	5.275394	0		
-20160919 020338	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.1	1000	2	20	0	5.433846	0		
-20160919 020345	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.1	1000	5	5	0	5.737537	0		
-20160919 020351	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.1	1000	5	10	0	6.08831	0		
-20160919 020357	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.1	1000	5	20	0	5.335448	0		
-20160919 020403	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.1	3000	2	5	0	5.346476	0		
-20160919 020409	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.1	3000	2	10	0	5.456954	0		
-20160919 020414	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.1	3000	2	20	0	5.26233	0		
-20160919 020420	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.1	3000	5	5	0	5.361465	0		
-20160919 020426	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.1	3000	5	10	0	5.532625	0		
-20160919 020432	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.1	3000	5	20	0	5.50132	0		
-20160919 023052	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	500	250	5	0	7.418649	0	0	0
-20160919 023130	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	500	250	10	0	11.50397	0	0	0
-20160919 023226	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	500	250	15	0	17.21603	0	0	0
-20160919 023340	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	500	250	20	0	23.49821	0	0	0
-20160919 023505	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	20	10	5	1072500	59.97264	1170833	1134167	912500
-20160919 023506	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	500	100	5	152777.8	27.52713	0	0	458333.3
-20160919 023727	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	500	100	10	152777.8	45.81566	0	0	458333.3
-20160919 024027	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	20	10	10	1130278	106.0297	1164167	1245833	980833.3
-20160919 024045	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	500	100	15	152777.8	64.73522	0	0	458333.3
-20160919 024535	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	500	100	20	152777.8	95.4664	0	0	458333.3
-20160919 024604	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	1000	500	5	0	8.546679	0	0	0
-20160919 024654	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	1000	500	10	0	15.51781	0	0	0
-20160919 024812	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	1000	500	15	0	24.52957	0	0	0
-20160919 024927	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	1000	500	20	0	23.6063	0	0	0
-20160919 024955	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	1000	200	5	0	8.35511	0	0	0
-20160919 025008	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	20	10	15	1125278	192.1158	1164167	1245833	965833.3
-20160919 025054	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	1000	200	10	0	18.13561	0	0	0
-20160919 025207	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	1000	200	15	0	22.99177	0	0	0
-20160919 025324	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	1000	200	20	0	24.60887	0	0	0
-20160919 025352	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	3000	1500	5	0	8.223231	0	0	0
-20160919 025438	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	3000	1500	10	0	14.10289	0	0	0
-20160919 025533	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	3000	1500	15	0	17.19497	0	0	0
-20160919 025626	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	3000	1500	20	0	16.4089	0	0	0
-20160919 025654	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	3000	600	5	0	8.204698	0	0	0
-20160919 025743	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	3000	600	10	0	14.94655	0	0	0
-20160919 025842	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	3000	600	15	0	18.6835	0	0	0
-20160919 025951	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	3000	600	20	0	21.52848	0	0	0
-20160919 030022	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	500	250	5	0	9.05352	0	0	0
-20160919 030112	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	500	250	10	0	14.74343	0	0	0
-20160919 030212	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	20	10	20	1125278	239.9626	1164167	1245833	965833.3
-20160919 030212	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	500	250	15	0	19.03852	0	0	0
-20160919 030336	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	500	250	20	0	26.77909	0	0	0
-20160919 030458	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	500	100	5	152777.8	26.0525	0	0	458333.3
-20160919 030642	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	20	4	5	1083611	88.64583	1170833	1134167	945833.3
-20160919 030749	binaria1	rpart	0.0001	20	10	5	902222.2	99.19294	942500	917500	846666.7
-20160919 030823	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	500	100	10	152777.8	66.90093	0	0	458333.3
-20160919 031253	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	500	100	15	152777.8	88.43542	0	0	458333.3
-20160919 031501	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	20	4	10	1129167	164.9647	1062500	1209167	1115833
-20160919 031744	binaria1	rpart	0.0001	20	10	10	941388.9	196.7697	954166.7	1051667	818333.3
-20160919 032001	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	500	100	20	152777.8	141.003	0	0	458333.3
-20160919 032033	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	1000	500	5	0	9.359099	0	0	0
-20160919 032119	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	1000	500	10	0	14.44434	0	0	0
-20160919 032220	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	1000	500	15	0	18.89771	0	0	0
-20160919 032416	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	1000	500	20	0	37.12835	0	0	0
-20160919 032504	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	1000	200	5	0	14.39548	0	0	0
-20160919 032603	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	1000	200	10	0	18.18286	0	0	0
-20160919 032713	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	1000	200	15	0	22.32766	0	0	0
-20160919 032847	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	20	4	15	1090278	273.4352	952500	1199167	1119167
-20160919 032848	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	1000	200	20	0	30.09201	0	0	0
-20160919 032914	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	3000	1500	5	0	7.787017	0	0	0
-20160919 032932	binaria1	rpart	0.0001	20	10	15	990555.6	234.6869	1101667	1051667	818333.3
-20160919 032957	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	3000	1500	10	0	13.08873	0	0	0
-20160919 033046	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	3000	1500	15	0	15.35422	0	0	0
-20160919 033134	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	3000	1500	20	0	15.09105	0	0	0
-20160919 033202	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	3000	600	5	0	7.932891	0	0	0
-20160919 033256	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	3000	600	10	0	16.88917	0	0	0
-20160919 033354	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	3000	600	15	0	18.19098	0	0	0
-20160919 033454	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	3000	600	20	0	18.90474	0	0	0
-20160919 033522	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	500	250	5	0	7.905586	0	0	0
-20160919 033605	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	500	250	10	0	13.27497	0	0	0
-20160919 033658	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	500	250	15	0	16.60842	0	0	0
-20160919 033825	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	500	250	20	0	27.68955	0	0	0
-20160919 033852	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	500	100	5	0	7.861582	0	0	0
-20160919 033949	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	500	100	10	0	17.75855	0	0	0
-20160919 034044	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	500	100	15	0	17.3131	0	0	0
-20160919 034146	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	500	100	20	0	19.39876	0	0	0
-20160919 034213	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	1000	500	5	0	7.973212	0	0	0
-20160919 034313	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	1000	500	10	0	18.70821	0	0	0
-20160919 034426	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	1000	500	15	0	22.66051	0	0	0
-20160919 034518	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	1000	500	20	0	16.28568	0	0	0
-20160919 034544	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	1000	200	5	0	7.724835	0	0	0
-20160919 034642	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	1000	200	10	0	17.693	0	0	0
-20160919 034806	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	1000	200	15	0	26.28159	0	0	0
-20160919 034806	binaria1	rpart	0.0001	20	10	20	990555.6	369.8281	1101667	1051667	818333.3
-20160919 034829	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	20	4	20	1090556	392.5398	959166.7	1193333	1119167
-20160919 034944	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	1000	200	20	0	31.2229	0	0	0
-20160919 035029	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	3000	1500	5	0	13.4436	0	0	0
-20160919 035140	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	3000	1500	10	0	21.95302	0	0	0
-20160919 035210	binaria1	rpart	0.0001	20	4	5	962777.8	79.79593	836666.7	1146667	905000
-20160919 035216	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	50	25	5	1056111	74.29475	1105833	1134167	928333.3
-20160919 035256	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	3000	1500	15	0	23.62535	0	0	0
-20160919 035412	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	3000	1500	20	0	23.84177	0	0	0
-20160919 035459	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	3000	600	5	0	13.92122	0	0	0
-20160919 035615	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	3000	600	10	0	23.5941	0	0	0
-20160919 035727	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	3000	600	15	0	22.51569	0	0	0
-20160919 035827	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	3000	600	20	0	19.21424	0	0	0
-20160919 035902	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	50	25	10	1136111	133.9492	1173333	1183333	1051667
-20160919 040025	binaria1	rpart	0.0001	20	4	10	1046667	163.5214	965833.3	1228333	945833.3
-20160919 040704	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	50	25	15	1136111	159.5691	1173333	1183333	1051667
-20160919 040831	binaria1	rpart	0.0001	20	4	15	985277.8	160.8313	890000	1123333	942500
-20160919 041746	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	50	25	20	1136111	212.626	1173333	1183333	1051667
-20160919 041818	binaria1	rpart	0.0001	20	4	20	941388.9	194.6321	890000	1079167	855000
-20160919 042030	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	50	10	5	1050833	53.42426	1105833	1134167	912500
-20160919 042054	binaria1	rpart	0.0001	50	25	5	773888.9	50.79827	764166.7	735000	822500
-20160919 042602	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	50	10	10	1152222	109.3136	1212500	1278333	965833.3
-20160919 042607	binaria1	rpart	0.0001	50	25	10	773888.9	103.2164	764166.7	735000	822500
-20160919 043333	binaria1	rpart	0.0001	50	25	15	773888.9	147.6065	764166.7	735000	822500
-20160919 043416	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	50	10	15	1152222	163.4689	1212500	1278333	965833.3
-20160919 044251	binaria1	rpart	0.0001	50	25	20	773888.9	184.9195	764166.7	735000	822500
-20160919 044502	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	50	10	20	1152222	214.1672	1212500	1278333	965833.3
-20160919 044529	binaria1	rpart	0.0001	50	10	5	781944.4	51.61305	764166.7	735000	846666.7
-20160919 044749	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	200	100	5	567777.8	54.26871	598333.3	646666.7	458333.3
-20160919 045038	binaria1	rpart	0.0001	50	10	10	840277.8	101.9163	764166.7	938333.3	818333.3
-20160919 045322	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	200	100	10	596944.4	110.0297	598333.3	646666.7	545833.3
-20160919 045818	binaria1	rpart	0.0001	50	10	15	840277.8	152.0928	764166.7	938333.3	818333.3
-20160919 050118	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	200	100	15	596944.4	157.2698	598333.3	646666.7	545833.3
-20160919 050800	binaria1	rpart	0.0001	50	10	20	840277.8	192.6757	764166.7	938333.3	818333.3
-20160919 050825	binaria1	rpart	0.0001	200	100	5	0	7.278326	0	0	0
-20160919 050906	binaria1	rpart	0.0001	200	100	10	0	12.28164	0	0	0
-20160919 050958	binaria1	rpart	0.0001	200	100	15	0	16.3857	0	0	0
-20160919 051058	binaria1	rpart	0.0001	200	100	20	0	19.06145	0	0	0
-20160919 051105	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	200	100	20	596944.4	194.6517	598333.3	646666.7	545833.3
-20160919 051122	binaria1	rpart	0.0001	200	40	5	0	6.78395	0	0	0
-20160919 051201	binaria1	rpart	0.0001	200	40	10	0	12.0589	0	0	0
-20160919 051255	binaria1	rpart	0.0001	200	40	15	0	16.91882	0	0	0
-20160919 051346	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	200	40	5	567777.8	52.64619	598333.3	646666.7	458333.3
-20160919 051358	binaria1	rpart	0.0001	200	40	20	0	20.08322	0	0	0
-20160919 051633	binaria1	rpart	0.001	20	10	5	860555.6	50.73859	817500	917500	846666.7
-20160919 051911	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	200	40	10	567777.8	106.9735	598333.3	646666.7	458333.3
-20160919 052143	binaria1	rpart	0.001	20	10	10	899722.2	102.3444	829166.7	1051667	818333.3
-20160919 052709	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	200	40	15	567777.8	158.3761	598333.3	646666.7	458333.3
-20160919 052916	binaria1	rpart	0.001	20	10	15	899722.2	149.7682	829166.7	1051667	818333.3
-20160919 053724	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	200	40	20	567777.8	203.7495	598333.3	646666.7	458333.3
-20160919 053848	binaria1	rpart	0.001	20	10	20	899722.2	189.7178	829166.7	1051667	818333.3
-20160919 054014	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	20	10	5	1072500	54.94117	1170833	1134167	912500
-20160919 054122	binaria1	rpart	0.001	20	4	5	962777.8	50.11038	836666.7	1146667	905000
-20160919 054544	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	20	10	10	1125556	108.8421	1165000	1227500	984166.7
-20160919 054629	binaria1	rpart	0.001	20	4	10	1046667	101.3062	965833.3	1228333	945833.3
-20160919 055352	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	20	10	15	1125556	161.4143	1165000	1227500	984166.7
-20160919 055406	binaria1	rpart	0.001	20	4	15	1046667	150.9615	965833.3	1228333	945833.3
-20160919 060356	binaria1	rpart	0.001	20	4	20	1046667	195.7876	965833.3	1228333	945833.3
-20160919 060431	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	20	10	20	1125556	211.8127	1165000	1227500	984166.7
-20160919 060630	binaria1	rpart	0.001	50	25	5	773888.9	50.12624	764166.7	735000	822500
-20160919 060714	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	20	4	5	1083611	52.90007	1170833	1134167	945833.3
-20160919 061134	binaria1	rpart	0.001	50	25	10	773888.9	100.2537	764166.7	735000	822500
-20160919 061241	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	20	4	10	1169722	107.7505	1178333	1273333	1057500
-20160919 061859	binaria1	rpart	0.001	50	25	15	773888.9	146.979	764166.7	735000	822500
-20160919 062054	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	20	4	15	1112778	163.2363	1078333	1202500	1057500
-20160919 062814	binaria1	rpart	0.001	50	25	20	773888.9	183.9257	764166.7	735000	822500
-20160919 063050	binaria1	rpart	0.001	50	10	5	781944.4	50.96475	764166.7	735000	846666.7
-20160919 063141	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	20	4	20	1112778	214.4889	1078333	1202500	1057500
-20160919 063426	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	50	25	5	1056111	53.80147	1105833	1134167	928333.3
-20160919 063555	binaria1	rpart	0.001	50	10	10	772500	100.7006	764166.7	735000	818333.3
-20160919 064011	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	50	25	10	1113611	113.9075	1105833	1183333	1051667
-20160919 064334	binaria1	rpart	0.001	50	10	15	772500	151.8193	764166.7	735000	818333.3
-20160919 064818	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	50	25	15	1113611	161.2762	1105833	1183333	1051667
-20160919 065309	binaria1	rpart	0.001	50	10	20	772500	190.3529	764166.7	735000	818333.3
-20160919 065332	binaria1	rpart	0.001	200	100	5	0	6.781858	0	0	0
-20160919 065411	binaria1	rpart	0.001	200	100	10	0	11.9179	0	0	0
-20160919 065501	binaria1	rpart	0.001	200	100	15	0	15.67721	0	0	0
-20160919 065559	binaria1	rpart	0.001	200	100	20	0	18.25415	0	0	0
-20160919 065622	binaria1	rpart	0.001	200	40	5	0	6.773923	0	0	0
-20160919 065700	binaria1	rpart	0.001	200	40	10	0	11.88458	0	0	0
-20160919 065754	binaria1	rpart	0.001	200	40	15	0	16.66052	0	0	0
-20160919 065833	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	50	25	20	1113611	203.6611	1105833	1183333	1051667
-20160919 065901	binaria1	rpart	0.001	200	40	20	0	21.18107	0	0	0
-20160919 070051	binaria1	rpart	0.005	20	10	5	499722.2	35.55758	764166.7	735000	0
-20160919 070117	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	50	10	5	1050833	53.62124	1105833	1134167	912500
-20160919 070427	binaria1	rpart	0.005	20	10	10	499722.2	71.00113	764166.7	735000	0
-20160919 070643	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	50	10	10	1113056	107.4192	1213333	1160000	965833.3
-20160919 070939	binaria1	rpart	0.005	20	10	15	499722.2	102.8724	764166.7	735000	0
-20160919 071454	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	50	10	15	1113056	162.7802	1213333	1160000	965833.3
-20160919 071553	binaria1	rpart	0.005	20	10	20	499722.2	123.5079	764166.7	735000	0
-20160919 071700	binaria1	rpart	0.005	20	4	5	245000	21.20436	0	735000	0
-20160919 072039	binaria1	rpart	0.005	20	4	10	459444.4	72.06265	712500	665833.3	0
-20160919 072525	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	50	10	20	1113056	208.9806	1213333	1160000	965833.3
-20160919 072559	binaria1	rpart	0.005	20	4	15	459444.4	105.4962	712500	665833.3	0
-20160919 072817	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	200	100	5	567777.8	56.34163	598333.3	646666.7	458333.3
-20160919 073226	binaria1	rpart	0.005	20	4	20	459444.4	128.0709	712500	665833.3	0
-20160919 073347	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	200	100	10	596944.4	108.6859	598333.3	646666.7	545833.3
-20160919 073420	binaria1	rpart	0.005	50	25	5	519166.7	36.75162	0	735000	822500
-20160919 073755	binaria1	rpart	0.005	50	25	10	519166.7	70.7777	0	735000	822500
-20160919 074136	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	200	100	15	596944.4	155.2623	598333.3	646666.7	545833.3
-20160919 074301	binaria1	rpart	0.005	50	25	15	519166.7	100.8879	0	735000	822500
-20160919 074914	binaria1	rpart	0.005	50	25	20	519166.7	123.2033	0	735000	822500
-20160919 075107	binaria1	rpart	0.005	50	10	5	499722.2	36.47992	764166.7	735000	0
-20160919 075115	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	200	100	20	596944.4	191.8497	598333.3	646666.7	545833.3
-20160919 075400	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	200	40	5	567777.8	53.75233	598333.3	646666.7	458333.3
-20160919 075441	binaria1	rpart	0.005	50	10	10	499722.2	70.21519	764166.7	735000	0
-20160919 075929	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	200	40	10	567777.8	108.6236	598333.3	646666.7	458333.3
-20160919 075952	binaria1	rpart	0.005	50	10	15	499722.2	102.6229	764166.7	735000	0
-20160919 080605	binaria1	rpart	0.005	50	10	20	499722.2	123.3335	764166.7	735000	0
-20160919 080629	binaria1	rpart	0.005	200	100	5	0	6.85272	0	0	0
-20160919 080706	binaria1	rpart	0.005	200	100	10	0	11.5683	0	0	0
-20160919 080723	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	200	40	15	567777.8	157.0927	598333.3	646666.7	458333.3
-20160919 080755	binaria1	rpart	0.005	200	100	15	0	15.07636	0	0	0
-20160919 080847	binaria1	rpart	0.005	200	100	20	0	16.53206	0	0	0
-20160919 080911	binaria1	rpart	0.005	200	40	5	0	6.823625	0	0	0
-20160919 080949	binaria1	rpart	0.005	200	40	10	0	11.68785	0	0	0
-20160919 081040	binaria1	rpart	0.005	200	40	15	0	16.08332	0	0	0
-20160919 081139	binaria1	rpart	0.005	200	40	20	0	18.51386	0	0	0
-20160919 081548	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	200	40	20	567777.8	167.0469	598333.3	646666.7	458333.3
-20160919 081746	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	20	10	5	567777.8	38.67139	598333.3	646666.7	458333.3
-20160919 082137	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	20	10	10	567777.8	75.89973	598333.3	646666.7	458333.3
-20160919 082708	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	20	10	15	567777.8	109.3599	598333.3	646666.7	458333.3
-20160919 083356	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	20	10	20	567777.8	135.2225	598333.3	646666.7	458333.3
-20160919 083555	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	20	4	5	567777.8	38.55953	598333.3	646666.7	458333.3
-20160919 083946	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	20	4	10	561388.9	75.8757	598333.3	646666.7	439166.7
-20160919 084524	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	20	4	15	561388.9	111.9456	598333.3	646666.7	439166.7
-20160919 085218	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	20	4	20	561388.9	136.9611	598333.3	646666.7	439166.7
-20160919 085417	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	50	25	5	567777.8	38.58015	598333.3	646666.7	458333.3
-20160919 085808	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	50	25	10	567777.8	76.24094	598333.3	646666.7	458333.3
-20160919 090333	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	50	25	15	567777.8	107.3685	598333.3	646666.7	458333.3
-20160919 091004	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	50	25	20	567777.8	129.3993	598333.3	646666.7	458333.3
-20160919 091202	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	50	10	5	567777.8	38.46139	598333.3	646666.7	458333.3
-20160919 091552	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	50	10	10	567777.8	75.64589	598333.3	646666.7	458333.3
-20160919 092124	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	50	10	15	567777.8	109.8043	598333.3	646666.7	458333.3
-20160919 092806	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	50	10	20	567777.8	133.0092	598333.3	646666.7	458333.3
-20160919 092932	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	200	100	5	415000	27.61455	598333.3	646666.7	0
-20160919 093215	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	200	100	10	415000	53.4179	598333.3	646666.7	0
-20160919 093552	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	200	100	15	415000	71.2863	598333.3	646666.7	0
-20160919 093959	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	200	100	20	415000	81.68902	598333.3	646666.7	0
-20160919 094124	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	200	40	5	415000	27.40807	598333.3	646666.7	0
-20160919 094408	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	200	40	10	415000	53.3865	598333.3	646666.7	0
-20160919 094755	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	200	40	15	415000	74.95132	598333.3	646666.7	0
-20160919 095219	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	200	40	20	415000	86.92837	598333.3	646666.7	0
-20160919 164612	oversampling_binaria1	rpart	0.0001	200	2	10	0	8.824628	0	0	0
-20160919 164649	oversampling_binaria1	rpart	0.0001	200	2	15	0	11.45296	0	0	0
-20160919 165737	oversampling_binaria1	rpart	0.0001	20	10	10	941388.9	73.29704	954166.7	1051667	818333.3
-20160919 170303	oversampling_binaria1	rpart	0.0001	20	10	15	990555.6	107.6705	1101667	1051667	818333.3
-20160919 171001	oversampling_binaria1	rpart	1e-04	20	10	20	990555.6	138.5311	1101667	1051667	818333.3	
-20160919 171343	oversampling_binaria1	rpart	1e-04	20	4	10	1046667	73.22079	965833.3	1228333	945833.3	
-20160919 171922	oversampling_binaria1	rpart	1e-04	20	4	15	985277.8	112.2353	890000	1123333	942500	
-20160919 172623	oversampling_binaria1	rpart	1e-04	20	4	20	941388.9	139.3862	890000	1079167	855000	
-20160919 173003	oversampling_binaria1	rpart	1e-04	50	25	10	773888.9	72.46504	764166.7	735000	822500	
-20160919 173520	oversampling_binaria1	rpart	1e-04	50	25	15	773888.9	104.8737	764166.7	735000	822500	
-20160919 174157	oversampling_binaria1	rpart	1e-04	50	25	20	773888.9	131.616	764166.7	735000	822500	
-20160919 174540	oversampling_binaria1	rpart	1e-04	50	10	10	840277.8	73.28299	764166.7	938333.3	818333.3	
-20160919 175103	oversampling_binaria1	rpart	1e-04	50	10	15	840277.8	107.0337	764166.7	938333.3	818333.3	
-20160919 175754	oversampling_binaria1	rpart	1e-04	50	10	20	840277.8	136.1677	764166.7	938333.3	818333.3	
-20160919 175822	oversampling_binaria1	rpart	1e-04	200	100	10	0	8.552902	0	0	0	
-20160919 175859	oversampling_binaria1	rpart	1e-04	200	100	15	0	11.52792	0	0	0	
-20160919 175942	oversampling_binaria1	rpart	1e-04	200	100	20	0	13.55493	0	0	0	
-20160919 180011	oversampling_binaria1	rpart	1e-04	200	40	10	0	8.770785	0	0	0	
-20160919 180050	oversampling_binaria1	rpart	1e-04	200	40	15	0	12.12257	0	0	0	
-20160919 180136	oversampling_binaria1	rpart	1e-04	200	40	20	0	14.68441	0	0	0	
+fecha	archivo	algoritmo	cp	minsplit	minbucket	maxdepth	ganancia_promedio	tiempo_promedio	ganancias			
+20160919 005222	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	20	2	5	1170833	40.47309	1170833			
+20160919 005342	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	20	2	10	995833.3	80.25454	995833.3			
+20160919 005619	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	20	2	20	927500	156.2928	927500			
+20160919 005707	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	20	5	5	1170833	47.16098	1170833			
+20160919 005832	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	20	5	10	1096667	84.72392	1096667			
+20160919 010109	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	20	5	20	944166.7	155.8046	944166.7			
+20160919 010148	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	200	2	5	1105833	38.69104	1105833			
+20160919 010306	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	200	2	10	1193333	77.75032	1193333			
+20160919 010554	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	200	2	20	1144167	166.8837	1144167			
+20160919 010637	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	200	5	5	598333.3	42.95217	598333.3			
+20160919 010802	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	200	5	10	598333.3	83.65419	598333.3			
+20160919 011055	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	200	5	20	598333.3	172.7873	598333.3			
+20160919 011139	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	1000	2	5	992500	43.21296	992500			
+20160919 011258	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	1000	2	10	992500	78.42489	992500			
+20160919 011532	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	1000	2	20	992500	153.6244	992500			
+20160919 011538	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	1000	5	5	0	5.233174	0			
+20160919 011547	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	1000	5	10	0	9.097228	0			
+20160919 011604	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	1000	5	20	0	16.84775	0			
+20160919 011643	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	3000	2	5	992500	38.02456	992500			
+20160919 011758	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	3000	2	10	992500	74.93879	992500			
+20160919 012023	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	3000	2	20	992500	144.1882	992500			
+20160919 012029	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	3000	5	5	0	5.55058	0			
+20160919 012038	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	3000	5	10	0	8.874577	0			
+20160919 012055	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	3000	5	20	0	15.97019	0			
+20160919 012134	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	20	2	5	598333.3	38.87799	598333.3			
+20160919 012252	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	20	2	10	598333.3	77.50095	598333.3			
+20160919 012507	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	20	2	20	598333.3	133.706	598333.3			
+20160919 012546	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	20	5	5	598333.3	39.06163	598333.3			
+20160919 012704	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	20	5	10	598333.3	76.91261	598333.3			
+20160919 012928	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	20	5	20	598333.3	144.1147	598333.3			
+20160919 013008	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	200	2	5	598333.3	39.04385	598333.3			
+20160919 013133	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	200	2	10	598333.3	84.67804	598333.3			
+20160919 013400	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	200	2	20	598333.3	145.8326	598333.3			
+20160919 013443	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	200	5	5	598333.3	42.62443	598333.3			
+20160919 013603	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	200	5	10	598333.3	79.45635	598333.3			
+20160919 013821	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	200	5	20	598333.3	137.1356	598333.3			
+20160919 013827	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	1000	2	5	0	6.213673	0			
+20160919 013837	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	1000	2	10	0	9.117401	0			
+20160919 013852	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	1000	2	20	0	14.33308	0			
+20160919 013858	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	1000	5	5	0	5.431787	0			
+20160919 013908	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	1000	5	10	0	9.967633	0			
+20160919 013923	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	1000	5	20	0	14.49922	0			
+20160919 013929	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	3000	2	5	0	5.370491	0			
+20160919 013939	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	3000	2	10	0	9.989823	0			
+20160919 013954	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	3000	2	20	0	14.37588	0			
+20160919 014000	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	3000	5	5	0	5.398408	0			
+20160919 014009	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	3000	5	10	0	9.041599	0			
+20160919 014024	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	3000	5	20	0	14.18118	0			
+20160919 014106	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.01	20	2	5	598333.3	41.81141	598333.3			
+20160919 014249	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.01	20	2	10	598333.3	101.6887	598333.3			
+20160919 014509	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.01	20	2	20	598333.3	139.1951	598333.3			
+20160919 014601	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.01	20	5	5	598333.3	51.29932	598333.3			
+20160919 014741	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.01	20	5	10	598333.3	99.53604	598333.3			
+20160919 015001	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.01	20	5	20	598333.3	139.8596	598333.3			
+20160919 015053	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.01	200	2	5	598333.3	51.85008	598333.3			
+20160919 015236	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.01	200	2	10	598333.3	101.5608	598333.3			
+20160919 015456	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.01	200	2	20	598333.3	139.6222	598333.3			
+20160919 015548	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.01	200	5	5	598333.3	50.99831	598333.3			
+20160919 015727	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.01	200	5	10	598333.3	98.27881	598333.3			
+20160919 015943	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.01	200	5	20	598333.3	136.3015	598333.3			
+20160919 015951	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.01	1000	2	5	0	6.80287	0			
+20160919 020002	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.01	1000	2	10	0	11.40578	0			
+20160919 020018	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.01	1000	2	20	0	14.65139	0			
+20160919 020025	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.01	1000	5	5	0	6.601847	0			
+20160919 020037	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.01	1000	5	10	0	11.23415	0			
+20160919 020051	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.01	1000	5	20	0	14.36681	0			
+20160919 020058	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.01	3000	2	5	0	6.630241	0			
+20160919 020110	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.01	3000	2	10	0	11.07931	0			
+20160919 020125	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.01	3000	2	20	0	14.24977	0			
+20160919 020132	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.01	3000	5	5	0	6.777368	0			
+20160919 020144	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.01	3000	5	10	0	11.42085	0			
+20160919 020159	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.01	3000	5	20	0	14.28925	0			
+20160919 020206	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.1	20	2	5	0	6.399479	0			
+20160919 020213	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.1	20	2	10	0	6.955401	0			
+20160919 020220	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.1	20	2	20	0	6.662568	0			
+20160919 020228	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.1	20	5	5	0	6.56253	0			
+20160919 020235	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.1	20	5	10	0	6.650204	0			
+20160919 020242	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.1	20	5	20	0	6.694686	0			
+20160919 020249	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.1	200	2	5	0	6.573767	0			
+20160919 020257	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.1	200	2	10	0	7.038728	0			
+20160919 020303	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.1	200	2	20	0	6.057199	0			
+20160919 020309	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.1	200	5	5	0	5.392359	0			
+20160919 020315	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.1	200	5	10	0	5.420315	0			
+20160919 020321	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.1	200	5	20	0	5.472365	0			
+20160919 020327	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.1	1000	2	5	0	5.517886	0			
+20160919 020332	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.1	1000	2	10	0	5.275394	0			
+20160919 020338	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.1	1000	2	20	0	5.433846	0			
+20160919 020345	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.1	1000	5	5	0	5.737537	0			
+20160919 020351	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.1	1000	5	10	0	6.08831	0			
+20160919 020357	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.1	1000	5	20	0	5.335448	0			
+20160919 020403	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.1	3000	2	5	0	5.346476	0			
+20160919 020409	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.1	3000	2	10	0	5.456954	0			
+20160919 020414	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.1	3000	2	20	0	5.26233	0			
+20160919 020420	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.1	3000	5	5	0	5.361465	0			
+20160919 020426	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.1	3000	5	10	0	5.532625	0			
+20160919 020432	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.1	3000	5	20	0	5.50132	0			
+20160919 023052	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	500	250	5	0	7.418649	0	0	0	
+20160919 023130	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	500	250	10	0	11.50397	0	0	0	
+20160919 023226	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	500	250	15	0	17.21603	0	0	0	
+20160919 023340	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	500	250	20	0	23.49821	0	0	0	
+20160919 023505	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	20	10	5	1072500	59.97264	1170833	1134167	912500	
+20160919 023506	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	500	100	5	152777.8	27.52713	0	0	458333.3	
+20160919 023727	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	500	100	10	152777.8	45.81566	0	0	458333.3	
+20160919 024027	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	20	10	10	1130278	106.0297	1164167	1245833	980833.3	
+20160919 024045	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	500	100	15	152777.8	64.73522	0	0	458333.3	
+20160919 024535	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	500	100	20	152777.8	95.4664	0	0	458333.3	
+20160919 024604	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	1000	500	5	0	8.546679	0	0	0	
+20160919 024654	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	1000	500	10	0	15.51781	0	0	0	
+20160919 024812	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	1000	500	15	0	24.52957	0	0	0	
+20160919 024927	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	1000	500	20	0	23.6063	0	0	0	
+20160919 024955	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	1000	200	5	0	8.35511	0	0	0	
+20160919 025008	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	20	10	15	1125278	192.1158	1164167	1245833	965833.3	
+20160919 025054	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	1000	200	10	0	18.13561	0	0	0	
+20160919 025207	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	1000	200	15	0	22.99177	0	0	0	
+20160919 025324	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	1000	200	20	0	24.60887	0	0	0	
+20160919 025352	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	3000	1500	5	0	8.223231	0	0	0	
+20160919 025438	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	3000	1500	10	0	14.10289	0	0	0	
+20160919 025533	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	3000	1500	15	0	17.19497	0	0	0	
+20160919 025626	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	3000	1500	20	0	16.4089	0	0	0	
+20160919 025654	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	3000	600	5	0	8.204698	0	0	0	
+20160919 025743	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	3000	600	10	0	14.94655	0	0	0	
+20160919 025842	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	3000	600	15	0	18.6835	0	0	0	
+20160919 025951	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	3000	600	20	0	21.52848	0	0	0	
+20160919 030022	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	500	250	5	0	9.05352	0	0	0	
+20160919 030112	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	500	250	10	0	14.74343	0	0	0	
+20160919 030212	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	20	10	20	1125278	239.9626	1164167	1245833	965833.3	
+20160919 030212	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	500	250	15	0	19.03852	0	0	0	
+20160919 030336	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	500	250	20	0	26.77909	0	0	0	
+20160919 030458	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	500	100	5	152777.8	26.0525	0	0	458333.3	
+20160919 030642	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	20	4	5	1083611	88.64583	1170833	1134167	945833.3	
+20160919 030749	binaria1	rpart	0.0001	20	10	5	902222.2	99.19294	942500	917500	846666.7	
+20160919 030823	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	500	100	10	152777.8	66.90093	0	0	458333.3	
+20160919 031253	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	500	100	15	152777.8	88.43542	0	0	458333.3	
+20160919 031501	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	20	4	10	1129167	164.9647	1062500	1209167	1115833	
+20160919 031744	binaria1	rpart	0.0001	20	10	10	941388.9	196.7697	954166.7	1051667	818333.3	
+20160919 032001	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	500	100	20	152777.8	141.003	0	0	458333.3	
+20160919 032033	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	1000	500	5	0	9.359099	0	0	0	
+20160919 032119	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	1000	500	10	0	14.44434	0	0	0	
+20160919 032220	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	1000	500	15	0	18.89771	0	0	0	
+20160919 032416	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	1000	500	20	0	37.12835	0	0	0	
+20160919 032504	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	1000	200	5	0	14.39548	0	0	0	
+20160919 032603	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	1000	200	10	0	18.18286	0	0	0	
+20160919 032713	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	1000	200	15	0	22.32766	0	0	0	
+20160919 032847	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	20	4	15	1090278	273.4352	952500	1199167	1119167	
+20160919 032848	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	1000	200	20	0	30.09201	0	0	0	
+20160919 032914	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	3000	1500	5	0	7.787017	0	0	0	
+20160919 032932	binaria1	rpart	0.0001	20	10	15	990555.6	234.6869	1101667	1051667	818333.3	
+20160919 032957	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	3000	1500	10	0	13.08873	0	0	0	
+20160919 033046	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	3000	1500	15	0	15.35422	0	0	0	
+20160919 033134	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	3000	1500	20	0	15.09105	0	0	0	
+20160919 033202	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	3000	600	5	0	7.932891	0	0	0	
+20160919 033256	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	3000	600	10	0	16.88917	0	0	0	
+20160919 033354	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	3000	600	15	0	18.19098	0	0	0	
+20160919 033454	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	3000	600	20	0	18.90474	0	0	0	
+20160919 033522	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	500	250	5	0	7.905586	0	0	0	
+20160919 033605	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	500	250	10	0	13.27497	0	0	0	
+20160919 033658	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	500	250	15	0	16.60842	0	0	0	
+20160919 033825	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	500	250	20	0	27.68955	0	0	0	
+20160919 033852	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	500	100	5	0	7.861582	0	0	0	
+20160919 033949	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	500	100	10	0	17.75855	0	0	0	
+20160919 034044	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	500	100	15	0	17.3131	0	0	0	
+20160919 034146	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	500	100	20	0	19.39876	0	0	0	
+20160919 034213	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	1000	500	5	0	7.973212	0	0	0	
+20160919 034313	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	1000	500	10	0	18.70821	0	0	0	
+20160919 034426	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	1000	500	15	0	22.66051	0	0	0	
+20160919 034518	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	1000	500	20	0	16.28568	0	0	0	
+20160919 034544	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	1000	200	5	0	7.724835	0	0	0	
+20160919 034642	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	1000	200	10	0	17.693	0	0	0	
+20160919 034806	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	1000	200	15	0	26.28159	0	0	0	
+20160919 034806	binaria1	rpart	0.0001	20	10	20	990555.6	369.8281	1101667	1051667	818333.3	
+20160919 034829	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	20	4	20	1090556	392.5398	959166.7	1193333	1119167	
+20160919 034944	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	1000	200	20	0	31.2229	0	0	0	
+20160919 035029	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	3000	1500	5	0	13.4436	0	0	0	
+20160919 035140	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	3000	1500	10	0	21.95302	0	0	0	
+20160919 035210	binaria1	rpart	0.0001	20	4	5	962777.8	79.79593	836666.7	1146667	905000	
+20160919 035216	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	50	25	5	1056111	74.29475	1105833	1134167	928333.3	
+20160919 035256	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	3000	1500	15	0	23.62535	0	0	0	
+20160919 035412	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	3000	1500	20	0	23.84177	0	0	0	
+20160919 035459	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	3000	600	5	0	13.92122	0	0	0	
+20160919 035615	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	3000	600	10	0	23.5941	0	0	0	
+20160919 035727	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	3000	600	15	0	22.51569	0	0	0	
+20160919 035827	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	3000	600	20	0	19.21424	0	0	0	
+20160919 035902	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	50	25	10	1136111	133.9492	1173333	1183333	1051667	
+20160919 040025	binaria1	rpart	0.0001	20	4	10	1046667	163.5214	965833.3	1228333	945833.3	
+20160919 040704	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	50	25	15	1136111	159.5691	1173333	1183333	1051667	
+20160919 040831	binaria1	rpart	0.0001	20	4	15	985277.8	160.8313	890000	1123333	942500	
+20160919 041746	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	50	25	20	1136111	212.626	1173333	1183333	1051667	
+20160919 041818	binaria1	rpart	0.0001	20	4	20	941388.9	194.6321	890000	1079167	855000	
+20160919 042030	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	50	10	5	1050833	53.42426	1105833	1134167	912500	
+20160919 042054	binaria1	rpart	0.0001	50	25	5	773888.9	50.79827	764166.7	735000	822500	
+20160919 042602	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	50	10	10	1152222	109.3136	1212500	1278333	965833.3	
+20160919 042607	binaria1	rpart	0.0001	50	25	10	773888.9	103.2164	764166.7	735000	822500	
+20160919 043333	binaria1	rpart	0.0001	50	25	15	773888.9	147.6065	764166.7	735000	822500	
+20160919 043416	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	50	10	15	1152222	163.4689	1212500	1278333	965833.3	
+20160919 044251	binaria1	rpart	0.0001	50	25	20	773888.9	184.9195	764166.7	735000	822500	
+20160919 044502	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	50	10	20	1152222	214.1672	1212500	1278333	965833.3	
+20160919 044529	binaria1	rpart	0.0001	50	10	5	781944.4	51.61305	764166.7	735000	846666.7	
+20160919 044749	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	200	100	5	567777.8	54.26871	598333.3	646666.7	458333.3	
+20160919 045038	binaria1	rpart	0.0001	50	10	10	840277.8	101.9163	764166.7	938333.3	818333.3	
+20160919 045322	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	200	100	10	596944.4	110.0297	598333.3	646666.7	545833.3	
+20160919 045818	binaria1	rpart	0.0001	50	10	15	840277.8	152.0928	764166.7	938333.3	818333.3	
+20160919 050118	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	200	100	15	596944.4	157.2698	598333.3	646666.7	545833.3	
+20160919 050800	binaria1	rpart	0.0001	50	10	20	840277.8	192.6757	764166.7	938333.3	818333.3	
+20160919 050825	binaria1	rpart	0.0001	200	100	5	0	7.278326	0	0	0	
+20160919 050906	binaria1	rpart	0.0001	200	100	10	0	12.28164	0	0	0	
+20160919 050958	binaria1	rpart	0.0001	200	100	15	0	16.3857	0	0	0	
+20160919 051058	binaria1	rpart	0.0001	200	100	20	0	19.06145	0	0	0	
+20160919 051105	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	200	100	20	596944.4	194.6517	598333.3	646666.7	545833.3	
+20160919 051122	binaria1	rpart	0.0001	200	40	5	0	6.78395	0	0	0	
+20160919 051201	binaria1	rpart	0.0001	200	40	10	0	12.0589	0	0	0	
+20160919 051255	binaria1	rpart	0.0001	200	40	15	0	16.91882	0	0	0	
+20160919 051346	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	200	40	5	567777.8	52.64619	598333.3	646666.7	458333.3	
+20160919 051358	binaria1	rpart	0.0001	200	40	20	0	20.08322	0	0	0	
+20160919 051633	binaria1	rpart	0.001	20	10	5	860555.6	50.73859	817500	917500	846666.7	
+20160919 051911	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	200	40	10	567777.8	106.9735	598333.3	646666.7	458333.3	
+20160919 052143	binaria1	rpart	0.001	20	10	10	899722.2	102.3444	829166.7	1051667	818333.3	
+20160919 052709	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	200	40	15	567777.8	158.3761	598333.3	646666.7	458333.3	
+20160919 052916	binaria1	rpart	0.001	20	10	15	899722.2	149.7682	829166.7	1051667	818333.3	
+20160919 053724	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.0001	200	40	20	567777.8	203.7495	598333.3	646666.7	458333.3	
+20160919 053848	binaria1	rpart	0.001	20	10	20	899722.2	189.7178	829166.7	1051667	818333.3	
+20160919 054014	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	20	10	5	1072500	54.94117	1170833	1134167	912500	
+20160919 054122	binaria1	rpart	0.001	20	4	5	962777.8	50.11038	836666.7	1146667	905000	
+20160919 054544	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	20	10	10	1125556	108.8421	1165000	1227500	984166.7	
+20160919 054629	binaria1	rpart	0.001	20	4	10	1046667	101.3062	965833.3	1228333	945833.3	
+20160919 055352	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	20	10	15	1125556	161.4143	1165000	1227500	984166.7	
+20160919 055406	binaria1	rpart	0.001	20	4	15	1046667	150.9615	965833.3	1228333	945833.3	
+20160919 060356	binaria1	rpart	0.001	20	4	20	1046667	195.7876	965833.3	1228333	945833.3	
+20160919 060431	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	20	10	20	1125556	211.8127	1165000	1227500	984166.7	
+20160919 060630	binaria1	rpart	0.001	50	25	5	773888.9	50.12624	764166.7	735000	822500	
+20160919 060714	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	20	4	5	1083611	52.90007	1170833	1134167	945833.3	
+20160919 061134	binaria1	rpart	0.001	50	25	10	773888.9	100.2537	764166.7	735000	822500	
+20160919 061241	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	20	4	10	1169722	107.7505	1178333	1273333	1057500	
+20160919 061859	binaria1	rpart	0.001	50	25	15	773888.9	146.979	764166.7	735000	822500	
+20160919 062054	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	20	4	15	1112778	163.2363	1078333	1202500	1057500	
+20160919 062814	binaria1	rpart	0.001	50	25	20	773888.9	183.9257	764166.7	735000	822500	
+20160919 063050	binaria1	rpart	0.001	50	10	5	781944.4	50.96475	764166.7	735000	846666.7	
+20160919 063141	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	20	4	20	1112778	214.4889	1078333	1202500	1057500	
+20160919 063426	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	50	25	5	1056111	53.80147	1105833	1134167	928333.3	
+20160919 063555	binaria1	rpart	0.001	50	10	10	772500	100.7006	764166.7	735000	818333.3	
+20160919 064011	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	50	25	10	1113611	113.9075	1105833	1183333	1051667	
+20160919 064334	binaria1	rpart	0.001	50	10	15	772500	151.8193	764166.7	735000	818333.3	
+20160919 064818	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	50	25	15	1113611	161.2762	1105833	1183333	1051667	
+20160919 065309	binaria1	rpart	0.001	50	10	20	772500	190.3529	764166.7	735000	818333.3	
+20160919 065332	binaria1	rpart	0.001	200	100	5	0	6.781858	0	0	0	
+20160919 065411	binaria1	rpart	0.001	200	100	10	0	11.9179	0	0	0	
+20160919 065501	binaria1	rpart	0.001	200	100	15	0	15.67721	0	0	0	
+20160919 065559	binaria1	rpart	0.001	200	100	20	0	18.25415	0	0	0	
+20160919 065622	binaria1	rpart	0.001	200	40	5	0	6.773923	0	0	0	
+20160919 065700	binaria1	rpart	0.001	200	40	10	0	11.88458	0	0	0	
+20160919 065754	binaria1	rpart	0.001	200	40	15	0	16.66052	0	0	0	
+20160919 065833	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	50	25	20	1113611	203.6611	1105833	1183333	1051667	
+20160919 065901	binaria1	rpart	0.001	200	40	20	0	21.18107	0	0	0	
+20160919 070051	binaria1	rpart	0.005	20	10	5	499722.2	35.55758	764166.7	735000	0	
+20160919 070117	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	50	10	5	1050833	53.62124	1105833	1134167	912500	
+20160919 070427	binaria1	rpart	0.005	20	10	10	499722.2	71.00113	764166.7	735000	0	
+20160919 070643	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	50	10	10	1113056	107.4192	1213333	1160000	965833.3	
+20160919 070939	binaria1	rpart	0.005	20	10	15	499722.2	102.8724	764166.7	735000	0	
+20160919 071454	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	50	10	15	1113056	162.7802	1213333	1160000	965833.3	
+20160919 071553	binaria1	rpart	0.005	20	10	20	499722.2	123.5079	764166.7	735000	0	
+20160919 071700	binaria1	rpart	0.005	20	4	5	245000	21.20436	0	735000	0	
+20160919 072039	binaria1	rpart	0.005	20	4	10	459444.4	72.06265	712500	665833.3	0	
+20160919 072525	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	50	10	20	1113056	208.9806	1213333	1160000	965833.3	
+20160919 072559	binaria1	rpart	0.005	20	4	15	459444.4	105.4962	712500	665833.3	0	
+20160919 072817	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	200	100	5	567777.8	56.34163	598333.3	646666.7	458333.3	
+20160919 073226	binaria1	rpart	0.005	20	4	20	459444.4	128.0709	712500	665833.3	0	
+20160919 073347	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	200	100	10	596944.4	108.6859	598333.3	646666.7	545833.3	
+20160919 073420	binaria1	rpart	0.005	50	25	5	519166.7	36.75162	0	735000	822500	
+20160919 073755	binaria1	rpart	0.005	50	25	10	519166.7	70.7777	0	735000	822500	
+20160919 074136	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	200	100	15	596944.4	155.2623	598333.3	646666.7	545833.3	
+20160919 074301	binaria1	rpart	0.005	50	25	15	519166.7	100.8879	0	735000	822500	
+20160919 074914	binaria1	rpart	0.005	50	25	20	519166.7	123.2033	0	735000	822500	
+20160919 075107	binaria1	rpart	0.005	50	10	5	499722.2	36.47992	764166.7	735000	0	
+20160919 075115	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	200	100	20	596944.4	191.8497	598333.3	646666.7	545833.3	
+20160919 075400	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	200	40	5	567777.8	53.75233	598333.3	646666.7	458333.3	
+20160919 075441	binaria1	rpart	0.005	50	10	10	499722.2	70.21519	764166.7	735000	0	
+20160919 075929	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	200	40	10	567777.8	108.6236	598333.3	646666.7	458333.3	
+20160919 075952	binaria1	rpart	0.005	50	10	15	499722.2	102.6229	764166.7	735000	0	
+20160919 080605	binaria1	rpart	0.005	50	10	20	499722.2	123.3335	764166.7	735000	0	
+20160919 080629	binaria1	rpart	0.005	200	100	5	0	6.85272	0	0	0	
+20160919 080706	binaria1	rpart	0.005	200	100	10	0	11.5683	0	0	0	
+20160919 080723	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	200	40	15	567777.8	157.0927	598333.3	646666.7	458333.3	
+20160919 080755	binaria1	rpart	0.005	200	100	15	0	15.07636	0	0	0	
+20160919 080847	binaria1	rpart	0.005	200	100	20	0	16.53206	0	0	0	
+20160919 080911	binaria1	rpart	0.005	200	40	5	0	6.823625	0	0	0	
+20160919 080949	binaria1	rpart	0.005	200	40	10	0	11.68785	0	0	0	
+20160919 081040	binaria1	rpart	0.005	200	40	15	0	16.08332	0	0	0	
+20160919 081139	binaria1	rpart	0.005	200	40	20	0	18.51386	0	0	0	
+20160919 081548	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.001	200	40	20	567777.8	167.0469	598333.3	646666.7	458333.3	
+20160919 081746	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	20	10	5	567777.8	38.67139	598333.3	646666.7	458333.3	
+20160919 082137	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	20	10	10	567777.8	75.89973	598333.3	646666.7	458333.3	
+20160919 082708	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	20	10	15	567777.8	109.3599	598333.3	646666.7	458333.3	
+20160919 083356	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	20	10	20	567777.8	135.2225	598333.3	646666.7	458333.3	
+20160919 083555	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	20	4	5	567777.8	38.55953	598333.3	646666.7	458333.3	
+20160919 083946	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	20	4	10	561388.9	75.8757	598333.3	646666.7	439166.7	
+20160919 084524	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	20	4	15	561388.9	111.9456	598333.3	646666.7	439166.7	
+20160919 085218	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	20	4	20	561388.9	136.9611	598333.3	646666.7	439166.7	
+20160919 085417	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	50	25	5	567777.8	38.58015	598333.3	646666.7	458333.3	
+20160919 085808	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	50	25	10	567777.8	76.24094	598333.3	646666.7	458333.3	
+20160919 090333	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	50	25	15	567777.8	107.3685	598333.3	646666.7	458333.3	
+20160919 091004	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	50	25	20	567777.8	129.3993	598333.3	646666.7	458333.3	
+20160919 091202	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	50	10	5	567777.8	38.46139	598333.3	646666.7	458333.3	
+20160919 091552	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	50	10	10	567777.8	75.64589	598333.3	646666.7	458333.3	
+20160919 092124	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	50	10	15	567777.8	109.8043	598333.3	646666.7	458333.3	
+20160919 092806	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	50	10	20	567777.8	133.0092	598333.3	646666.7	458333.3	
+20160919 092932	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	200	100	5	415000	27.61455	598333.3	646666.7	0	
+20160919 093215	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	200	100	10	415000	53.4179	598333.3	646666.7	0	
+20160919 093552	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	200	100	15	415000	71.2863	598333.3	646666.7	0	
+20160919 093959	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	200	100	20	415000	81.68902	598333.3	646666.7	0	
+20160919 094124	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	200	40	5	415000	27.40807	598333.3	646666.7	0	
+20160919 094408	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	200	40	10	415000	53.3865	598333.3	646666.7	0	
+20160919 094755	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	200	40	15	415000	74.95132	598333.3	646666.7	0	
+20160919 095219	/home/macramole/Desktop/dm/2do_cuatri/finanzas/producto_premium_201604.txt	rpart	0.005	200	40	20	415000	86.92837	598333.3	646666.7	0	
+20160919 164612	oversampling_binaria1	rpart	0.0001	200	2	10	0	8.824628	0	0	0	
+20160919 164649	oversampling_binaria1	rpart	0.0001	200	2	15	0	11.45296	0	0	0	
+20160919 165737	oversampling_binaria1	rpart	0.0001	20	10	10	941388.9	73.29704	954166.7	1051667	818333.3	
+20160919 170303	oversampling_binaria1	rpart	0.0001	20	10	15	990555.6	107.6705	1101667	1051667	818333.3	
+20160919 171001	oversampling_binaria1	rpart	0.0001	20	10	20	990555.6	138.5311	1101667	1051667	818333.3	
+20160919 171343	oversampling_binaria1	rpart	0.0001	20	4	10	1046667	73.22079	965833.3	1228333	945833.3	
+20160919 171922	oversampling_binaria1	rpart	0.0001	20	4	15	985277.8	112.2353	890000	1123333	942500	
+20160919 172623	oversampling_binaria1	rpart	0.0001	20	4	20	941388.9	139.3862	890000	1079167	855000	
+20160919 173003	oversampling_binaria1	rpart	0.0001	50	25	10	773888.9	72.46504	764166.7	735000	822500	
+20160919 173520	oversampling_binaria1	rpart	0.0001	50	25	15	773888.9	104.8737	764166.7	735000	822500	
+20160919 174157	oversampling_binaria1	rpart	0.0001	50	25	20	773888.9	131.616	764166.7	735000	822500	
+20160919 174540	oversampling_binaria1	rpart	0.0001	50	10	10	840277.8	73.28299	764166.7	938333.3	818333.3	
+20160919 175103	oversampling_binaria1	rpart	0.0001	50	10	15	840277.8	107.0337	764166.7	938333.3	818333.3	
+20160919 175754	oversampling_binaria1	rpart	0.0001	50	10	20	840277.8	136.1677	764166.7	938333.3	818333.3	
+20160919 175822	oversampling_binaria1	rpart	0.0001	200	100	10	0	8.552902	0	0	0	
+20160919 175859	oversampling_binaria1	rpart	0.0001	200	100	15	0	11.52792	0	0	0	
+20160919 175942	oversampling_binaria1	rpart	0.0001	200	100	20	0	13.55493	0	0	0	
+20160919 180011	oversampling_binaria1	rpart	0.0001	200	40	10	0	8.770785	0	0	0	
+20160919 180050	oversampling_binaria1	rpart	0.0001	200	40	15	0	12.12257	0	0	0	
+20160919 180136	oversampling_binaria1	rpart	0.0001	200	40	20	0	14.68441	0	0	0	
 20160919 180519	oversampling_binaria1	rpart	0.001	20	10	10	899722.2	73.44828	829166.7	1051667	818333.3	
 20160919 181045	oversampling_binaria1	rpart	0.001	20	10	15	899722.2	107.7752	829166.7	1051667	818333.3	
 20160919 181743	oversampling_binaria1	rpart	0.001	20	10	20	899722.2	138.6024	829166.7	1051667	818333.3	
 20160919 182127	oversampling_binaria1	rpart	0.001	20	4	10	1046667	73.68183	965833.3	1228333	945833.3	
 20160919 182656	oversampling_binaria1	rpart	0.001	20	4	15	1046667	109.0237	965833.3	1228333	945833.3	
+20160924 012412	ternaria_noparallel	rpart	0	20	2	5	1093125	42.82346	1170833	1134167	912500	1155000
+20160924 020716	ternaria_noparallel	rpart	0	20	2	11	1257083	194.7993	1172500	1341667		
+20160924 023950	ternaria_noparallel	rpart	0	18	18	9	1135208	74.5353	1140833	1165000	951666.7	1283333
+20160924 024525	ternaria_noparallel	rpart	0	18	18	10	1135208	82.67876	1140833	1165000	951666.7	1283333
+20160924 025121	ternaria_noparallel	rpart	0	18	18	11	1135208	87.9775	1140833	1165000	951666.7	1283333
+20160924 025755	ternaria_noparallel	rpart	0	18	18	12	1135208	97.49265	1140833	1165000	951666.7	1283333
+20160924 030455	ternaria_noparallel	rpart	0	18	18	13	1135208	104.1001	1140833	1165000	951666.7	1283333
+20160924 030946	ternaria_noparallel	rpart	0	18	9	9	1211250	71.53322	1212500	1355000	1003333	1274167
+20160924 031507	ternaria_noparallel	rpart	0	18	9	10	1188750	79.28357	1212500	1360833	980833.3	1200833
+20160924 032106	ternaria_noparallel	rpart	0	18	9	11	1202917	88.74865	1212500	1360833	1040000	1198333
+20160924 032732	ternaria_noparallel	rpart	0	18	9	12	1193333	95.51353	1231667	1360833	982500	1198333
+20160924 033431	ternaria_noparallel	rpart	0	18	9	13	1148958	103.6025	1231667	1360833	982500	1020833
+20160924 033920	ternaria_noparallel	rpart	0	18	6	9	1190417	71.30099	1131667	1338333	1135833	1155833
+20160924 034444	ternaria_noparallel	rpart	0	18	6	10	1170625	79.94244	1131667	1316667	1073333	1160833
+20160924 035045	ternaria_noparallel	rpart	0	18	6	11	1120417	89.23192	1110833	1316667	1067500	986666.7
+20160924 035707	ternaria_noparallel	rpart	0	18	6	12	1121458	94.63862	1110833	1320833	1067500	986666.7
+20160924 040402	ternaria_noparallel	rpart	0	18	6	13	1118542	102.7817	1108333	1299167	1067500	999166.7
+20160924 040853	ternaria_noparallel	rpart	0	19	19	9	1164375	71.65441	1239167	1183333	951666.7	1283333
+20160924 041413	ternaria_noparallel	rpart	0	19	19	10	1164375	79.02575	1239167	1183333	951666.7	1283333
+20160924 042003	ternaria_noparallel	rpart	0	19	19	11	1164375	86.3762	1239167	1183333	951666.7	1283333
+20160924 042622	ternaria_noparallel	rpart	0	19	19	12	1164375	93.92247	1239167	1183333	951666.7	1283333
+20160924 043315	ternaria_noparallel	rpart	0	19	19	13	1164375	102.1922	1239167	1183333	951666.7	1283333
+20160924 043800	ternaria_noparallel	rpart	0	19	9.5	9	1216458	70.31369	1212500	1375833	1003333	1274167
+20160924 044319	ternaria_noparallel	rpart	0	19	9.5	10	1193958	78.55823	1212500	1381667	980833.3	1200833
+20160924 044912	ternaria_noparallel	rpart	0	19	9.5	11	1205000	87.44928	1212500	1381667	1040000	1185833
+20160924 045529	ternaria_noparallel	rpart	0	19	9.5	12	1195417	93.27414	1231667	1381667	982500	1185833
+20160924 050220	ternaria_noparallel	rpart	0	19	9.5	13	1156458	101.5279	1231667	1381667	982500	1030000
+20160924 050707	ternaria_noparallel	rpart	0	19	6.333333	9	1196667	70.82902	1156667	1338333	1135833	1155833
+20160924 051224	ternaria_noparallel	rpart	0	19	6.333333	10	1176875	78.36507	1156667	1316667	1073333	1160833
+20160924 051811	ternaria_noparallel	rpart	0	19	6.333333	11	1126667	85.69004	1135833	1316667	1067500	986666.7
+20160924 052429	ternaria_noparallel	rpart	0	19	6.333333	12	1127708	93.6349	1135833	1320833	1067500	986666.7
+20160924 053120	ternaria_noparallel	rpart	0	19	6.333333	13	1130208	101.7571	1133333	1299167	1067500	1020833
+20160924 053607	ternaria_noparallel	rpart	0	20	20	9	1169583	70.73255	1238333	1183333	973333.3	1283333
+20160924 054126	ternaria_noparallel	rpart	0	20	20	10	1169583	78.83257	1238333	1183333	973333.3	1283333
+20160924 054717	ternaria_noparallel	rpart	0	20	20	11	1169583	86.66319	1238333	1183333	973333.3	1283333
+20160924 055336	ternaria_noparallel	rpart	0	20	20	12	1169583	93.76921	1238333	1183333	973333.3	1283333
+20160924 060026	ternaria_noparallel	rpart	0	20	20	13	1169583	101.4421	1238333	1183333	973333.3	1283333
+20160924 060510	ternaria_noparallel	rpart	0	20	10	9	1194792	70.2671	1172500	1335833	1003333	1267500
+20160924 061026	ternaria_noparallel	rpart	0	20	10	10	1178542	77.93735	1172500	1341667	980833.3	1219167
+20160924 061614	ternaria_noparallel	rpart	0	20	10	11	1178750	85.87205	1172500	1341667	981666.7	1219167
+20160924 062232	ternaria_noparallel	rpart	0	20	10	12	1178750	93.66747	1172500	1341667	981666.7	1219167
+20160924 062920	ternaria_noparallel	rpart	0	20	10	13	1148750	100.8817	1172500	1341667	981666.7	1099167
+20160924 063403	ternaria_noparallel	rpart	0	20	6.666667	9	1196667	69.77915	1156667	1338333	1135833	1155833
+20160924 063916	ternaria_noparallel	rpart	0	20	6.666667	10	1176875	77.46098	1156667	1316667	1073333	1160833
+20160924 064501	ternaria_noparallel	rpart	0	20	6.666667	11	1126667	85.20874	1135833	1316667	1067500	986666.7
+20160924 065119	ternaria_noparallel	rpart	0	20	6.666667	12	1127708	93.53411	1135833	1320833	1067500	986666.7
+20160924 065809	ternaria_noparallel	rpart	0	20	6.666667	13	1130208	101.4471	1133333	1299167	1067500	1020833
+20160924 070257	ternaria_noparallel	rpart	0	21	21	9	1166875	71.00531	1238333	1183333	962500	1283333
+20160924 070816	ternaria_noparallel	rpart	0	21	21	10	1166875	78.82188	1238333	1183333	962500	1283333
+20160924 071404	ternaria_noparallel	rpart	0	21	21	11	1166875	86.1056	1238333	1183333	962500	1283333
+20160924 072025	ternaria_noparallel	rpart	0	21	21	12	1166875	94.19035	1238333	1183333	962500	1283333
+20160924 072715	ternaria_noparallel	rpart	0	21	21	13	1166875	101.5756	1238333	1183333	962500	1283333
+20160924 073200	ternaria_noparallel	rpart	0	21	10.5	9	1195417	70.2284	1172500	1335833	1003333	1270000
+20160924 073718	ternaria_noparallel	rpart	0	21	10.5	10	1192500	78.42357	1172500	1341667	980833.3	1275000
+20160924 074303	ternaria_noparallel	rpart	0	21	10.5	11	1192708	85.30599	1172500	1341667	981666.7	1275000
+20160924 074921	ternaria_noparallel	rpart	0	21	10.5	12	1192708	93.48673	1172500	1341667	981666.7	1275000
+20160924 075609	ternaria_noparallel	rpart	0	21	10.5	13	1149375	101.1666	1172500	1341667	981666.7	1101667
+20160924 080052	ternaria_noparallel	rpart	0	21	7	9	1198750	69.76433	1200833	1352500	1033333	1208333
+20160924 080609	ternaria_noparallel	rpart	0	21	7	10	1196042	78.13056	1200833	1353333	1016667	1213333
+20160924 081157	ternaria_noparallel	rpart	0	21	7	11	1134375	86.2599	1131667	1353333	1056667	995833.3
