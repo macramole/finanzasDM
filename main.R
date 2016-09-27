@@ -1,14 +1,15 @@
 library(rpart)
 library(caret)
-library(doMC)
-
-registerDoMC(4)
 
 seeds <- c( 442619, 664579, 235813 , 502841, 351551 )
 
-#clase ternaria
-abril_dataset = db.getDataset()
 
+
+       ########################
+       ##      TERNARIA      ##
+       ########################
+
+abril_dataset = db.getDataset()
 
 #model params
 vcp <- 1 ;
@@ -16,10 +17,10 @@ vminsplit <- 50 ;
 vminbucket <- 8 ;
 vmaxdepth <- 8
 
-vcpValues = c(0, 0.0001, 0.001, 0.005)
-vminsplitValues = c(20,50,200)
-vminbucketValues = c(2,5) #padre / cada número
-vmaxdepthValues = c(5,10,15,20)
+# vcpValues = c(0, 0.0001, 0.001, 0.005)
+# vminsplitValues = c(20,50,200)
+# vminbucketValues = c(2,5) #padre / cada número
+# vmaxdepthValues = c(5,10,15,20)
 
 vcpValues = c(0)
 vminsplitValues = c(18,19,20,21,22)
@@ -29,44 +30,56 @@ vmaxdepthValues = c(9,10,11,12,13)
 table(abril_dataset$clase)
 
 
-# models = foreach( vcp = vcpValues ) %dopar%
-for ( vcp in vcpValues ) {
-  for ( vminsplit in vminsplitValues ) {
-    for ( vminbucket in vminbucketValues ) {
-      for ( vmaxdepth in vmaxdepthValues ) {
-        tiempos = c()
-        ganancias = c()
-        
-        
-        
-        # for( s in  1:length(seeds) )
-        for( s in  1:4 ) {
-        # models = foreach( s = 1:2 ) %dopar% {
-          set.seed( seeds[s] )
-          abril_inTraining <- createDataPartition( abril_dataset$clase, p = .70, list = FALSE)
-          abril_dataset_training <- abril_dataset[ abril_inTraining,]
-          abril_dataset_testing  <- abril_dataset[-abril_inTraining,]
-          
-          t0 =  Sys.time()  
-          
-          abril_modelo  <- rpart( clase ~ .   ,   data = abril_dataset_training,   cp=vcp, minsplit=vminsplit, minbucket=vminsplit/vminbucket, maxdepth=vmaxdepth, x = F, y = F )
-          
-          t1 =  Sys.time()
-          tiempos[s] <-  as.numeric(  t1 - t0, units = "secs" )
-          
-          abril_testing_prediccion  = predict(  abril_modelo, abril_dataset_testing , type = "prob")
-          ganancias[s] <- ganancia.ternaria( abril_testing_prediccion,  abril_dataset_testing$clase ) / 0.30
-          # ganancia.ternaria( abril_testing_prediccion,  abril_dataset_testing$clase ) / 0.30
-        }
-        
-        
-        #tiempos = as.numeric(  t1 - t0, units = "secs" )
-        
-        log.add("ternaria_noparallel", vcp, vminsplit, vminbucket, vmaxdepth, ganancias, tiempos )
-      }
-    }
-  }
-}
+run(abril_dataset, "ternaria", ganancia.ternaria, vcpValues, vminsplitValues, vminbucketValues, vmaxdepthValues )
+
+
+
+     ########################
+     ##      BINARIA1      ##
+     ########################
+
+db.connect()
+dataset_binaria = db.getDataset( db.BINARIA1 )
+
+vcpValues = c(0)
+vminsplitValues = c(18,19,20,21,22)
+vminbucketValues = c(1,2,3) #padre / cada número
+maxdepthValues = c(9,10,11,12,13)
+
+# vcpValues = c(0)
+# vminsplitValues = c(20)
+# vminbucketValues = c(2) #padre / cada número
+# maxdepthValues = c(11)
+
+# Cada corrida con 4 seeds tarda: 
+tiempo = 71.2 * 4
+cantCorridas = length(vcpValues) * length(vminsplitValues) * length(vminbucketValues) * length(maxdepthValues)
+  
+cat( "Tardará:",
+  round(tiempo * cantCorridas / 60 / 60), "horas" )
+
+# TEST
+# vcpValues = c(0)
+# vminsplitValues = c(18)
+# vminbucketValues = c(1,2,3) #padre / cada número
+# vmaxdepthValues = c(9)
+
+#proporcion
+t = table(dataset_binaria$clase)
+t[2] / t[1]
+
+# TEST
+# dataset_binaria_reducida = dataset_binaria[ createDataPartition( dataset_binaria$clase, p = .20, list = F ), ]
+# 
+# #proporcion
+# t = table(dataset_binaria_reducida$clase)
+# t[2] / t[1]
+# 
+# run(dataset_binaria_reducida, "binaria1_20%", ganancia.binaria1, vcpValues, vminsplitValues, vminbucketValues, vmaxdepthValues )
+
+run(dataset_binaria, "binaria1", ganancia.binaria1, vcpValues, vminsplitValues, vminbucketValues, vmaxdepthValues )
+
+
 
 
 
@@ -87,9 +100,6 @@ for ( vcp in vcpValues ) {
 #  trainingList = c(trainingList, createDataPartition( abril_dataset$clase, p = .70))
 #}
 ?"%dopar%"
-
-
-
 #aca poner bien los parámetros
 paramsGrid = expand.grid( cp = c(0, 0.0001, 0.001),
                           #minsplit = c(20,50,200),

@@ -9,6 +9,10 @@ db.TERNARIA = 1
 db.BINARIA1 = 2
 db.BINARIA2 = 3
 
+db.connect = function() {
+  con <<- dbConnect(RSQLite::SQLite(), "db/producto_premium_201604.sqlite")
+}
+
 db.getDataset = function(cual = db.TERNARIA) {
   res = dbSendQuery(con, "SELECT * FROM data")
   abril_dataset = dbFetch(res, n = -1 )
