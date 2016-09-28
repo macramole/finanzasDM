@@ -54,5 +54,5 @@ run = function(dataset, dataset_desc = "", funcGanancia = ganancia.ternaria, vcp
   
   totalTime1 =  Sys.time()
   
-  cat("Run tardó", as.numeric(  totalTime1 - totalTime0, units = "minutes" ) )
+  cat("Run tardó", as.numeric(  totalTime1 - totalTime0, units = "mins" ) )
 }

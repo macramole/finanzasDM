@@ -44,7 +44,7 @@ dataset_binaria = db.getDataset( db.BINARIA1 )
 vcpValues = c(0)
 vminsplitValues = c(18,19,20,21,22)
 vminbucketValues = c(1,2,3) #padre / cada número
-maxdepthValues = c(9,10,11,12,13)
+vmaxdepthValues = c(9,10,11,12,13)
 
 # vcpValues = c(0)
 # vminsplitValues = c(20)
@@ -79,6 +79,58 @@ t[2] / t[1]
 
 run(dataset_binaria, "binaria1", ganancia.binaria1, vcpValues, vminsplitValues, vminbucketValues, vmaxdepthValues )
 
+
+
+     ###########################
+     ##      OVERSAMPLED      ##
+     ###########################
+
+db.connect()
+dataset_binaria = db.getDataset( db.BINARIA1 )
+dataset_binaria_oversampled = upSample( dataset_binaria, as.factor(dataset_binaria$clase) )
+dataset_binaria_oversampled = dataset_binaria_oversampled[,-172]
+str(dataset_binaria_oversampled[171])
+
+vcpValues = c(0)
+vminsplitValues = c(18,19,20,21,22)
+vminbucketValues = c(1,2,3) #padre / cada número
+vmaxdepthValues = c(9,10,11,12,13)
+
+vcpValues = c(0)
+vminsplitValues = c(20)
+vminbucketValues = c(2) #padre / cada número
+vmaxdepthValues = c(11)
+
+# Cada corrida con 4 seeds tarda: 
+tiempo = 71.2 * 4
+cantCorridas = length(vcpValues) * length(vminsplitValues) * length(vminbucketValues) * length(vmaxdepthValues)
+cantCorridas
+
+cat( "Tardará:",
+     round(tiempo * cantCorridas / 60 / 60), "horas" )
+
+# TEST
+# vcpValues = c(0)
+# vminsplitValues = c(18)
+# vminbucketValues = c(1,2,3) #padre / cada número
+# vmaxdepthValues = c(9)
+
+#proporcion
+t = table(dataset_binaria$clase)
+t[2] / t[1]
+t = table(dataset_binaria_oversampled$clase)
+t[2] / t[1]
+
+# TEST
+# dataset_binaria_reducida = dataset_binaria[ createDataPartition( dataset_binaria$clase, p = .20, list = F ), ]
+# 
+# #proporcion
+# t = table(dataset_binaria_reducida$clase)
+# t[2] / t[1]
+# 
+# run(dataset_binaria_reducida, "binaria1_20%", ganancia.binaria1, vcpValues, vminsplitValues, vminbucketValues, vmaxdepthValues )
+
+run(dataset_binaria_oversampled, "binaria1_oversampled", ganancia.oversampled, vcpValues, vminsplitValues, vminbucketValues, vmaxdepthValues )
 
 
 
