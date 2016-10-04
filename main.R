@@ -96,6 +96,7 @@ vminsplitValues = c(18,19,20,21,22)
 vminbucketValues = c(1,2,3) #padre / cada número
 vmaxdepthValues = c(9,10,11,12,13)
 
+#esta es la mayor por el momento
 vcpValues = c(0)
 vminsplitValues = c(20)
 vminbucketValues = c(2) #padre / cada número
