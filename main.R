@@ -1,6 +1,7 @@
 library(rpart)
 library(caret)
 
+
 seeds <- c( 442619, 664579, 235813 , 502841, 351551 )
 
 
@@ -10,12 +11,6 @@ seeds <- c( 442619, 664579, 235813 , 502841, 351551 )
        ########################
 
 abril_dataset = db.getDataset()
-
-#model params
-vcp <- 1 ;
-vminsplit <- 50 ;
-vminbucket <- 8 ;
-vmaxdepth <- 8
 
 # vcpValues = c(0, 0.0001, 0.001, 0.005)
 # vminsplitValues = c(20,50,200)
@@ -29,10 +24,44 @@ vmaxdepthValues = c(9,10,11,12,13)
 
 table(abril_dataset$clase)
 
-
 run(abril_dataset, "ternaria", ganancia.ternaria, vcpValues, vminsplitValues, vminbucketValues, vmaxdepthValues )
 
+vcpValues = c(0, 0.0001, 0.001, 0.005)
+vminsplitValues = c(10,20,40)
+vminbucketValues = c(2,6,8) #padre / cada número
+vmaxdepthValues = c(11,15,20)
 
+#model = 
+run.noParallel(abril_dataset, "ternaria_VisaMaster_historicas", ganancia.ternaria, vcpValues, vminsplitValues, vminbucketValues, vmaxdepthValues )
+#model$variable.importance
+
+
+?filterVarImp
+
+# sink("test.txt")
+# str(abril_dataset[,c(1:200,168)], list.len = length(colnames(abril_dataset[,c(1:200,168)])) )
+# sink()
+## Anda todo re lento, intento hacer hacer feature selection
+#nop
+
+## Intentemos con C5.0
+library(C50)
+claseIndex = 168
+
+
+abril_inTraining <- createDataPartition( abril_dataset$clase, p = .20, list = FALSE)
+abril_dataset_training <- abril_dataset[ abril_inTraining,]
+abril_dataset_testing  <- abril_dataset[-abril_inTraining,]
+
+t0 = Sys.time()
+model = C5.0( abril_dataset_training[,-claseIndex], abril_dataset_training$clase, trials = 1,  control = ?C5.0Control(
+  subset = F
+) )
+t1 = Sys.time()
+as.numeric(t1 - t0, units = "secs")
+
+summary(model)
+plot(model)
 
      ########################
      ##      BINARIA1      ##
@@ -139,6 +168,9 @@ run(dataset_binaria_oversampled, "binaria1_oversampled", ganancia.oversampled, v
 
 
 
+
+
+  
 
 
 
