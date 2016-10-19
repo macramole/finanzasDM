@@ -13,9 +13,22 @@ db.connect = function() {
   con <<- dbConnect(RSQLite::SQLite(), "db/producto_premium_201604.sqlite")
 }
 
-db.getDataset = function(cual = db.TERNARIA) {
-  res = dbSendQuery(con, "SELECT * FROM data")
+db.getDataset = function(cual = db.TERNARIA, historicas = T) {
+  # res = dbSendQuery(con, "SELECT * FROM data")
+  
+  sql = "SELECT * FROM data, historicas, visamaster WHERE data.numero_de_cliente = historicas.numero_de_cliente and data.numero_de_cliente = visamaster.numero_de_cliente"
+  
+  if ( historicas == F ) {
+    sql = "SELECT * FROM data, visamaster WHERE data.numero_de_cliente = visamaster.numero_de_cliente"
+  }
+  
+  res = dbSendQuery(con, sql)
+  
   abril_dataset = dbFetch(res, n = -1 )
+  
+  abril_dataset = abril_dataset[,colnames(abril_dataset) != "numero_de_cliente" ]
+  abril_dataset = abril_dataset[,colnames(abril_dataset) != "foto_mes" ]
+  abril_dataset = abril_dataset[,colnames(abril_dataset) != "participa" ]
   
   if ( cual == db.TERNARIA) {
     abril_dataset$clasebinaria1 = NULL
