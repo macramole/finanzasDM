@@ -1,6 +1,9 @@
 library(DBI)
 
-con = dbConnect(RSQLite::SQLite(), "db/producto_premium_201604.sqlite")
+# dbFile = "db/producto_premium_201604.sqlite"
+dbFile = "db/201604_checkpoint.sqlite"
+
+con = dbConnect(RSQLite::SQLite(), dbFile)
 
 dbListTables(con)
 dbListFields(con,"data")
@@ -10,7 +13,7 @@ db.BINARIA1 = 2
 db.BINARIA2 = 3
 
 db.connect = function() {
-  con <<- dbConnect(RSQLite::SQLite(), "db/producto_premium_201604.sqlite")
+  con <<- dbConnect(RSQLite::SQLite(), dbFile)
 }
 
 db.getDataset = function(cual = db.TERNARIA, historicas = T) {
@@ -26,6 +29,7 @@ db.getDataset = function(cual = db.TERNARIA, historicas = T) {
   
   abril_dataset = dbFetch(res, n = -1 )
   
+  rownames(abril_dataset) = abril_dataset[,"numero_de_cliente" ] 
   abril_dataset = abril_dataset[,colnames(abril_dataset) != "numero_de_cliente" ]
   abril_dataset = abril_dataset[,colnames(abril_dataset) != "foto_mes" ]
   abril_dataset = abril_dataset[,colnames(abril_dataset) != "participa" ]

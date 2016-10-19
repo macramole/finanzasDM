@@ -112,7 +112,7 @@ run.noParallel = function(dataset, dataset_desc = "", funcGanancia = ganancia.te
   totalTime1 =  Sys.time()
   
   cat("Run tardó", as.numeric(  totalTime1 - totalTime0, units = "mins" ), "minutos" , fill = T)
-  # abril_modelo
+  abril_modelo
 }
 
 
@@ -120,7 +120,7 @@ run.noParallel = function(dataset, dataset_desc = "", funcGanancia = ganancia.te
 #devuelve el modelo
 run.one.noSplit = function(dataset, vcp, vminsplit, vminbucket, vmaxdepth) {
   t0 =  Sys.time()  
-  abril_modelo  <- rpart( clase ~ .   ,   data = dataset, cp=vcp, minsplit=vminsplit, minbucket=vminsplit/vminbucket, maxdepth=vmaxdepth, xval = F )
+  abril_modelo  <- rpart( clase ~ .   ,   data = dataset,   cp=vcp, minsplit=vminsplit, minbucket=vminsplit/vminbucket, maxdepth=vmaxdepth, xval = 0, x = F, y = F )
   t1 =  Sys.time()
   cat("Tiempo:", as.numeric(  t1 - t0, units = "secs" ))
   abril_modelo   

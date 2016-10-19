@@ -10,7 +10,8 @@ seeds <- c( 442619, 664579, 235813 , 502841, 351551 )
        ##      TERNARIA      ##
        ########################
 
-abril_dataset = db.getDataset()
+db.connect()
+abril_dataset = db.getDataset(historicas = F)
 
 # vcpValues = c(0, 0.0001, 0.001, 0.005)
 # vminsplitValues = c(20,50,200)
@@ -26,14 +27,15 @@ table(abril_dataset$clase)
 
 run(abril_dataset, "ternaria", ganancia.ternaria, vcpValues, vminsplitValues, vminbucketValues, vmaxdepthValues )
 
-vcpValues = c(0, 0.0001, 0.001, 0.005)
-vminsplitValues = c(10,20,40)
-vminbucketValues = c(2,6,8) #padre / cada número
-vmaxdepthValues = c(11,15,20)
+vcpValues = c(0.001)
+vminsplitValues = c(20)
+vminbucketValues = c(2) #padre / cada número
+vmaxdepthValues = c(11)
 
-#model = 
-run.noParallel(abril_dataset, "ternaria_VisaMaster_historicas", ganancia.ternaria, vcpValues, vminsplitValues, vminbucketValues, vmaxdepthValues )
-#model$variable.importance
+#model = run.noParallel(abril_dataset, "ternaria_VisaMaster", ganancia.ternaria, vcpValues, vminsplitValues, vminbucketValues, vmaxdepthValues )
+model = run.one.noSplit(abril_dataset, vcpValues, vminsplitValues, vminbucketValues, vmaxdepthValues )
+model$variable.importance
+
 
 
 ?filterVarImp
