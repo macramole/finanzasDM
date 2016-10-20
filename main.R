@@ -36,9 +36,20 @@ vmaxdepthValues = c(11)
 model = run.one.noSplit(abril_dataset, vcpValues, vminsplitValues, vminbucketValues, vmaxdepthValues )
 model$variable.importance
 
+abril_testing_prediccion  = predict(  model, abril_dataset , type = "prob")
+
+head(abril_testing_prediccion)
+
+abril_testing_prediccion_posta = abril_testing_prediccion[abril_testing_prediccion[,2] > 250/8000,2]
+length(abril_testing_prediccion[abril_testing_prediccion[,2] > 250/8000,2])
+write.csv(names(abril_testing_prediccion_posta),"checkpoint_predict.csv", sep = "\t", row.names = F, col.names = F, quote = F )
 
 
-?filterVarImp
+#plot
+# library(rattle)				
+# library(rpart.plot)		
+# prp(model, type=2)
+
 
 # sink("test.txt")
 # str(abril_dataset[,c(1:200,168)], list.len = length(colnames(abril_dataset[,c(1:200,168)])) )
@@ -47,23 +58,23 @@ model$variable.importance
 #nop
 
 ## Intentemos con C5.0
-library(C50)
-claseIndex = 168
-
-
-abril_inTraining <- createDataPartition( abril_dataset$clase, p = .20, list = FALSE)
-abril_dataset_training <- abril_dataset[ abril_inTraining,]
-abril_dataset_testing  <- abril_dataset[-abril_inTraining,]
-
-t0 = Sys.time()
-model = C5.0( abril_dataset_training[,-claseIndex], abril_dataset_training$clase, trials = 1,  control = ?C5.0Control(
-  subset = F
-) )
-t1 = Sys.time()
-as.numeric(t1 - t0, units = "secs")
-
-summary(model)
-plot(model)
+# library(C50)
+# claseIndex = 168
+# 
+# 
+# abril_inTraining <- createDataPartition( abril_dataset$clase, p = .20, list = FALSE)
+# abril_dataset_training <- abril_dataset[ abril_inTraining,]
+# abril_dataset_testing  <- abril_dataset[-abril_inTraining,]
+# 
+# t0 = Sys.time()
+# model = C5.0( abril_dataset_training[,-claseIndex], abril_dataset_training$clase, trials = 1,  control = ?C5.0Control(
+#   subset = F
+# ) )
+# t1 = Sys.time()
+# as.numeric(t1 - t0, units = "secs")
+# 
+# summary(model)
+# plot(model)
 
      ########################
      ##      BINARIA1      ##
