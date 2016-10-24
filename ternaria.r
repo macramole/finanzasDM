@@ -231,14 +231,16 @@ ensamble.prediction.validation = ( model.1.prediction.validation * pesosEnsamble
 
 model.1.hojas_positivas = hojas_positivas( model.1.prediction.validation,  abril_dataset_validation$clase )
 model.2.hojas_positivas = hojas_positivas( model.2.prediction.validation,  abril_dataset_validation$clase )
-ensamble.hojas_positivas = hojas_positivas( ensamble.prediction.validation,  abril_dataset_validation$clase )
+# ensamble.hojas_positivas = hojas_positivas( ensamble.prediction.validation,  abril_dataset_validation$clase )
 
 #calculo la ganancia en TESTING
 model.1.prediction.testing = predict(  model.1, abril_dataset_testing , type = "prob")
 abril_dataset_testing_noNulls = db.nonulls(abril_dataset_testing)
 model.2.prediction.testing = predict(  model.2, abril_dataset_testing_noNulls , type = "prob")
 
-ensamble.prediction.testing = ( model.1.prediction.testing * pesosEnsamble[1] + model.2.prediction.testing * pesosEnsamble[2] )
+votacion = getVotaciones( list(model.1.prediction.testing, model.2.prediction.testing), list(model.1.hojas_positivas, model.2.hojas_positivas) )
+
+# ensamble.prediction.testing = ( model.1.prediction.testing * pesosEnsamble[1] + model.2.prediction.testing * pesosEnsamble[2] )
 
 # model.1.prediction.testing[15,]
 # model.2.prediction.testing[15,]
