@@ -1,6 +1,8 @@
 library(rpart)
 library(caret)
-
+source("db.R")
+source("log.R")
+source("ganancias.R")
 
 seeds <- c( 442619, 664579, 235813 , 502841, 351551 )
 
@@ -51,9 +53,9 @@ write.csv(names(abril_testing_prediccion_posta),"checkpoint_predict.csv", sep = 
 # prp(model, type=2)
 
 
-# sink("test.txt")
-# str(abril_dataset[,c(1:200,168)], list.len = length(colnames(abril_dataset[,c(1:200,168)])) )
-# sink()
+sink("test.txt")
+str(abril_dataset, list.len = length(colnames(abril_dataset)) )
+sink()
 ## Anda todo re lento, intento hacer hacer feature selection
 #nop
 
@@ -120,6 +122,11 @@ t[2] / t[1]
 # run(dataset_binaria_reducida, "binaria1_20%", ganancia.binaria1, vcpValues, vminsplitValues, vminbucketValues, vmaxdepthValues )
 
 run(dataset_binaria, "binaria1", ganancia.binaria1, vcpValues, vminsplitValues, vminbucketValues, vmaxdepthValues )
+
+     ########################
+     ##      BINARIA2      ##
+     ########################
+
 
 
 

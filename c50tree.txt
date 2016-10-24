@@ -1,0 +1,955 @@
+
+Call:
+C5.0.default(x = abril_dataset_training[, -claseIndex], y = abril_dataset_training[, claseIndex], trials = 1, rules = F, weights = vweights,
+ control = C5.0Control(CF = cf))
+
+
+C5.0 [Release 2.07 GPL Edition]  	Sun Oct 23 22:57:04 2016
+-------------------------------
+
+Class specified by attribute `outcome'
+
+Read 95204 cases (366 attributes) from undefined.data
+Using relative case weighting
+
+Decision tree:
+
+ttarjeta_visa.y <= -0.2:
+:...mpagomiscuentas.x > 74.87: CONTINUA (73.9/3.7)
+:   mpagomiscuentas.x <= 74.87:
+:   :...mcuenta_corriente_Paquete.y > 0.2939168: CONTINUA (38.3/1.8)
+:       mcuenta_corriente_Paquete.y <= 0.2939168:
+:       :...mactivos_margen.x <= -89.48:
+:           :...ccheques_emitidos_rechazados.x <= 1: CONTINUA (50.2/20.1)
+:           :   ccheques_emitidos_rechazados.x > 1: BAJA+2 (28.3)
+:           mactivos_margen.x > -89.48:
+:           :...Visa_marca_atraso.y <= -0.1732051:
+:               :...ccomisiones_otras.y <= -0.4427189: BAJA+2 (28.3)
+:               :   ccomisiones_otras.y > -0.4427189:
+:               :   :...VisaMaster_madelantopesos.x <= 2530: CONTINUA (47.5/5.5)
+:               :       VisaMaster_madelantopesos.x > 2530: BAJA+1 (2.7)
+:               Visa_marca_atraso.y > -0.1732051:
+:               :...tcajas_extracciones.x > 0:
+:                   :...cprestamos_hipotecarios.x <= 0: CONTINUA (23.7/5.5)
+:                   :   cprestamos_hipotecarios.x > 0: BAJA+2 (28.3)
+:                   tcajas_extracciones.x <= 0:
+:                   :...mcomisiones.y <= -0.3727524:
+:                       :...mcomisiones.x > 4.57:
+:                       :   :...mdescubierto_preacordado.x <= 0: BAJA+1 (21/8.2)
+:                       :   :   mdescubierto_preacordado.x > 0: CONTINUA (16.4/1.8)
+:                       :   mcomisiones.x <= 4.57:
+:                       :   :...mcuentas_saldo.y <= -0.005752319:
+:                       :       :...ttarjeta_visa.y <= -0.4: BAJA+2 (84.9)
+:                       :       :   ttarjeta_visa.y > -0.4: BAJA+1 (3.7/0.9)
+:                       :       mcuentas_saldo.y > -0.005752319:
+:                       :       :...thomebanking.x <= 0: BAJA+1 (6.4/0.9)
+:                       :           thomebanking.x > 0: CONTINUA (2.7)
+:                       mcomisiones.y > -0.3727524:
+:                       :...ttarjeta_visa.y > -0.3464102:
+:                           :...cliente_antiguedad <= 163: CONTINUA (23.7/2.7)
+:                           :   cliente_antiguedad > 163: BAJA+2 (59.3/2.7)
+:                           ttarjeta_visa.y <= -0.3464102:
+:                           :...mpasivos_margen.x > 213.24: [S1]
+:                               mpasivos_margen.x <= 213.24:
+:                               :...cliente_edad <= 32: [S2]
+:                                   cliente_edad > 32: [S3]
+ttarjeta_visa.y > -0.2:
+:...mcuenta_corriente_Nopaquete.x <= -51.14:
+    :...ttarjeta_visa_debitos_automaticos.x <= 1: BAJA+2 (56.6)
+    :   ttarjeta_visa_debitos_automaticos.x > 1: CONTINUA (6.4)
+    mcuenta_corriente_Nopaquete.x > -51.14:
+    :...mcuenta_corriente_Nopaquete.y > 0.3990131:
+        :...marketing_activo_ultimos90dias.x <= 0: BAJA+2 (28.3)
+        :   marketing_activo_ultimos90dias.x > 0: CONTINUA (5.5)
+        mcuenta_corriente_Nopaquete.y <= 0.3990131:
+        :...VisaMaster_cant_tarjetas.y <= -1.755417e-17:
+            :...chomebanking_transacciones.y > 0.06280193: CONTINUA (72.1/0.9)
+            :   chomebanking_transacciones.y <= 0.06280193:
+            :   :...VisaMaster_mconsumototal.x > 1338.88: CONTINUA (38.3)
+            :       VisaMaster_mconsumototal.x <= 1338.88:
+            :       :...mrentabilidad_annual.y <= -0.429753: CONTINUA (24.6)
+            :           mrentabilidad_annual.y > -0.429753:
+            :           :...mautoservicio.y > 0.02217255: CONTINUA (15.5)
+            :               mautoservicio.y <= 0.02217255:
+            :               :...mpasivos_margen.x <= 4.1: [S4]
+            :                   mpasivos_margen.x > 4.1:
+            :                   :...Visa_mlimitecompra.x <= 28750: BAJA+2 (307.4/15.3)
+            :                       Visa_mlimitecompra.x > 28750: [S5]
+            VisaMaster_cant_tarjetas.y > -1.755417e-17:
+            :...mdescubierto_preacordado.y <= -0.4:
+                :...mrentabilidad.x <= 145.44:
+                :   :...cliente_sucursal.x <= 329: CONTINUA (7.3/1.8)
+                :   :   cliente_sucursal.x > 329: BAJA+2 (118.7/5.5)
+                :   mrentabilidad.x > 145.44:
+                :   :...tcuenta_debitos_automaticos.y <= -0.3395499: BAJA+1 (4.6)
+                :       tcuenta_debitos_automaticos.y > -0.3395499: CONTINUA (42/6.4)
+                mdescubierto_preacordado.y > -0.4:
+                :...ccheques_depositados_rechazados.x > 5:
+                    :...cprestamos_personales.x <= 0: CONTINUA (10)
+                    :   cprestamos_personales.x > 0: BAJA+2 (28.3)
+                    ccheques_depositados_rechazados.x <= 5:
+                    :...ccomisiones_mantenimiento.x > 5:
+                        :...Visa_marca_atraso.x <= 0: CONTINUA (11)
+                        :   Visa_marca_atraso.x > 0: BAJA+2 (28.3)
+                        ccomisiones_mantenimiento.x <= 5:
+                        :...marketing_activo_ultimos90dias.y <= -0.2:
+                            :...cliente_edad > 56: CONTINUA (85.8/6.4)
+                            :   cliente_edad <= 56: [S6]
+                            marketing_activo_ultimos90dias.y > -0.2:
+                            :...Visa_marca_atraso.x > 0: [S7]
+                                Visa_marca_atraso.x <= 0:
+                                :...ttarjeta_master.y <= -0.4: [S8]
+                                    ttarjeta_master.y > -0.4:
+                                    :...mpasivos_margen.x > 30.03:
+                                        :...tcaja_seguridad.y <= -0.4: [S9]
+                                        :   tcaja_seguridad.y > -0.4: [S10]
+                                        mpasivos_margen.x <= 30.03:
+                                        :...ttitulos.y <= -0.1788854: [S11]
+                                            ttitulos.y > -0.1788854:
+                                            :...mcaja_ahorro_Nopaquete.y <= -0.2208561: [S12]
+                                                mcaja_ahorro_Nopaquete.y > -0.2208561: [S13]
+
+SubTree [S1]
+
+cprestamos_hipotecarios.x <= 0: CONTINUA (16.4/2.7)
+cprestamos_hipotecarios.x > 0: BAJA+2 (28.3)
+
+SubTree [S2]
+
+mtarjeta_master_consumo.y <= 0.006384037: CONTINUA (22.8/5.5)
+mtarjeta_master_consumo.y > 0.006384037: BAJA+2 (86.7/1.8)
+
+SubTree [S3]
+
+mttarjeta_master_debitos_automaticos.y > 0.0067012:
+:...tpaquete7.x <= 0: CONTINUA (11.9/4.6)
+:   tpaquete7.x > 0: BAJA+2 (28.3)
+mttarjeta_master_debitos_automaticos.y <= 0.0067012:
+:...mcheques_emitidos_rechazados.x > 26737.5: BAJA+2 (113.2)
+    mcheques_emitidos_rechazados.x <= 26737.5:
+    :...cliente_sucursal.x > 779:
+        :...ctarjeta_visa_transacciones.y > -0.3718679: CONTINUA (21.9/6.4)
+        :   ctarjeta_visa_transacciones.y <= -0.3718679:
+        :   :...ccomisiones_otras.y > -0.0396059: BAJA+2 (175.3/5.5)
+        :       ccomisiones_otras.y <= -0.0396059:
+        :       :...ttarjeta_master.y <= -0.4242641: BAJA+1 (3.7)
+        :           ttarjeta_master.y > -0.4242641: CONTINUA (4.6)
+        cliente_sucursal.x <= 779:
+        :...mtarjeta_visa_descuentos.y <= -0.1:
+            :...tplan_sueldo.x <= 0: CONTINUA (5.5)
+            :   tplan_sueldo.x > 0: BAJA+2 (28.3)
+            mtarjeta_visa_descuentos.y > -0.1:
+            :...mdescubierto_preacordado.y <= -0.2:
+                :...Master_mpagominimo.y <= 0.3950184: BAJA+2 (545.9/14.4)
+                :   Master_mpagominimo.y > 0.3950184:
+                :   :...thomebanking.x <= 0: BAJA+2 (36.3/1.8)
+                :       thomebanking.x > 0: BAJA+1 (6.6/0.1)
+                mdescubierto_preacordado.y > -0.2:
+                :...Visa_Finiciomora.x > 2.016033e+07:
+                    :...Visa_marca_atraso.y <= 0.3: BAJA+2 (15.1/0.9)
+                    :   Visa_marca_atraso.y > 0.3: CONTINUA (6.4/0.9)
+                    Visa_Finiciomora.x <= 2.016033e+07:
+                    :...mpagomiscuentas.y <= -0.1409011: BAJA+2 (164.7)
+                        mpagomiscuentas.y > -0.1409011:
+                        :...Visa_Finiciomora.y > 0.1416172: BAJA+2 (395.5/17.2)
+                            Visa_Finiciomora.y <= 0.1416172:
+                            :...Visa_marca_atraso.y <= -1.755417e-17: CONTINUA (8.8/1.8)
+                                Visa_marca_atraso.y > -1.755417e-17: BAJA+2 (10.1/1.4)
+
+SubTree [S4]
+
+marketing_activo_ultimos90dias.y <= -0.4: BAJA+2 (29.2/0.9)
+marketing_activo_ultimos90dias.y > -0.4:
+:...mcuenta_corriente_Paquete.x <= -9210.29: BAJA+1 (3.7)
+    mcuenta_corriente_Paquete.x > -9210.29: CONTINUA (15.5/0.9)
+
+SubTree [S5]
+
+VisaMaster_cant_tarjetas.x <= 0: BAJA+2 (21.1/1.8)
+VisaMaster_cant_tarjetas.x > 0: CONTINUA (7.5)
+
+SubTree [S6]
+
+mcomisiones_mantenimiento.y > 0.09733285: CONTINUA (39.3/3.7)
+mcomisiones_mantenimiento.y <= 0.09733285:
+:...mrentabilidad.x <= 2.07: CONTINUA (30.1/2.7)
+    mrentabilidad.x > 2.07:
+    :...thomebanking.y > 0: CONTINUA (21/1.8)
+        thomebanking.y <= 0:
+        :...ccallcenter_transacciones.y <= -8.777084e-18: CONTINUA (13.7)
+            ccallcenter_transacciones.y > -8.777084e-18:
+            :...chomebanking_transacciones.y <= -0.2244374: CONTINUA (12.8)
+                chomebanking_transacciones.y > -0.2244374:
+                :...mrentabilidad.x <= 119.12:
+                    :...mrentabilidad.x <= 3: BAJA+2 (58.4/1.8)
+                    :   mrentabilidad.x > 3: CONTINUA (21.9)
+                    mrentabilidad.x > 119.12:
+                    :...mcuenta_corriente_Paquete.y > -0.3088883: BAJA+2 (206.3/8.2)
+                        mcuenta_corriente_Paquete.y <= -0.3088883:
+                        :...cliente_edad > 41: CONTINUA (8.2)
+                            cliente_edad <= 41:
+                            :...cliente_sucursal.x <= 269: CONTINUA (2.7)
+                                cliente_sucursal.x > 269: BAJA+2 (57.5/0.9)
+
+SubTree [S7]
+
+mtarjeta_master_consumo.x > 6663.33: CONTINUA (70.3)
+mtarjeta_master_consumo.x <= 6663.33:
+:...mpasivos_margen.y > 0.299234: CONTINUA (65.1/2.6)
+    mpasivos_margen.y <= 0.299234:
+    :...mcajeros_ajenos.x > 5807.5: CONTINUA (28.1)
+        mcajeros_ajenos.x <= 5807.5:
+        :...mrentabilidad.y > 0.2794226: CONTINUA (32.2/1.5)
+            mrentabilidad.y <= 0.2794226:
+            :...mcuenta_corriente_Paquete.x > -401.48: CONTINUA (38.7/3.8)
+                mcuenta_corriente_Paquete.x <= -401.48:
+                :...Visa_Finiciomora.x <= 2.016032e+07:
+                    :...mrentabilidad_annual.y > -0.1763763:
+                    :   :...tplan_sueldo.x <= 1: CONTINUA (10/3.1)
+                    :   :   tplan_sueldo.x > 1: BAJA+2 (28.3)
+                    :   mrentabilidad_annual.y <= -0.1763763:
+                    :   :...ctarjeta_visa_transacciones.y <= -0.3698712:
+                    :       :...ccheques_depositados.y <= -0.1: BAJA+2 (28.3)
+                    :       :   ccheques_depositados.y > -0.1: CONTINUA (9.1)
+                    :       ctarjeta_visa_transacciones.y > -0.3698712: [S14]
+                    Visa_Finiciomora.x > 2.016032e+07:
+                    :...tseguro_vivienda.x > 0: CONTINUA (38)
+                        tseguro_vivienda.x <= 0:
+                        :...mrentabilidad.y > 0.168476: CONTINUA (36/0.9)
+                            mrentabilidad.y <= 0.168476:
+                            :...mrentabilidad.y <= -0.1827604:
+                                :...tcajas_extracciones.y <= -0.5656855: BAJA+2 (28.3)
+                                :   tcajas_extracciones.y > -0.5656855: CONTINUA (49.5/2.7)
+                                mrentabilidad.y > -0.1827604: [S15]
+
+SubTree [S8]
+
+Master_msaldodolares.y <= -0.371822: BAJA+2 (28.3)
+Master_msaldodolares.y > -0.371822: CONTINUA (26.4)
+
+SubTree [S9]
+
+mttarjeta_visa_debitos_automaticos.x <= 13498.03: CONTINUA (36.5)
+mttarjeta_visa_debitos_automaticos.x > 13498.03: BAJA+2 (28.3)
+
+SubTree [S10]
+
+VisaMaster_madelantopesos.x > 20125:
+:...mpasivos_margen.y <= 0.4592782: CONTINUA (58.4)
+:   mpasivos_margen.y > 0.4592782: BAJA+2 (28.3)
+VisaMaster_madelantopesos.x <= 20125:
+:...VisaMaster_madelantopesos.y > 0.4669738:
+    :...tpagodeservicios.x <= 6: CONTINUA (40.2)
+    :   tpagodeservicios.x > 6: BAJA+2 (28.3)
+    VisaMaster_madelantopesos.y <= 0.4669738:
+    :...ccallcenter_transacciones.x > 31:
+        :...cliente_sucursal.y <= -0.2: BAJA+2 (28.3)
+        :   cliente_sucursal.y > -0.2: CONTINUA (79.4)
+        ccallcenter_transacciones.x <= 31:
+        :...cliente_sucursal.y > 0.3:
+            :...mtitulos.y <= 0.322081:
+            :   :...ccambio_monedas_venta.y <= 0.4437602: CONTINUA (319.4)
+            :   :   ccambio_monedas_venta.y > 0.4437602: BAJA+2 (29.2/0.9)
+            :   mtitulos.y > 0.322081:
+            :   :...ttarjeta_visa_debitos_automaticos.y <= -0.1: BAJA+2 (56.6)
+            :       ttarjeta_visa_debitos_automaticos.y > -0.1: CONTINUA (5.5)
+            cliente_sucursal.y <= 0.3:
+            :...tcaja_ahorro.x > 5:
+                :...tmovimientos_ultimos90dias.x <= 4: BAJA+2 (28.3)
+                :   tmovimientos_ultimos90dias.x > 4: CONTINUA (94.9)
+                tcaja_ahorro.x <= 5:
+                :...ccambio_monedas_venta.y > 0.5165676:
+                    :...chomebanking_transacciones.x > 10: CONTINUA (189)
+                    :   chomebanking_transacciones.x <= 10:
+                    :   :...mplan_sueldo.y <= -0.1262763: BAJA+2 (58.4/1.8)
+                    :       mplan_sueldo.y > -0.1262763: CONTINUA (11)
+                    ccambio_monedas_venta.y <= 0.5165676:
+                    :...ttarjeta_visa.x <= 0:
+                        :...mpasivos_margen.x > 5311.58:
+                        :   :...mcaja_ahorro_Paquete.x <= 192398.6: BAJA+2 (56.4/0.9)
+                        :   :   mcaja_ahorro_Paquete.x > 192398.6: CONTINUA (10.8/0.9)
+                        :   mpasivos_margen.x <= 5311.58:
+                        :   :...mcuenta_corriente_Paquete.y <= 0.3867187:
+                        :       :...ccomisiones_otras.x > 1: CONTINUA (774.1/4.5)
+                        :       :   ccomisiones_otras.x <= 1: [S16]
+                        :       mcuenta_corriente_Paquete.y > 0.3867187:
+                        :       :...ccomisiones_otras.x > 7: CONTINUA (34/0.9)
+                        :           ccomisiones_otras.x <= 7: [S17]
+                        ttarjeta_visa.x > 0:
+                        :...thomebanking.y <= -0.4242641:
+                            :...cliente_sucursal.x <= 3: BAJA+2 (28.3)
+                            :   cliente_sucursal.x > 3:
+                            :   :...ccheques_emitidos.y <= -0.4343315: BAJA+2 (29.2/0.9)
+                            :       ccheques_emitidos.y > -0.4343315: [S18]
+                            thomebanking.y > -0.4242641:
+                            :...tpagodeservicios.y > 0.4467523:
+                                :...ccomisiones_otras.x > 7: CONTINUA (270.2)
+                                :   ccomisiones_otras.x <= 7: [S19]
+                                tpagodeservicios.y <= 0.4467523:
+                                :...tmovimientos_ultimos90dias.x > 43:
+                                    :...ccomisiones_mantenimiento.y > 0.7071068: [S20]
+                                    :   ccomisiones_mantenimiento.y <= 0.7071068:
+                                    :   :...ctransferencias_emitidas.x > 12: [S21]
+                                    :       ctransferencias_emitidas.x <= 12:
+                                    :       :...VisaMaster_mpagospesos.x > -96.6:
+                                    :           :...Visa_mpagado.x > 8484.41: [S22]
+                                    :           :   Visa_mpagado.x <= 8484.41: [S23]
+                                    :           VisaMaster_mpagospesos.x <= -96.6: [S24]
+                                    tmovimientos_ultimos90dias.x <= 43: [S25]
+
+SubTree [S11]
+
+marketing_coss_selling.x <= 8: BAJA+2 (28.3)
+marketing_coss_selling.x > 8: CONTINUA (4.6)
+
+SubTree [S12]
+
+ctarjeta_debito_transacciones.y <= -0.1192432: BAJA+2 (28.3)
+ctarjeta_debito_transacciones.y > -0.1192432: CONTINUA (6.4)
+
+SubTree [S13]
+
+tmovimientos_ultimos90dias.x > 85: CONTINUA (639/0.9)
+tmovimientos_ultimos90dias.x <= 85:
+:...mcheques_emitidos_rechazados.x > 10350:
+    :...tcuenta_debitos_automaticos.x <= 0: CONTINUA (4.5)
+    :   tcuenta_debitos_automaticos.x > 0: BAJA+2 (28.3)
+    mcheques_emitidos_rechazados.x <= 10350:
+    :...tpagomiscuentas.x > 8:
+        :...cprestamos_personales.x <= 0: CONTINUA (5.5)
+        :   cprestamos_personales.x > 0: BAJA+2 (28.3)
+        tpagomiscuentas.x <= 8:
+        :...ccajeros_ajenos_transacciones.y <= -0.3591996:
+            :...VisaMaster_mpagominimo.y > -0.1979802: CONTINUA (31.8/0.9)
+            :   VisaMaster_mpagominimo.y <= -0.1979802:
+            :   :...mactivos_margen.x <= 0.37: CONTINUA (5.5)
+            :       mactivos_margen.x > 0.37: BAJA+2 (115/1.8)
+            ccajeros_ajenos_transacciones.y > -0.3591996:
+            :...mcomisiones.x > 503.43: CONTINUA (570.9/3.6)
+                mcomisiones.x <= 503.43:
+                :...mactivos_margen.x > 2353.56:
+                    :...mcaja_ahorro_Paquete.x <= 0.04: BAJA+2 (56.6)
+                    :   mcaja_ahorro_Paquete.x > 0.04: CONTINUA (2.7)
+                    mactivos_margen.x <= 2353.56:
+                    :...mcambio_monedas_venta.x > 1552.5:
+                        :...cliente_edad <= 54: CONTINUA (2.7)
+                        :   cliente_edad > 54: BAJA+2 (28.3)
+                        mcambio_monedas_venta.x <= 1552.5:
+                        :...tcajas_depositos.x > 3: [S26]
+                            tcajas_depositos.x <= 3:
+                            :...mttarjeta_master_debitos_automaticos.y > 0.4229614: [S27]
+                                mttarjeta_master_debitos_automaticos.y <= 0.4229614:
+                                :...mpagomiscuentas.y <= -0.4296258: [S28]
+                                    mpagomiscuentas.y > -0.4296258:
+                                    :...tcajas_otras.x > 0: CONTINUA (338.9/4.5)
+                                        tcajas_otras.x <= 0: [S29]
+
+SubTree [S14]
+
+ccajeros_propio_transacciones.x <= 1: BAJA+2 (721.1/11.8)
+ccajeros_propio_transacciones.x > 1:
+:...tseguro_vivienda.x <= 0: CONTINUA (7.1)
+    tseguro_vivienda.x > 0: BAJA+2 (56.9/0.3)
+
+SubTree [S15]
+
+VisaMaster_mconsumototal.x <= 1319.93: CONTINUA (35.2/0.7)
+VisaMaster_mconsumototal.x > 1319.93:
+:...mactivos_margen.x <= 162.73:
+    :...ccajeros_propios_descuentos.y <= -0.1385641: BAJA+2 (28.3)
+    :   ccajeros_propios_descuentos.y > -0.1385641: CONTINUA (20.2)
+    mactivos_margen.x > 162.73:
+    :...ctarjeta_visa_transacciones.x <= 9:
+        :...ccajeros_propio_transacciones.x <= 1: CONTINUA (12.8)
+        :   ccajeros_propio_transacciones.x > 1: BAJA+2 (28.3)
+        ctarjeta_visa_transacciones.x > 9:
+        :...mrentabilidad_annual.y > -0.4311662: BAJA+2 (289.4/6.4)
+            mrentabilidad_annual.y <= -0.4311662:
+            :...tcajas_depositos.x <= 0: CONTINUA (9.1/0.9)
+                tcajas_depositos.x > 0: BAJA+2 (28.3)
+
+SubTree [S16]
+
+tseguro_vida_mercado_abierto.x <= 1: CONTINUA (7.2)
+tseguro_vida_mercado_abierto.x > 1: BAJA+2 (27.8)
+
+SubTree [S17]
+
+chomebanking_transacciones.x <= 10: CONTINUA (8.1)
+chomebanking_transacciones.x > 10: BAJA+2 (84.2/0.9)
+
+SubTree [S18]
+
+mcambio_monedas_venta.y > -0.2911821: CONTINUA (582.4/0.9)
+mcambio_monedas_venta.y <= -0.2911821:
+:...mcomisiones_mantenimiento.x <= 261.68: CONTINUA (13.7)
+    mcomisiones_mantenimiento.x > 261.68: BAJA+2 (57.5/0.9)
+
+SubTree [S19]
+
+Visa_mlimitecompra.y <= 0.1485702: CONTINUA (20.1)
+Visa_mlimitecompra.y > 0.1485702: BAJA+2 (56.6)
+
+SubTree [S20]
+
+cliente_sucursal.x <= 1031: CONTINUA (29.2)
+cliente_sucursal.x > 1031: BAJA+2 (28.3)
+
+SubTree [S21]
+
+mtarjeta_master_descuentos.y <= -0.2140257: BAJA+2 (28.3)
+mtarjeta_master_descuentos.y > -0.2140257: CONTINUA (118.7)
+
+SubTree [S22]
+
+Visa_msaldototal.y <= 0.0114893: BAJA+2 (57.5/0.9)
+Visa_msaldototal.y > 0.0114893: CONTINUA (26.5)
+
+SubTree [S23]
+
+VisaMaster_mpagospesos.x <= -94.3:
+:...Visa_msaldodolares.x <= 919.8: CONTINUA (9.1)
+:   Visa_msaldodolares.x > 919.8: BAJA+2 (28.3)
+VisaMaster_mpagospesos.x > -94.3:
+:...mplan_sueldo.x > 145692.3:
+    :...tseguro_accidentes_personales.x <= 0: CONTINUA (9.1)
+    :   tseguro_accidentes_personales.x > 0: BAJA+2 (28.3)
+    mplan_sueldo.x <= 145692.3:
+    :...ccheques_emitidos.y > 0.3986464:
+        :...ccajeros_propios_descuentos.y > -0.1007905: CONTINUA (53.9)
+        :   ccajeros_propios_descuentos.y <= -0.1007905:
+        :   :...tpagomiscuentas.x <= 1: CONTINUA (5.5)
+        :       tpagomiscuentas.x > 1: BAJA+2 (56.6)
+        ccheques_emitidos.y <= 0.3986464:
+        :...tpagomiscuentas.y > -0.07385489: CONTINUA (2799.6/0.9)
+            tpagomiscuentas.y <= -0.07385489:
+            :...mprestamos_prendarios.y <= -0.3304446:
+                :...mrentabilidad_annual.y <= -0.1970186: BAJA+2 (28.3)
+                :   mrentabilidad_annual.y > -0.1970186: CONTINUA (4.6)
+                mprestamos_prendarios.y > -0.3304446:
+                :...chomebanking_transacciones.x <= 1:
+                    :...cliente_antiguedad <= 22: BAJA+2 (28.3)
+                    :   cliente_antiguedad > 22: CONTINUA (3.7)
+                    chomebanking_transacciones.x > 1:
+                    :...tpagomiscuentas.y <= -0.0766261: CONTINUA (363.3)
+                        tpagomiscuentas.y > -0.0766261: BAJA+2 (31/2.7)
+
+SubTree [S24]
+
+VisaMaster_mlimitecompra.x <= 17250:
+:...Visa_mpagominimo.x > 8878:
+:   :...ctarjeta_visa_descuentos.y <= 0.1705606: CONTINUA (21)
+:   :   ctarjeta_visa_descuentos.y > 0.1705606: BAJA+2 (58.4/1.8)
+:   Visa_mpagominimo.x <= 8878:
+:   :...mcuentas_saldo.x > -3669.78: CONTINUA (1103.6)
+:       mcuentas_saldo.x <= -3669.78:
+:       :...mtarjeta_visa_descuentos.y <= -0.1: BAJA+2 (28.3)
+:           mtarjeta_visa_descuentos.y > -0.1: CONTINUA (9.1)
+VisaMaster_mlimitecompra.x > 17250:
+:...ccheques_emitidos.y > 0.4239992:
+    :...VisaMaster_mconsumototal.x <= -41.36: BAJA+2 (30.1/1.8)
+    :   VisaMaster_mconsumototal.x > -41.36: CONTINUA (302.2)
+    ccheques_emitidos.y <= 0.4239992:
+    :...cliente_edad <= 26:
+        :...tmovimientos_ultimos90dias.x <= 46:
+        :   :...ttarjeta_master_debitos_automaticos.x <= 0: CONTINUA (11)
+        :   :   ttarjeta_master_debitos_automaticos.x > 0: BAJA+2 (28.3)
+        :   tmovimientos_ultimos90dias.x > 46:
+        :   :...tcajas_depositos.y > -0.3893314: CONTINUA (1199.5)
+        :       tcajas_depositos.y <= -0.3893314:
+        :       :...Master_mpagado.y <= -0.100191: BAJA+2 (28.3)
+        :           Master_mpagado.y > -0.100191: CONTINUA (14.6)
+        cliente_edad > 26:
+        :...ttarjeta_visa_debitos_automaticos.y <= -0.4242641:
+            :...ttarjeta_visa.x > 1:
+            :   :...mcajeros_propios_descuentos.y <= -0.1388496: BAJA+2 (28.3)
+            :   :   mcajeros_propios_descuentos.y > -0.1388496: CONTINUA (27.4)
+            :   ttarjeta_visa.x <= 1:
+            :   :...Visa_mlimitecompra.y <= 0.3855184: CONTINUA (1030.6)
+            :       Visa_mlimitecompra.y > 0.3855184:
+            :       :...mcheques_emitidos.y <= 0.009098313: CONTINUA (21)
+            :           mcheques_emitidos.y > 0.009098313: BAJA+2 (28.3)
+            ttarjeta_visa_debitos_automaticos.y > -0.4242641:
+            :...Visa_mpagominimo.x > 11994.5:
+                :...Visa_msaldototal.x > 17130.31: CONTINUA (1215/56.6)
+                :   Visa_msaldototal.x <= 17130.31:
+                :   :...mrentabilidad.y <= -0.2078172: BAJA+2 (56.6)
+                :       mrentabilidad.y > -0.2078172: CONTINUA (13.7)
+                Visa_mpagominimo.x <= 11994.5:
+                :...ccomisiones_otras.x <= 4:
+                    :...tpaquete9.x > 0: [S30]
+                    :   tpaquete9.x <= 0:
+                    :   :...mcuenta_corriente_Paquete.y <= 0.4338115: CONTINUA (1334.6/4.6)
+                    :       mcuenta_corriente_Paquete.y > 0.4338115: [S31]
+                    ccomisiones_otras.x > 4:
+                    :...cextraccion_autoservicio.y > -0.4535574: CONTINUA (55194.1/78.5)
+                        cextraccion_autoservicio.y <= -0.4535574:
+                        :...ccambio_monedas_venta.x <= 1: CONTINUA (595.2)
+                            ccambio_monedas_venta.x > 1: [S32]
+
+SubTree [S25]
+
+cprestamos_personales.x > 5: BAJA+2 (29.2/0.9)
+cprestamos_personales.x <= 5:
+:...ccheques_emitidos_rechazados.y <= -0.1098884:
+    :...ccheques_depositados.x <= 2: CONTINUA (10)
+    :   ccheques_depositados.x > 2: BAJA+2 (28.3)
+    ccheques_emitidos_rechazados.y > -0.1098884:
+    :...VisaMaster_mpagado.x > 15640:
+        :...VisaMaster_mpagosdolares.y > -0.1999919: CONTINUA (61.2)
+        :   VisaMaster_mpagosdolares.y <= -0.1999919:
+        :   :...VisaMaster_msaldototal.y <= -0.1786684: CONTINUA (23.7)
+        :       VisaMaster_msaldototal.y > -0.1786684:
+        :       :...VisaMaster_msaldototal.y <= -0.1393209: BAJA+2 (84.9)
+        :           VisaMaster_msaldototal.y > -0.1393209: CONTINUA (5.5)
+        VisaMaster_mpagado.x <= 15640:
+        :...mplazo_fijo_dolares.y <= -0.4491494:
+            :...mplazo_fijo_dolares.x <= 558900: CONTINUA (11)
+            :   mplazo_fijo_dolares.x > 558900: BAJA+2 (28.3)
+            mplazo_fijo_dolares.y > -0.4491494:
+            :...ctransferencias_emitidas.y <= -0.4131182:
+                :...tseguro_vida_mercado_abierto.x <= 0: CONTINUA (21.9)
+                :   tseguro_vida_mercado_abierto.x > 0: BAJA+2 (28.3)
+                ctransferencias_emitidas.y > -0.4131182:
+                :...ctarjeta_visa_transacciones.x > 29:
+                    :...mcajeros_propio.y <= -0.002759211: BAJA+2 (29.2/0.9)
+                    :   mcajeros_propio.y > -0.002759211: CONTINUA (38.3)
+                    ctarjeta_visa_transacciones.x <= 29:
+                    :...mcambio_monedas_compra.x > 437:
+                        :...tcajas_otras.y <= 0.3718679: CONTINUA (42.9)
+                        :   tcajas_otras.y > 0.3718679: BAJA+2 (29.2/0.9)
+                        mcambio_monedas_compra.x <= 437:
+                        :...VisaMaster_mconsumototal.y <= -0.271777:
+                            :...mactivos_margen.y <= 0.09788831: CONTINUA (356)
+                            :   mactivos_margen.y > 0.09788831: [S33]
+                            VisaMaster_mconsumototal.y > -0.271777:
+                            :...ttarjeta_visa_debitos_automaticos.x > 6:
+                                :...mpasivos_margen.x > 64.71: CONTINUA (75.8)
+                                :   mpasivos_margen.x <= 64.71:
+                                :   :...cliente_edad <= 63: CONTINUA (4.6)
+                                :       cliente_edad > 63: BAJA+2 (56.6)
+                                ttarjeta_visa_debitos_automaticos.x <= 6:
+                                :...Visa_marca_atraso.y <= -0.1732051:
+                                    :...tcallcenter.y <= -0.2828427: BAJA+2 (28.3)
+                                    :   tcallcenter.y > -0.2828427: CONTINUA (44.7)
+                                    Visa_marca_atraso.y > -0.1732051:
+                                    :...ctransferencias_emitidas.x > 2: [S34]
+                                        ctransferencias_emitidas.x <= 2:
+                                        :...cprestamos_personales.y <= -0.3794733: [S35]
+                                            cprestamos_personales.y > -0.3794733:
+                                            :...Visa_fechaalta.x > 2.016042e+07: [S36]
+                                                Visa_fechaalta.x <= 2.016042e+07:
+                                                :...tpaquete9.x > 0: [S37]
+                                                    tpaquete9.x <= 0: [S38]
+
+SubTree [S26]
+
+ctarjeta_master_transacciones.x <= 0: CONTINUA (4.5)
+ctarjeta_master_transacciones.x > 0: BAJA+2 (28.3)
+
+SubTree [S27]
+
+mcuenta_debitos_automaticos.y <= 0.2: CONTINUA (16.4)
+mcuenta_debitos_automaticos.y > 0.2: BAJA+2 (56.6)
+
+SubTree [S28]
+
+Master_marca_atraso.x <= 0: CONTINUA (4.6)
+Master_marca_atraso.x > 0: BAJA+2 (28.3)
+
+SubTree [S29]
+
+ctarjeta_visa_descuentos.x > 1: CONTINUA (168.9)
+ctarjeta_visa_descuentos.x <= 1:
+:...ccajeros_ajenos_transacciones.x > 1: CONTINUA (150.2)
+    ccajeros_ajenos_transacciones.x <= 1:
+    :...ctarjeta_master_transacciones.y > 8.777084e-18: CONTINUA (317.5/2.7)
+        ctarjeta_master_transacciones.y <= 8.777084e-18:
+        :...tcajas_extracciones.x > 0: CONTINUA (122.9/0.9)
+            tcajas_extracciones.x <= 0:
+            :...cliente_antiguedad <= 7:
+                :...cprestamos_personales.x > 1: BAJA+2 (32.9/4.6)
+                :   cprestamos_personales.x <= 1:
+                :   :...Visa_fechaalta.x <= 2.016042e+07: CONTINUA (734.1/4.6)
+                :       Visa_fechaalta.x > 2.016042e+07:
+                :       :...Visa_mfinanciacion_limite.x > 21735: CONTINUA (118.2)
+                :           Visa_mfinanciacion_limite.x <= 21735:
+                :           :...tcuentas.x <= 1: CONTINUA (11.9)
+                :               tcuentas.x > 1: BAJA+2 (36.5/8.2)
+                cliente_antiguedad > 7:
+                :...tcuenta_debitos_automaticos.y <= -1.755417e-17: CONTINUA (175.6/3.6)
+                    tcuenta_debitos_automaticos.y > -1.755417e-17:
+                    :...VisaMaster_mpagado.x > 1268.15: CONTINUA (195.3/3.6)
+                        VisaMaster_mpagado.x <= 1268.15:
+                        :...mtarjeta_visa_descuentos.y <= -0.16474: CONTINUA (136.9)
+                            mtarjeta_visa_descuentos.y > -0.16474: [S39]
+
+SubTree [S30]
+
+ttarjeta_visa_debitos_automaticos.y <= 0.2106741: CONTINUA (17.3/0.9)
+ttarjeta_visa_debitos_automaticos.y > 0.2106741: BAJA+2 (28.3)
+
+SubTree [S31]
+
+VisaMaster_mconsumototal_div_mlimitecompra.x <= 0.328709: CONTINUA (20.1)
+VisaMaster_mconsumototal_div_mlimitecompra.x > 0.328709: BAJA+2 (28.3)
+
+SubTree [S32]
+
+mcuenta_corriente_Paquete.x <= -47.34: BAJA+2 (28.3)
+mcuenta_corriente_Paquete.x > -47.34: CONTINUA (7.3)
+
+SubTree [S33]
+
+mcomisiones_mantenimiento.x <= 197.74: CONTINUA (106.8/0.9)
+mcomisiones_mantenimiento.x > 197.74:
+:...mcomisiones_mantenimiento.x > 389.82: CONTINUA (63/0.9)
+    mcomisiones_mantenimiento.x <= 389.82:
+    :...mttarjeta_visa_debitos_automaticos.y > 0.05912498: CONTINUA (38.3)
+        mttarjeta_visa_debitos_automaticos.y <= 0.05912498:
+        :...tcajas_extracciones.y <= -8.777084e-18: CONTINUA (11.9/0.9)
+            tcajas_extracciones.y > -8.777084e-18:
+            :...tcajas.y > 0.1154701: CONTINUA (20.1)
+                tcajas.y <= 0.1154701:
+                :...ctarjeta_debito_transacciones.y <= -8.777084e-18: CONTINUA (11)
+                    ctarjeta_debito_transacciones.y > -8.777084e-18:
+                    :...tmovimientos_ultimos90dias.y > -0.04714045: CONTINUA (15.5)
+                        tmovimientos_ultimos90dias.y <= -0.04714045:
+                        :...mactivos_margen.y > 0.3749127: CONTINUA (11)
+                            mactivos_margen.y <= 0.3749127:
+                            :...Visa_mconsumospesos.x > 57.5: BAJA+2 (230.5/8.2)
+                                Visa_mconsumospesos.x <= 57.5: [S40]
+
+SubTree [S34]
+
+ccomisiones_mantenimiento.y <= 0.1732051: CONTINUA (70.3)
+ccomisiones_mantenimiento.y > 0.1732051: BAJA+2 (29.2/0.9)
+
+SubTree [S35]
+
+cliente_sucursal.x <= 35: BAJA+2 (29.2/0.9)
+cliente_sucursal.x > 35: CONTINUA (73.9/0.9)
+
+SubTree [S36]
+
+ccallcenter_transacciones.x <= 6: CONTINUA (63.9)
+ccallcenter_transacciones.x > 6: BAJA+2 (29.2/0.9)
+
+SubTree [S37]
+
+ccheques_depositados.y <= 0.249101: CONTINUA (87.6)
+ccheques_depositados.y > 0.249101: BAJA+2 (29.2/0.9)
+
+SubTree [S38]
+
+mprestamos_hipotecarios.x > 37733.05:
+:...mrentabilidad.y <= 0.4714349: CONTINUA (86.7)
+:   mrentabilidad.y > 0.4714349: BAJA+2 (28.3)
+mprestamos_hipotecarios.x <= 37733.05:
+:...cliente_edad <= 26:
+    :...Visa_msaldopesos.x <= 24308.72: CONTINUA (112.3)
+    :   Visa_msaldopesos.x > 24308.72: BAJA+2 (30.1/1.8)
+    cliente_edad > 26:
+    :...ccomisiones_mantenimiento.y > 0.4129483:
+        :...VisaMaster_mpagominimo.y > -0.3899733: CONTINUA (107.7/1.8)
+        :   VisaMaster_mpagominimo.y <= -0.3899733:
+        :   :...ctarjeta_master_transacciones.x <= 1: CONTINUA (5.5)
+        :       ctarjeta_master_transacciones.x > 1: BAJA+2 (28.3)
+        ccomisiones_mantenimiento.y <= 0.4129483:
+        :...ttarjeta_visa_debitos_automaticos.y <= -0.3919455:
+            :...mcaja_ahorro_dolares.y <= 0.3972148: CONTINUA (115.9)
+            :   mcaja_ahorro_dolares.y > 0.3972148: BAJA+2 (30.1/1.8)
+            ttarjeta_visa_debitos_automaticos.y > -0.3919455:
+            :...tcallcenter.y <= -0.4:
+                :...VisaMaster_mfinanciacion_limite.x > 14748: CONTINUA (120.5)
+                :   VisaMaster_mfinanciacion_limite.x <= 14748:
+                :   :...cliente_sucursal.x <= 873: CONTINUA (3.7)
+                :       cliente_sucursal.x > 873: BAJA+2 (28.3)
+                tcallcenter.y > -0.4:
+                :...tcuenta_debitos_automaticos.y > -0.1897367: CONTINUA (8368/66.6)
+                    tcuenta_debitos_automaticos.y <= -0.1897367:
+                    :...tmovimientos_ultimos90dias.x <= 6: BAJA+2 (30.1/1.8)
+                        tmovimientos_ultimos90dias.x > 6: CONTINUA (285.7/0.9)
+
+SubTree [S39]
+
+ctarjeta_visa_transacciones.y > 0.3473738: CONTINUA (136/3.7)
+ctarjeta_visa_transacciones.y <= 0.3473738:
+:...mcuenta_corriente_Paquete.y > 0.3500506: CONTINUA (150.3/0.9)
+    mcuenta_corriente_Paquete.y <= 0.3500506:
+    :...mprestamos_personales.x > 67931.51: CONTINUA (133.2/0.9)
+        mprestamos_personales.x <= 67931.51:
+        :...mrentabilidad_annual.y <= -0.446415: CONTINUA (119.4/0.9)
+            mrentabilidad_annual.y > -0.446415:
+            :...VisaMaster_mpagado.y > 0.3627611:
+                :...Visa_fultimo_cierre.x <= 2.016041e+07: BAJA+2 (85.8/0.9)
+                :   Visa_fultimo_cierre.x > 2.016041e+07: CONTINUA (9.1)
+                VisaMaster_mpagado.y <= 0.3627611:
+                :...VisaMaster_mpagosdolares.y <= -8.777084e-18: CONTINUA (164.7/27.8)
+                    VisaMaster_mpagosdolares.y > -8.777084e-18:
+                    :...mcheques_depositados.y <= -7.021667e-17: CONTINUA (92.9/0.9)
+                        mcheques_depositados.y > -7.021667e-17:
+                        :...cliente_sucursal.x > 953: CONTINUA (145/0.9)
+                            cliente_sucursal.x <= 953:
+                            :...tpagomiscuentas.y > 0.2752989:
+                                :...mactivos_margen.x <= -7.2: BAJA+2 (87.1/2.7)
+                                :   mactivos_margen.x > -7.2: CONTINUA (12.7/0.9)
+                                tpagomiscuentas.y <= 0.2752989: [S41]
+
+SubTree [S40]
+
+ctarjeta_visa_transacciones.y <= -0.0949158: CONTINUA (13.8)
+ctarjeta_visa_transacciones.y > -0.0949158: BAJA+2 (4.1)
+
+SubTree [S41]
+
+VisaMaster_mlimitecompra.x > 184746: CONTINUA (103.2/0.9)
+VisaMaster_mlimitecompra.x <= 184746:
+:...tmovimientos_ultimos90dias.x <= 17:
+    :...cliente_antiguedad > 205: CONTINUA (70.8/0.9)
+    :   cliente_antiguedad <= 205:
+    :   :...Visa_fechaalta.x > 2.015082e+07:
+    :       :...ttarjeta_visa.x <= 0: BAJA+2 (21.7/6.2)
+    :       :   ttarjeta_visa.x > 0: CONTINUA (90.4/1.8)
+    :       Visa_fechaalta.x <= 2.015082e+07:
+    :       :...mcomisiones_otras.y <= 0.09015934:
+    :           :...ccomisiones_otras.x > 1: BAJA+2 (1257/309.4)
+    :           :   ccomisiones_otras.x <= 1:
+    :           :   :...marketing_activo_ultimos90dias.x > 0: CONTINUA (46.4)
+    :           :       marketing_activo_ultimos90dias.x <= 0:
+    :           :       :...cliente_edad <= 45: BAJA+2 (141.9/30.8)
+    :           :           cliente_edad > 45: CONTINUA (46.5/5.3)
+    :           mcomisiones_otras.y > 0.09015934:
+    :           :...mrentabilidad_annual.y <= -0.4028042: CONTINUA (122.7/5.4)
+    :               mrentabilidad_annual.y > -0.4028042:
+    :               :...ctarjeta_visa_transacciones.x > 0: CONTINUA (34.7/0.9)
+    :                   ctarjeta_visa_transacciones.x <= 0:
+    :                   :...ccomisiones_otras.y <= 0.1309307: CONTINUA (31.5/0.9)
+    :                       ccomisiones_otras.y > 0.1309307:
+    :                       :...mactivos_margen.y <= 0.4045756: BAJA+2 (191.8/26.1)
+    :                           mactivos_margen.y > 0.4045756: CONTINUA (22.7/1.8)
+    tmovimientos_ultimos90dias.x > 17:
+    :...ccomisiones_mantenimiento.y <= -1.755417e-17:
+        :...mpasivos_margen.x <= 12.12: CONTINUA (21.9/0.9)
+        :   mpasivos_margen.x > 12.12: BAJA+2 (90.4/5.5)
+        ccomisiones_mantenimiento.y > -1.755417e-17:
+        :...ctarjeta_master_transacciones.x > 6:
+            :...tcallcenter.x <= 0: CONTINUA (10.9)
+            :   tcallcenter.x > 0: BAJA+2 (56.6)
+            ctarjeta_master_transacciones.x <= 6:
+            :...tmovimientos_ultimos90dias.x > 80:
+                :...tseguro_vida_mercado_abierto.x <= 1: CONTINUA (10)
+                :   tseguro_vida_mercado_abierto.x > 1: BAJA+2 (56.6)
+                tmovimientos_ultimos90dias.x <= 80:
+                :...ctarjeta_debito_transacciones.x > 4:
+                    :...cliente_edad <= 33: BAJA+2 (28.3)
+                    :   cliente_edad > 33: CONTINUA (8.2)
+                    ctarjeta_debito_transacciones.x <= 4:
+                    :...VisaMaster_mpagospesos.y <= -0.4192657:
+                        :...ttarjeta_debito.x <= 1: CONTINUA (21/1.8)
+                        :   ttarjeta_debito.x > 1: BAJA+2 (61.2/4.6)
+                        VisaMaster_mpagospesos.y > -0.4192657:
+                        :...VisaMaster_mpagado.y <= -0.01240803:
+                            :...cprestamos_personales.y <= -0.1044466: BAJA+2 (59.3/2.7)
+                            :   cprestamos_personales.y > -0.1044466: CONTINUA (38.3)
+                            VisaMaster_mpagado.y > -0.01240803:
+                            :...VisaMaster_mpagominimo.y <= -0.4370957:
+                                :...cliente_sucursal.x <= 201: BAJA+2 (28.3)
+                                :   cliente_sucursal.x > 201: CONTINUA (7.3)
+                                VisaMaster_mpagominimo.y > -0.4370957:
+                                :...mrentabilidad_annual.y > -0.4403141: CONTINUA (825.3/10)
+                                    mrentabilidad_annual.y <= -0.4403141: [S42]
+
+SubTree [S42]
+
+VisaMaster_msaldopesos.x <= 14742.6: CONTINUA (16.4)
+VisaMaster_msaldopesos.x > 14742.6: BAJA+2 (28.3)
+
+
+Evaluation on training data (95204 cases):
+
+	    Decision Tree   
+	  ----------------  
+	  Size      Errors  
+
+	   313  864( 0.9%)   <<
+
+
+	   (a)   (b)   (c)    <-classified as
+	  ----  ----  ----
+	    46    44   265    (a): class BAJA+1
+	         297     6    (b): class BAJA+2
+	    11   538 93997    (c): class CONTINUA
+
+
+	Attribute usage:
+
+	100.00%	ttarjeta_visa.y
+	 99.40%	mcuenta_corriente_Nopaquete.x
+	 99.39%	mcuenta_corriente_Nopaquete.y
+	 99.38%	VisaMaster_cant_tarjetas.y
+	 99.25%	mdescubierto_preacordado.y
+	 99.07%	ccheques_depositados_rechazados.x
+	 99.07%	marketing_activo_ultimos90dias.y
+	 99.06%	ccomisiones_mantenimiento.x
+	 98.46%	mpasivos_margen.x
+	 98.20%	ttarjeta_master.y
+	 97.14%	Visa_marca_atraso.x
+	 95.27%	tmovimientos_ultimos90dias.x
+	 90.44%	VisaMaster_madelantopesos.x
+	 90.43%	tcaja_seguridad.y
+	 90.31%	VisaMaster_madelantopesos.y
+	 90.27%	ccallcenter_transacciones.x
+	 90.27%	cliente_sucursal.y
+	 90.06%	ccambio_monedas_venta.y
+	 89.80%	tcaja_ahorro.x
+	 89.70%	ttarjeta_visa.x
+	 88.58%	thomebanking.y
+	 87.77%	tpagodeservicios.y
+	 86.90%	ccomisiones_mantenimiento.y
+	 86.23%	ctransferencias_emitidas.x
+	 80.83%	cliente_edad
+	 78.54%	ttarjeta_visa_debitos_automaticos.y
+	 75.17%	VisaMaster_mpagospesos.x
+	 74.50%	ccheques_emitidos.y
+	 73.66%	VisaMaster_mlimitecompra.x
+	 68.38%	Visa_mpagominimo.x
+	 67.57%	ccomisiones_otras.x
+	 64.14%	cextraccion_autoservicio.y
+	 15.82%	VisaMaster_mpagado.x
+	 13.92%	tcuenta_debitos_automaticos.y
+	 13.12%	cprestamos_personales.x
+	 12.53%	Visa_fechaalta.x
+	 12.26%	tpaquete9.x
+	 12.12%	ctarjeta_visa_transacciones.x
+	 12.09%	ccheques_emitidos_rechazados.y
+	 11.97%	mplazo_fijo_dolares.y
+	 11.96%	ctransferencias_emitidas.y
+	 11.88%	mcambio_monedas_compra.x
+	 11.83%	VisaMaster_mconsumototal.y
+	 11.39%	Visa_marca_atraso.y
+	 11.08%	ttarjeta_visa_debitos_automaticos.x
+	 10.89%	cprestamos_personales.y
+	 10.57%	mprestamos_hipotecarios.x
+	 10.13%	tcallcenter.y
+	  7.73%	ttitulos.y
+	  7.73%	mcaja_ahorro_Nopaquete.y
+	  7.15%	mcheques_emitidos_rechazados.x
+	  6.99%	tpagomiscuentas.x
+	  6.98%	mcomisiones.x
+	  6.97%	ccajeros_ajenos_transacciones.y
+	  6.82%	mactivos_margen.x
+	  6.43%	mttarjeta_master_debitos_automaticos.y
+	  6.28%	mcuenta_corriente_Paquete.y
+	  6.28%	mpagomiscuentas.y
+	  6.26%	tcajas_depositos.x
+	  6.26%	mcambio_monedas_venta.x
+	  6.22%	tcajas_otras.x
+	  5.94%	tpagomiscuentas.y
+	  5.83%	ctarjeta_visa_descuentos.x
+	  5.63%	ccajeros_ajenos_transacciones.x
+	  5.46%	ctarjeta_master_transacciones.y
+	  5.45%	tcajas_extracciones.x
+	  4.99%	cliente_antiguedad
+	  3.78%	Visa_mpagado.x
+	  3.74%	mplan_sueldo.x
+	  3.73%	ctarjeta_visa_transacciones.y
+	  3.64%	mtarjeta_visa_descuentos.y
+	  3.46%	cliente_sucursal.x
+	  3.39%	mrentabilidad_annual.y
+	  3.03%	mprestamos_personales.x
+	  2.83%	VisaMaster_mpagosdolares.y
+	  2.74%	VisaMaster_mpagado.y
+	  2.56%	mcheques_depositados.y
+	  2.18%	mtarjeta_master_consumo.x
+	  2.06%	mpasivos_margen.y
+	  1.55%	mcajeros_ajenos.x
+	  1.53%	mrentabilidad.y
+	  1.40%	tcajas_depositos.y
+	  1.35%	Visa_msaldototal.x
+	  1.32%	mcuenta_corriente_Paquete.x
+	  1.28%	mcuentas_saldo.x
+	  1.24%	Visa_mlimitecompra.y
+	  1.16%	VisaMaster_mpagominimo.y
+	  1.11%	ctarjeta_master_transacciones.x
+	  1.07%	ctarjeta_debito_transacciones.x
+	  1.06%	VisaMaster_mpagospesos.y
+	  0.83%	mcomisiones_otras.y
+	  0.83%	mactivos_margen.y
+	  0.71%	tseguro_vivienda.x
+	  0.69%	ccambio_monedas_venta.x
+	  0.69%	mcambio_monedas_venta.y
+	  0.68%	chomebanking_transacciones.x
+	  0.61%	VisaMaster_mconsumototal.x
+	  0.60%	mpagomiscuentas.x
+	  0.46%	ccajeros_propio_transacciones.x
+	  0.43%	mprestamos_prendarios.y
+	  0.38%	mtitulos.y
+	  0.37%	mcomisiones_mantenimiento.x
+	  0.33%	Visa_Finiciomora.x
+	  0.33%	mcomisiones.y
+	  0.31%	chomebanking_transacciones.y
+	  0.22%	mrentabilidad.x
+	  0.20%	mcomisiones_mantenimiento.y
+	  0.18%	ccomisiones_otras.y
+	  0.17%	tcajas_extracciones.y
+	  0.16%	mttarjeta_visa_debitos_automaticos.y
+	  0.16%	Visa_mfinanciacion_limite.x
+	  0.16%	marketing_activo_ultimos90dias.x
+	  0.14%	VisaMaster_mfinanciacion_limite.x
+	  0.14%	mtarjeta_master_descuentos.y
+	  0.14%	mcaja_ahorro_dolares.y
+	  0.13%	Visa_msaldopesos.x
+	  0.11%	ccheques_depositados.y
+	  0.10%	tcajas.y
+	  0.09%	ccajeros_propios_descuentos.y
+	  0.09%	ccallcenter_transacciones.y
+	  0.09%	ctarjeta_debito_transacciones.y
+	  0.08%	mautoservicio.y
+	  0.08%	tplan_sueldo.x
+	  0.06%	tmovimientos_ultimos90dias.y
+	  0.06%	ccheques_emitidos_rechazados.x
+	  0.05%	tcajas_otras.y
+	  0.05%	tseguro_vida_mercado_abierto.x
+	  0.05%	cprestamos_hipotecarios.x
+	  0.05%	tpagodeservicios.x
+	  0.05%	mcajeros_propio.y
+	  0.04%	tcuentas.x
+	  0.04%	mdescubierto_preacordado.x
+	  0.04%	mttarjeta_visa_debitos_automaticos.x
+	  0.04%	Master_mpagominimo.y
+	  0.04%	VisaMaster_msaldototal.y
+	  0.03%	Visa_msaldototal.y
+	  0.03%	VisaMaster_cant_tarjetas.x
+	  0.03%	mcajeros_propios_descuentos.y
+	  0.03%	ttarjeta_debito.x
+	  0.03%	mtarjeta_master_consumo.y
+	  0.03%	Master_msaldodolares.y
+	  0.03%	Visa_mconsumospesos.x
+	  0.03%	ctarjeta_visa_descuentos.y
+	  0.03%	thomebanking.x
+	  0.03%	Visa_Finiciomora.y
+	  0.03%	mcheques_emitidos.y
+	  0.02%	VisaMaster_mconsumototal_div_mlimitecompra.x
+	  0.02%	mcaja_ahorro_Paquete.x
+	  0.02%	mcuenta_debitos_automaticos.y
+	  0.02%	VisaMaster_msaldopesos.x
+	  0.02%	mcuentas_saldo.y
+	  0.02%	Master_mpagado.y
+	  0.02%	Visa_mlimitecompra.x
+	  0.02%	mplan_sueldo.y
+	  0.01%	tpaquete7.x
+	  0.01%	tcallcenter.x
+	  0.01%	Visa_fultimo_cierre.x
+	  0.01%	mplazo_fijo_dolares.x
+	  0.01%	ttarjeta_master_debitos_automaticos.x
+	  0.01%	ccheques_depositados.x
+	  0.01%	tseguro_accidentes_personales.x
+	  0.01%	Visa_msaldodolares.x
+	  0.01%	marketing_coss_selling.x
+	  0.01%	tcuenta_debitos_automaticos.x
+	  0.01%	Master_marca_atraso.x
+
+
+Time: 759.2 secs
+

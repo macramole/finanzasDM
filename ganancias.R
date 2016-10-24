@@ -4,7 +4,8 @@ ganancia.ternaria = function( probs, clases ){
   
   for( i in 1:largo )
   {
-    if( probs[ i, "BAJAMASDOS"]  > ( 250/8000)   ){ suma <- suma + if( clases[i]=="BAJAMASDOS" ) { 7750 } else { -250 }  
+    # if( probs[ i, "BAJAMASDOS"]  > ( 250/8000)   ){ suma <- suma + if( clases[i]=="BAJAMASDOS" ) { 7750 } else { -250 }
+    if( probs[ i, "BAJA+2"]  > ( 250/8000)   ){ suma <- suma + if( clases[i]=="BAJA+2" ) { 7750 } else { -250 }  
     } ;
   }
   
