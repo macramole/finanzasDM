@@ -57,10 +57,11 @@ db.getDataset = function(cual = db.TERNARIA, historicas = T) {
   abril_dataset = abril_dataset[,colnames(abril_dataset) != "foto_mes" ]
   abril_dataset = abril_dataset[,colnames(abril_dataset) != "participa" ]
   
+  abril_dataset$clase = as.factor(abril_dataset$clase)
+  
   if ( cual == db.TERNARIA) {
     abril_dataset$clasebinaria1 = NULL
     abril_dataset$clasebinaria2 = NULL
-    abril_dataset$clase = as.factor(abril_dataset$clase)
     # levels(abril_dataset$clase)[1] = "BAJAMASUNO"
     # levels(abril_dataset$clase)[2] = "BAJAMASDOS"
   } else if ( cual == db.BINARIA1 ) {

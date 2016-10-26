@@ -84,5 +84,3 @@ hojas_positivas = function( probs, clases )
   
   return(   hojas_lista  )
 }
-
-#######################################

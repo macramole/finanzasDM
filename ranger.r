@@ -1,13 +1,14 @@
 library(ranger)
 
-db.nonulls()
+abril_dataset = db.getDataset(historicas = F)
+abril_dataset = db.nonulls(abril_dataset)
 head(abril_dataset)
 
 sum( c(1000,3000) )*4/60/60
 
 
 
-for ( vmin.node.size in c(10, 100, 200) ) {
+for ( vmin.node.size in c(100, 200, 500) ) {
 	for ( canttrees in c(500, 1000,3000) ) {
 	  # canttrees = 1000
 
@@ -22,22 +23,22 @@ for ( vmin.node.size in c(10, 100, 200) ) {
 		abril_dataset_training <- abril_dataset[ abril_inTraining,]
 		abril_dataset_testing  <- abril_dataset[-abril_inTraining,]
 		
+		vweights <- ifelse( abril_dataset_training$clase =='BAJA+2', 31, 1 )
 		#mirar save.memory = TRUE
 
 		t0 =  Sys.time()  
 		model = ranger( 
-			dependent.variable.name = clase,
+			dependent.variable.name = "clase",
 			data = abril_dataset_training, 
 			num.trees = canttrees, 
-			case.weights = "TODO",
-			num.threads = 3,
+			case.weights = vweights,
+			num.threads = 2,
 			min.node.size = vmin.node.size,
 			probability = T
 		)
 		t1 =  Sys.time()
 		tiempos[s] = as.numeric(  t1 - t0, units = "secs" )
-		
-		
+  		
 		
 		abril_testing_prediccion  = predict(  model, abril_dataset_testing , type = "response")
 		# head(abril_testing_prediccion$predictions, n = 100)
@@ -45,7 +46,7 @@ for ( vmin.node.size in c(10, 100, 200) ) {
 		ganancias[s] = ganancia.ternaria( abril_testing_prediccion$predictions,  abril_dataset_testing$clase ) / 0.30
 	  }
 	  
-	  log.add.ranger("abril_historicas_visamaster", canttrees, vmin.node.size, ganancias, tiempos)
+	  log.add.ranger("abril_visamaster", canttrees, vmin.node.size, ganancias, tiempos)
 	}
 }
 

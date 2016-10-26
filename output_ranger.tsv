@@ -1,4 +1,5 @@
-fecha	dataset	cantTrees	importance	ganancia_promedio	tiempo_promedio	ganancias	
-20161021 003939	abril_historicas_visamaster	500	none	1285833	534.1044	1285833	
-20161021 154318	abril_historicas_visamaster	1000	none	1288333	1238.502	1288333	
-20161021 171335	abril_historicas_visamaster	1000	impurity	1288333	NA	1288333	
+fecha	dataset	cantTrees	nodesize	ganancia_promedio	tiempo_promedio	ganancias
+20161021 003939	abril_historicas_visamaster	500	none	1285833	534.1044	1285833
+20161021 154318	abril_historicas_visamaster	1000	none	1288333	1238.502	1288333
+20161021 171335	abril_historicas_visamaster	1000	impurity	1288333	NA	1288333
+20161025 025608	abril_visamaster	500	100	-3078611	226.2085	-3220000	-3088333	-2927500	
