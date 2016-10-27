@@ -27,6 +27,14 @@ db.nonulls = function(df) {
   df
 }
 
+db.getTendencias() {
+  dfHistoricas = read.table("db/tendencias.tsv", sep = "\t", header = T)
+  rownames(dfHistoricas) = dfHistoricas$numero_de_cliente
+  dfHistoricasClase = merge( x = dfHistoricas, y = abril_dataset[,c("clase")], by = 0, all.x = T )
+  dfHistoricasClase = dfHistoricasClase[, -colnames(abril_dataset)]
+  dfHistoricasClase$y
+}
+
 db.getDataset = function(cual = db.TERNARIA, historicas = T) {
   # res = dbSendQuery(con, "SELECT * FROM data")
   
