@@ -27,12 +27,27 @@ db.nonulls = function(df) {
   df
 }
 
-db.getTendencias() {
-  dfHistoricas = read.table("db/tendencias.tsv", sep = "\t", header = T)
-  rownames(dfHistoricas) = dfHistoricas$numero_de_cliente
-  dfHistoricasClase = merge( x = dfHistoricas, y = abril_dataset[,c("clase")], by = 0, all.x = T )
-  dfHistoricasClase = dfHistoricasClase[, -colnames(abril_dataset)]
-  dfHistoricasClase$y
+db.getTendencias = function() {
+  # dfHistoricas = read.table("db/tendencias.tsv", sep = "\t", header = T)
+  # rownames(dfHistoricas) = dfHistoricas$numero_de_cliente
+  # dfHistoricasClase = merge( x = dfHistoricas, y = abril_dataset[,c("clase")], by = 0, all.x = T )
+  # dfHistoricasClase = dfHistoricasClase[, -colnames(abril_dataset)]
+  # dfHistoricasClase$y
+}
+
+db.discretize = function(df, bins = 10) {
+  library(arules)
+  
+  discretizeIfYouCan = function(x) {
+    # head(x)
+    if ( length(unique(x)) <= bins ) {
+      return(as.factor(x))
+    } else {
+      return( discretize(x, categories = bins, method = "interval") )
+    }
+  }
+  
+  as.data.frame(apply( df, 2, discretizeIfYouCan ))
 }
 
 db.getDataset = function(cual = db.TERNARIA, historicas = T) {
