@@ -96,8 +96,25 @@ db.doDump = function() {
   write.table(joined, "db/joined.tsv", sep = "\t", row.names = T)
 }
 
-db.getBigDataset = function() {
-  read.table("db/joined.tsv", row.names = T)
+db.getBigDataset = function(cual = db.TERNARIA) {
+  df = read.table("db/joined.tsv", row.names = 1)
+  
+  df = df[,colnames(df) != "numero_de_cliente" ]
+  df = df[,colnames(df) != "foto_mes" ]
+  df = df[,colnames(df) != "participa" ]
+  
+  df$clase = as.factor(df$clase)
+  
+  if ( cual == db.TERNARIA) {
+    df$clasebinaria1 = NULL
+    df$clasebinaria2 = NULL
+  } else if ( cual == db.BINARIA1 ) {
+    df$clasebinaria2 = NULL
+  } else if ( cual == db.BINARIA2 ) {
+    df$clasebinaria1 = NULL
+  }
+  
+  df
 }
 
 db.getDataset = function(cual = db.TERNARIA, historicas = T) {
