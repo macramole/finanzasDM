@@ -50,6 +50,56 @@ db.discretize = function(df, bins = 10) {
   as.data.frame(apply( df, 2, discretizeIfYouCan ))
 }
 
+db.doDump = function() {
+  sql = "SELECT * FROM data ORDER BY numero_de_cliente"
+  res = dbSendQuery(con, sql)
+  data = dbFetch(res, n = -1 )
+  
+  sql = "SELECT * FROM historicas WHERE numero_de_cliente IN ( SELECT numero_de_cliente FROM data ) ORDER BY numero_de_cliente"
+  res = dbSendQuery(con, sql)
+  historicas = dbFetch(res, n = -1 )
+  
+  
+  sql = "SELECT * FROM tendencias WHERE numero_de_cliente IN ( SELECT numero_de_cliente FROM data ) ORDER BY numero_de_cliente"
+  res = dbSendQuery(con, sql)
+  tendencias = dbFetch(res, n = -1 )
+  colnames(tendencias) = paste(colnames(tendencias),"_tend", sep = "")
+  colnames(tendencias)[1] = "numero_de_cliente"
+  
+  trunc(tendencias[10, "mrentabilidad_tend"]) 
+  
+  sql = "SELECT * FROM visamaster WHERE numero_de_cliente IN ( SELECT numero_de_cliente FROM data ) ORDER BY numero_de_cliente"
+  res = dbSendQuery(con, sql)
+  visamaster = dbFetch(res, n = -1 )
+  
+  head(data$numero_de_cliente, n = 50)
+  head(historicas$numero_de_cliente, n = 50)
+  head(tendencias$numero_de_cliente, n = 50)
+  head(visamaster$numero_de_cliente, n = 50)
+  
+  any((data$numero_de_cliente == historicas$numero_de_cliente) == FALSE)
+  any((data$numero_de_cliente == tendencias$numero_de_cliente) == FALSE)
+  any((data$numero_de_cliente == visamaster$numero_de_cliente) == FALSE)
+  
+  joined = cbind(data, historicas, tendencias, visamaster)
+  sum( ncol(data), ncol(historicas), ncol(tendencias), ncol(visamaster) )
+  
+  which(colnames(joined) == "numero_de_cliente")
+  #1 174 618 800
+  
+  joined = joined[,-c(174,618,800)]
+  colnames(joined)
+  
+  rownames(joined) = joined$numero_de_cliente
+  joined = joined [ , -1]
+  
+  write.table(joined, "db/joined.tsv", sep = "\t", row.names = T)
+}
+
+db.getBigDataset = function() {
+  read.table("db/joined.tsv", row.names = T)
+}
+
 db.getDataset = function(cual = db.TERNARIA, historicas = T) {
   # res = dbSendQuery(con, "SELECT * FROM data")
   
