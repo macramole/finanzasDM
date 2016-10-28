@@ -8,8 +8,8 @@ sum( c(1000,3000) )*4/60/60
 
 
 
-for ( canttrees in c(200, 300, 500, 1000,3000) ) {
-  for ( vmin.node.size in c(500, 600, 800, 1000) ) {
+for ( canttrees in c(200,300,500) ) {
+  for ( vmin.node.size in c(2500, 3000) ) {
 	  # canttrees = 300
 	  # vmin.node.size = 1000
     # s = 1
@@ -19,7 +19,7 @@ for ( canttrees in c(200, 300, 500, 1000,3000) ) {
 	  
 	  
 	  vimportance = "impurity"
-	  for( s in  1:3 ) {
+	  for( s in  1:5 ) {
   		set.seed( seeds[s] )
   		abril_inTraining <- createDataPartition( abril_dataset$clase, p = .70, list = FALSE)
   		abril_dataset_training <- abril_dataset[ abril_inTraining,]
@@ -35,7 +35,7 @@ for ( canttrees in c(200, 300, 500, 1000,3000) ) {
   			num.trees = canttrees,
   			importance = vimportance,
   			case.weights = vweights,
-  			num.threads = 2,
+  			num.threads = 1,
   			min.node.size = vmin.node.size,
   			probability = T
   			# save.memory = T
