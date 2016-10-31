@@ -1,3 +1,5 @@
+ALTER TABLE data_visamaster ADD COLUMN VisaMaster_mconsumototal_div_mlimitecompra double;
+
 update
     data_visamaster
 set

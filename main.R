@@ -1,4 +1,5 @@
 library(rpart)
+library(ranger)
 library(caret)
 source("db.R")
 source("log.R")

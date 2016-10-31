@@ -99,3 +99,18 @@ db.getDataset = function(cual = db.TERNARIA, historicas = T) {
   
   abril_dataset
 }
+
+db.getCheckpoint = function( file = "db/checkpoint/checkpoint.1.sqlite") {
+  con = dbConnect(RSQLite::SQLite(), file)
+  sql = "SELECT * FROM data d, data_visamaster vm WHERE d.numero_de_cliente = vm.numero_de_cliente ORDER BY numero_de_cliente"
+  res = dbSendQuery(con, sql)
+  
+  checkpoint_dataset = dbFetch(res, n = -1 )
+  
+  rownames(checkpoint_dataset) = checkpoint_dataset$numero_de_cliente
+  checkpoint_dataset = checkpoint_dataset[,colnames(checkpoint_dataset) != "numero_de_cliente" ]
+  checkpoint_dataset = checkpoint_dataset[,colnames(checkpoint_dataset) != "foto_mes" ]
+  checkpoint_dataset = checkpoint_dataset[,colnames(checkpoint_dataset) != "participa" ]
+  
+  checkpoint_dataset
+}

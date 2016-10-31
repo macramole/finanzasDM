@@ -25,12 +25,12 @@ for ( vminbucket in vminbucketValues ) {
     for ( vminsplit in vminsplitValues ) {
       for ( vmaxdepth in vmaxdepthValues ) {
 
-        # vcp = 0.001
-        # vminsplit = 100
-        # vminbucket = 1
-        # vmaxdepth = 5
+        vcp = 0.005
+        vminsplit = 400
+        vminbucket = 1
+        vmaxdepth = 6
         
-        # s = 1
+        s = 1
         
         tiempos = c()
         ganancias = c()
@@ -65,6 +65,8 @@ for ( vminbucket in vminbucketValues ) {
                           maxdepth=vmaxdepth ) 
           t1 =  Sys.time()
           tiempos[s] <-  as.numeric(  t1 - t0, units = "secs" )
+          
+          #prp(model, type = 1, extra = 4)
           
           #determino las hojas con ganancia positiva en VALIDATION
           abril_validation_prediccion  = predict(  model, abril_dataset_validation , type = "prob")

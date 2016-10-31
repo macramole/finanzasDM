@@ -14,6 +14,25 @@ select
     IFNULL(Master_mpagado,0) + IFNULL(Visa_mpagado,0) as VisaMaster_mpagado,
     IFNULL(Master_mpagospesos,0) + IFNULL(Visa_mpagospesos,0) as VisaMaster_mpagospesos,
     IFNULL(Master_mpagosdolares,0) + IFNULL(Visa_mpagosdolares,0) as VisaMaster_mpagosdolares,
-    IFNULL(Master_mpagominimo,0) + IFNULL(Visa_mpagominimo,0) as VisaMaster_mpagominimo
+    IFNULL(Master_mpagominimo,0) + IFNULL(Visa_mpagominimo,0) as VisaMaster_mpagominimo, 
+	case when
+		Visa_cuenta_estado is null and Master_cuenta_estado is null 
+	then 
+		0 
+	else 
+		case when
+		    Visa_cuenta_estado is not null and Master_cuenta_estado is not null
+		then 
+		    2
+		else
+		    case when
+		        Visa_cuenta_estado is null or Master_cuenta_estado is null
+		    then
+		        1
+		    else
+		        0
+		    end
+		end
+	end as VisaMaster_cant_tarjetas
 from
     data

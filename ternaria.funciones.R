@@ -64,6 +64,20 @@ ganancia_lista = function( probs, clases, prob_lista )
   return( suma )
 }
 
+getPositivosDeLista = function( probs, prob_lista )
+{
+  listaPos = c()
+  
+  for( i in 1:nrow(probs) )
+  {
+    if( probs[ i, "BAJA+2"] %in% prob_lista   )
+    { 
+      listaPos = c(listaPos, rownames(probs)[i]  )
+    } ;
+  }
+  
+  return( listaPos )
+}
 
 hojas_positivas = function( probs, clases )	
 {
