@@ -1,15 +1,12 @@
 library(ranger)
 
-abril_dataset = db.getDataset(historicas = F)
+#abril_dataset = db.getDataset(historicas = F)
+abril_dataset = db.getBigDataset()
 abril_dataset = db.nonulls(abril_dataset)
 head(abril_dataset)
 
-sum( c(1000,3000) )*4/60/60
-
-
-
 for ( canttrees in c(200,300,500) ) {
-  for ( vmin.node.size in c(2500, 3000) ) {
+  for ( vmin.node.size in c(500, 1000, 1500, 2000, 2500, 3000) ) {
 	  # canttrees = 300
 	  # vmin.node.size = 1000
     # s = 1
@@ -52,7 +49,7 @@ for ( canttrees in c(200,300,500) ) {
   		cat(tiempos[s], " | ", ganancias[s], "\n")
 	  }
 	  
-	  log.add.ranger("abril_visamaster", canttrees, vmin.node.size, ganancias, tiempos)
+	  log.add.ranger("abril_visamaster_historicas_tendencia", canttrees, vmin.node.size, ganancias, tiempos)
 	}
 }
 
