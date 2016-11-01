@@ -1,3 +1,4 @@
+create table data_historicas as
 select
     numero_de_cliente,
     VisaMaster_mfinanciacion_limite,

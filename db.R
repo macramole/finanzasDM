@@ -41,13 +41,17 @@ db.discretize = function(df, bins = 10) {
   discretizeIfYouCan = function(x) {
     # head(x)
     if ( length(unique(x)) <= bins ) {
-      return(as.factor(x))
+      return( as.factor(x) )
     } else {
       return( discretize(x, categories = bins, method = "interval") )
     }
   }
   
-  as.data.frame(apply( df, 2, discretizeIfYouCan ))
+  df_discr = as.data.frame(apply( df, 2, discretizeIfYouCan ))
+  for ( i in 1:ncol(df_discr) ) {
+    df_discr[,i] = addNA( df_discr[,i], ifany = T )
+  }
+  df_discr
 }
 
 db.doDump = function() {
@@ -165,19 +169,4 @@ db.getDataset = function(cual = db.TERNARIA, historicas = T) {
   }
   
   abril_dataset
-}
-
-db.getCheckpoint = function( file = "db/checkpoint/checkpoint.1.sqlite") {
-  con = dbConnect(RSQLite::SQLite(), file)
-  sql = "SELECT * FROM data d, data_visamaster vm WHERE d.numero_de_cliente = vm.numero_de_cliente ORDER BY numero_de_cliente"
-  res = dbSendQuery(con, sql)
-  
-  checkpoint_dataset = dbFetch(res, n = -1 )
-  
-  rownames(checkpoint_dataset) = checkpoint_dataset$numero_de_cliente
-  checkpoint_dataset = checkpoint_dataset[,colnames(checkpoint_dataset) != "numero_de_cliente" ]
-  checkpoint_dataset = checkpoint_dataset[,colnames(checkpoint_dataset) != "foto_mes" ]
-  checkpoint_dataset = checkpoint_dataset[,colnames(checkpoint_dataset) != "participa" ]
-  
-  checkpoint_dataset
 }

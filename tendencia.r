@@ -5,7 +5,7 @@ registerDoMC(3)
 
 con = dbConnect(RSQLite::SQLite(), "db/producto_premium_201511_201604.sqlite")
 
-sql = "SELECT * FROM data_visamaster WHERE numero_de_cliente IN ( SELECT numero_de_cliente FROM data_visamaster WHERE foto_mes = 201604 ) AND foto_mes <> 201512 ORDER BY numero_de_cliente ASC, foto_mes ASC"
+sql = "SELECT * FROM checkpoint_visamaster WHERE numero_de_cliente IN ( SELECT numero_de_cliente FROM data_visamaster WHERE foto_mes = 201604 ) AND foto_mes >= 201511 AND foto_mes <> 201512 ORDER BY numero_de_cliente ASC, foto_mes ASC"
 res = dbSendQuery(con, sql)
 df = dbFetch(res, n = -1 )
 df = df[,colnames(df) != "participa" ]

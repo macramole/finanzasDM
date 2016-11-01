@@ -5,15 +5,14 @@ abril_dataset = db.getBigDataset()
 abril_dataset = db.nonulls(abril_dataset)
 head(abril_dataset)
 
-for ( canttrees in c(300,500) ) {
-  for ( vmin.node.size in c(1500, 2000, 2500, 3000) ) {
+for ( canttrees in c(500) ) {
+  for ( vmin.node.size in c(2000, 2200, 2500, 2800) ) {
 	  # canttrees = 300
 	  # vmin.node.size = 1000
     # s = 1
     
 	  ganancias = c()
 	  tiempos = c()
-	  
 	  
 	  vimportance = "impurity"
 	  for( s in  1:5 ) {
@@ -47,6 +46,11 @@ for ( canttrees in c(300,500) ) {
   		ganancias[s] = ganancia.ternaria( abril_testing_prediccion$predictions,  abril_dataset_testing$clase, 0.5 ) / 0.30
   		
   		cat(tiempos[s], " | ", ganancias[s], "\n")
+<<<<<<< HEAD
+=======
+  		
+  		rm(abril_inTraining, abril_dataset_training, abril_dataset_testing, model, abril_testing_prediccion )
+>>>>>>> e759a0932f3fe09f323fa0cf6bdf111b1b08f9c8
   		gc()
 	  }
 	  
