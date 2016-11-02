@@ -66,17 +66,17 @@ db.discretize.soft = function(df, maxbins = 10) {
 
 db.discretize.tend = function(df) {
   library(arules)
-  which(colnames(df) == "marketing_activo_ultimos90dias_tend" )
-  colnames(df)[665:ncol(df)]
+  primerCampo = which(colnames(df) == "marketing_activo_ultimos90dias_tend" )
+  colnames(df)[primerCampo:ncol(df)]
   maxbins = 5
   
-  for ( col in colnames(df)[665:ncol(df)] ) {
+  for ( col in colnames(df)[primerCampo:ncol(df)] ) {
     x = df[,col]
     if ( !is.factor(x) ) {
       if ( length(unique(x)) <= maxbins ) {
         df[,col] = factor(x, exclude = NULL)
       } else {
-        df[,col] = discretize(x, categories = maxbins, method = "interval")
+        df[,col] = discretize(x, categories = maxbins, method = "interval", ordered = T)
         df[,col] = addNA( df[,col], ifany = T )
       }
     } 
@@ -152,6 +152,8 @@ db.getBigDataset = function(cual = db.TERNARIA) {
   df$clase = as.factor(df$clase)
   
   df = db.discretize.soft(df)
+  df = db.discretize.tend(df)
+  df = db.clean(df)
   
   if ( cual == db.TERNARIA) {
     df$clasebinaria1 = NULL
@@ -166,19 +168,15 @@ db.getBigDataset = function(cual = db.TERNARIA) {
 }
 
 db.clean = function(df) {
-  df = db.getDataset(historicas = F)
+  colsToRemove = c()
   
-  # removeColumns = c("numero_de_cliente","foto_mes","participa",
-  #                   "tpaquete1","tpaquete2","tpaquete3","tpaquete4","tpaquete5","tpaquete6", "tpaquete8", "mrentabilidad_annual"
-  #                   )
-  # removeColumns.index = which(colnames(df) %in% removeColumns)
-  # df = df[, -removeColumns.index]
+  for ( col in 1:ncol(df) )  {
+    if ( length(unique(df[,col])) == 1 ) {
+      colsToRemove = c(colsToRemove, col)
+    }
+  }
   
-  df_disc = db.discretize.soft(df)
-  summary(df_disc)
-  table(df$Master_tadelantosefectivo)
-  plot(density(df$Visa_tconsumos, na.rm = T))
-  table(df$VisaMaster_cant_tarjetas)
+  df[,-colsToRemove]
 }
 
 db.getDataset = function(cual = db.TERNARIA, historicas = F) {

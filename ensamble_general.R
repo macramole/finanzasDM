@@ -13,16 +13,16 @@ claseIndex = which( colnames(abril_dataset) == "clase" )
 trainModels = list (
   # c50 = function(trainIds) {
   #   df = abril_dataset[ trainIds,]
-  #   dfTest = abril_dataset[ -trainIds,] 
-  #   
+  #   dfTest = abril_dataset[ -trainIds,]
+  # 
   #   vweights <- ifelse( df$clase =='BAJA+2', 31, 1 )
   # 
   #   cf = 0.001
   #   minCases = 400
   #   vtrials = 2
-  # 
-  #   model = C5.0(  x = df[ , -claseIndex],
-  #                  y = df[ , claseIndex],
+  #   
+  #   model = C5.0(  x = df[ , -claseIndex2],
+  #                  y = df[ , claseIndex2],
   #                  weights = vweights,
   #                  rules = F,
   #                  trials = vtrials,
@@ -30,6 +30,44 @@ trainModels = list (
   # 
   #   predict(  model, dfTest , type = "prob")
   # },
+  rpart = function(trainIds) {
+    # df = db.nonulls( abril_dataset[ trainIds,] )
+    # dfTest = db.nonulls(abril_dataset[ -nIds,] )
+    df = abril_dataset[ trainIds,]
+    dfTest = abril_dataset[ -trainIds,]
+    
+    cat("Rpart... ")
+    
+    vweights <- ifelse( df$clase =='BAJA+2', 31, 1 )
+    
+    vcp = 0.005	
+    vminsplit = 400	
+    vminbucket = 1
+    vmaxdepth = 6
+    
+    model = rpart( clase ~ . ,
+                   weights = vweights,
+                   data = df,
+                   method="class", 
+                   xval=0, 
+                   maxsurrogate=1, 
+                   surrogatestyle=1, 
+                   x = F,
+                   y = F,
+                   cp=vcp, 
+                   minsplit=vminsplit, 
+                   minbucket=vminbucket, 
+                   maxdepth=vmaxdepth ) 
+    
+    result = predict(  model, dfTest, type = "prob")
+    
+    rm(df, dfTest,vweights,model)
+    gc()
+    
+    cat("done","\n")
+    
+    result
+  },
   ranger = function(trainIds) {
     df = db.nonulls( abril_dataset[ trainIds,] )
     dfTest = db.nonulls( abril_dataset[ -trainIds,] )
@@ -46,7 +84,7 @@ trainModels = list (
       num.trees = canttrees,
       importance = vimportance,
       case.weights = vweights,
-      num.threads = 2,
+      num.threads = 1,
       min.node.size = vmin.node.size,
       probability = T
       # save.memory = T
@@ -58,33 +96,6 @@ trainModels = list (
     gc()
     
     result$predictions
-  },
-  rpart = function(trainIds) {
-    df = db.nonulls( abril_dataset[ trainIds,] )
-    dfTest = db.nonulls(abril_dataset[ -trainIds,])
-    
-    vweights <- ifelse( df$clase =='BAJA+2', 31, 1 )
-    
-    vcp = 0.005	
-    vminsplit = 400	
-    vminbucket = 1
-    vmaxdepth = 6
-    
-    model = rpart( clase ~ .,
-                   data = df,
-                   method="class", 
-                   xval=0, 
-                   maxsurrogate=1, 
-                   surrogatestyle=1, 
-                   x = F,
-                   y = F,
-                   weights = vweights,
-                   cp=vcp, 
-                   minsplit=vminsplit, 
-                   minbucket=vminbucket, 
-                   maxdepth=vmaxdepth ) 
-    
-    predict(  model, dfTest, type = "prob")
   }
 )
 
@@ -92,9 +103,9 @@ pesosEnsamble = rbind(
   c(0.50,0.50),
   c(0.45,0.55),
   c(0.40,0.60),
+  c(0.35,0.65),
   c(0.55,0.45),
-  c(0.60,0.40),
-  c(0.65,0.35)
+  c(0.60,0.40)
 )
 
 sum(pesosEnsamble)
@@ -131,7 +142,7 @@ for ( p in 1:nrow(pesosEnsamble) ) {
     cat(ganancias[s]," | ",tiempos[s],"\n")
   }
   
-  log.add.ensamble("abril_visamaster", paste(names(trainModels), collapse = " "), paste(pesosEnsamble[p,], collapse = " "), ganancias, tiempos)
+  log.add.ensamble("joined_new", paste(names(trainModels), collapse = " "), paste(pesosEnsamble[p,], collapse = " "), ganancias, tiempos)
 }
 
 
