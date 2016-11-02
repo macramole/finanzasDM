@@ -2,11 +2,14 @@ library(ranger)
 
 #abril_dataset = db.getDataset(historicas = F)
 abril_dataset = db.getBigDataset()
-abril_dataset = db.nonulls(abril_dataset)
+abril_dataset = db.discretize.soft(abril_dataset)
+abril_dataset = db.discretize.tend(abril_dataset)
+
+abril_dataset_a = db.nonulls(abril_dataset)
 head(abril_dataset)
 
-for ( canttrees in c(500) ) {
-  for ( vmin.node.size in c(2000, 2200, 2500, 2800) ) {
+for ( canttrees in c(200) ) {
+  for ( vmin.node.size in c(2000, 2500) ) {
 	  # canttrees = 300
 	  # vmin.node.size = 1000
     # s = 1
@@ -46,17 +49,12 @@ for ( canttrees in c(500) ) {
   		ganancias[s] = ganancia.ternaria( abril_testing_prediccion$predictions,  abril_dataset_testing$clase, 0.5 ) / 0.30
   		
   		cat(tiempos[s], " | ", ganancias[s], "\n")
-<<<<<<< HEAD
-=======
   		
-  		rm(abril_inTraining, abril_dataset_training, abril_dataset_testing, model, abril_testing_prediccion )
->>>>>>> e759a0932f3fe09f323fa0cf6bdf111b1b08f9c8
+  		rm(abril_inTraining, abril_dataset_training, abril_dataset_testing, model, abril_testing_prediccion, vweights )
   		gc()
 	  }
 	  
-	  log.add.ranger("abril_visamaster_historicas_tendencia", canttrees, vmin.node.size, ganancias, tiempos)
+	  log.add.ranger("abril_joined_new_discret", canttrees, vmin.node.size, ganancias, tiempos)
 	  gc()
 	}
 }
-
-

@@ -1,10 +1,14 @@
 source("ternaria.funciones.R")
 
 abril_dataset = db.getDataset(db.TERNARIA, F)
-abril_dataset = db.nonulls(abril_dataset)
-db.cantnulls(abril_dataset)
+#abril_dataset = db.nonulls(abril_dataset) HACE PEOR
+#db.cantnulls(abril_dataset)
+abril_dataset = db.discretize.soft(abril_dataset) #hace mejor
 
 # head(abril_dataset)
+
+rm(df)
+gc()
 
 #me armo un dataset solo con la clase
 # abril_dataset.clase = abril_dataset$clase
@@ -24,7 +28,7 @@ for ( vminbucket in vminbucketValues ) {
   for ( vcp in vcpValues ) {
     for ( vminsplit in vminsplitValues ) {
       for ( vmaxdepth in vmaxdepthValues ) {
-
+        
         vcp = 0.005
         vminsplit = 400
         vminbucket = 1
@@ -66,7 +70,8 @@ for ( vminbucket in vminbucketValues ) {
           t1 =  Sys.time()
           tiempos[s] <-  as.numeric(  t1 - t0, units = "secs" )
           
-          #prp(model, type = 1, extra = 4)
+          library(rpart.plot)
+          prp(model, type = 1, extra = 4)
           
           #determino las hojas con ganancia positiva en VALIDATION
           abril_validation_prediccion  = predict(  model, abril_dataset_validation , type = "prob")
@@ -77,7 +82,7 @@ for ( vminbucket in vminbucketValues ) {
           ganancias[s] <- ganancia_lista( abril_testing_prediccion,  abril_dataset_testing$clase,  vhojas_positivas  ) / 0.30
         }
         
-        log.add("ternaria_VisaMaster_weights_corteProb", vcp, vminsplit, vminbucket, vmaxdepth, ganancias, tiempos)
+        log.add("ternaria_VisaMaster_NEW_NODISCRET_weights_corteProb", vcp, vminsplit, vminbucket, vmaxdepth, ganancias, tiempos)
       }
     }
   }

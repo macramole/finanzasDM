@@ -1,6 +1,6 @@
-create table data_visamaster as
+create table visamaster as
 select
-    *,
+    numero_de_cliente,
     IFNULL(Master_mfinanciacion_limite,0) + IFNULL(Visa_mfinanciacion_limite,0) as VisaMaster_mfinanciacion_limite,
     IFNULL(Master_msaldototal,0) + IFNULL(Visa_msaldototal,0) as VisaMaster_msaldototal,
     IFNULL(Master_msaldopesos,0) + IFNULL(Visa_msaldopesos,0) as VisaMaster_msaldopesos,
@@ -15,24 +15,45 @@ select
     IFNULL(Master_mpagospesos,0) + IFNULL(Visa_mpagospesos,0) as VisaMaster_mpagospesos,
     IFNULL(Master_mpagosdolares,0) + IFNULL(Visa_mpagosdolares,0) as VisaMaster_mpagosdolares,
     IFNULL(Master_mpagominimo,0) + IFNULL(Visa_mpagominimo,0) as VisaMaster_mpagominimo, 
+    IFNULL(Master_tconsumos,0) + IFNULL(Visa_tconsumos,0) as VisaMaster_tconsumos, 
+    IFNULL(Master_tadelantosefectivo,0) + IFNULL(Visa_tadelantosefectivo,0) as VisaMaster_tadelantosefectivo, 
+    IFNULL(Master_marca_atraso,0) + IFNULL(Visa_marca_atraso,0) as VisaMaster_marca_atraso,
 	case when
-		Visa_cuenta_estado is null and Master_cuenta_estado is null 
+		Visa_cuenta_estado > 10 and Master_cuenta_estado > 10 
 	then 
-		0 
+		2
 	else 
 		case when
-		    Visa_cuenta_estado is not null and Master_cuenta_estado is not null
+		    Visa_cuenta_estado > 10 or Master_cuenta_estado > 10
 		then 
-		    2
+		    1
 		else
-		    case when
-		        Visa_cuenta_estado is null or Master_cuenta_estado is null
-		    then
-		        1
-		    else
-		        0
-		    end
+			0
 		end
-	end as VisaMaster_cant_tarjetas
+	end as VisaMaster_cuenta_estado,
+	case when
+		Visa_finiciomora is not null and Master_finiciomora is not null
+	then 
+		2
+	else 
+		case when
+			Visa_finiciomora is not null or Master_finiciomora is not null
+		then 
+		    1
+		else
+			0
+		end
+	end as VisaMaster_finiciomora
+	
+	
 from
     data
+;
+
+ALTER TABLE visamaster ADD COLUMN VisaMaster_mconsumototal_div_mlimitecompra double;
+
+update
+    visamaster
+set
+    VisaMaster_mconsumototal_div_mlimitecompra = case VisaMaster_mlimitecompra when null or 0 then null else (VisaMaster_mconsumototal / VisaMaster_mlimitecompra) end
+;

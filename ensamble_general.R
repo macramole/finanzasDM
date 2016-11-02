@@ -6,40 +6,40 @@ library(C50)
 library(rpart)
 library(ranger)
 
-abril_dataset = db.getDataset(db.TERNARIA, F)
+# abril_dataset = db.getDataset(db.TERNARIA, F)
+abril_dataset = db.getBigDataset()
 claseIndex = which( colnames(abril_dataset) == "clase" )
 
 trainModels = list (
-  c50 = function(trainIds) {
-    df = abril_dataset[ trainIds,]
-    dfTest = abril_dataset[ -trainIds,] 
-    
-    vweights <- ifelse( df$clase =='BAJA+2', 31, 1 )
-
-    cf = 0.001
-    minCases = 400
-    vtrials = 2
-
-    model = C5.0(  x = df[ , -claseIndex],
-                   y = df[ , claseIndex],
-                   weights = vweights,
-                   rules = F,
-                   trials = vtrials,
-                   control = C5.0Control(CF = cf, minCases = minCases) )
-
-    predict(  model, dfTest , type = "prob")
-  },
+  # c50 = function(trainIds) {
+  #   df = abril_dataset[ trainIds,]
+  #   dfTest = abril_dataset[ -trainIds,] 
+  #   
+  #   vweights <- ifelse( df$clase =='BAJA+2', 31, 1 )
+  # 
+  #   cf = 0.001
+  #   minCases = 400
+  #   vtrials = 2
+  # 
+  #   model = C5.0(  x = df[ , -claseIndex],
+  #                  y = df[ , claseIndex],
+  #                  weights = vweights,
+  #                  rules = F,
+  #                  trials = vtrials,
+  #                  control = C5.0Control(CF = cf, minCases = minCases) )
+  # 
+  #   predict(  model, dfTest , type = "prob")
+  # },
   ranger = function(trainIds) {
     df = db.nonulls( abril_dataset[ trainIds,] )
     dfTest = db.nonulls( abril_dataset[ -trainIds,] )
     
-    canttrees = 500
-    vmin.node.size = 1000
+    canttrees = 200
+    vmin.node.size = 2500
     vimportance = "impurity"
     
     vweights <- ifelse( df$clase =='BAJA+2', 31, 1 )
-    
-    t0 =  Sys.time()  
+  
     model = ranger( 
       dependent.variable.name = "clase",
       data = df, 
@@ -51,10 +51,12 @@ trainModels = list (
       probability = T
       # save.memory = T
     )
-    t1 =  Sys.time()
-    tiempos[s] = as.numeric(  t1 - t0, units = "secs" )
     
     result = predict(  model, dfTest , type = "response")
+    
+    rm(df, dfTest,vweights,model)
+    gc()
+    
     result$predictions
   },
   rpart = function(trainIds) {
@@ -87,9 +89,12 @@ trainModels = list (
 )
 
 pesosEnsamble = rbind(
-  c(0.3,0.3,0.4),
-  c(0.3,0.4,0.3),
-  c(0.4,0.3,0.3)
+  c(0.50,0.50),
+  c(0.45,0.55),
+  c(0.40,0.60),
+  c(0.55,0.45),
+  c(0.60,0.40),
+  c(0.65,0.35)
 )
 
 sum(pesosEnsamble)

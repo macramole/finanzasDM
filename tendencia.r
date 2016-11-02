@@ -5,10 +5,11 @@ registerDoMC(3)
 
 con = dbConnect(RSQLite::SQLite(), "db/producto_premium_201511_201604.sqlite")
 
-sql = "SELECT * FROM checkpoint_visamaster WHERE numero_de_cliente IN ( SELECT numero_de_cliente FROM data_visamaster WHERE foto_mes = 201604 ) AND foto_mes >= 201511 AND foto_mes <> 201512 ORDER BY numero_de_cliente ASC, foto_mes ASC"
+# sql = "SELECT * FROM data_visamaster_new WHERE numero_de_cliente IN ( SELECT numero_de_cliente FROM data_visamaster_new WHERE foto_mes = 201604 ) AND foto_mes >= 201511 AND foto_mes <> 201512 ORDER BY numero_de_cliente ASC, foto_mes ASC"
+sql = "SELECT numero_de_cliente, VisaMaster_finiciomora FROM data_visamaster_new WHERE numero_de_cliente IN ( SELECT numero_de_cliente FROM data_visamaster_new WHERE foto_mes = 201604 ) AND foto_mes >= 201511 AND foto_mes <> 201512 ORDER BY numero_de_cliente ASC, foto_mes ASC"
 res = dbSendQuery(con, sql)
 df = dbFetch(res, n = -1 )
-df = df[,colnames(df) != "participa" ]
+ df = df[,colnames(df) != "participa" ]
 
 ignoreCols = c("numero_de_cliente","foto_mes", "participa", "cliente_edad", "cliente_antiguedad", "clase")
 columnas = colnames( df )
@@ -19,8 +20,42 @@ for ( col in ignoreCols ) {
 
 # cat("numero_de_cliente", columnas, "\n", file = "tendencias.tsv", fill = F, sep = "\t", append = F)
 
-# for ( currentNumCliente in unique(df$numero_de_cliente) ) {
+# todo esto es para una sola variable sin paralelo
+t = data.frame()
+# currentNumCliente = unique(df$numero_de_cliente)[3]
+cantClientes = length(unique(df$numero_de_cliente))
+currentClienteNum = 0
 
+for ( currentNumCliente in unique(df$numero_de_cliente) ) {
+  y =  df[ df$numero_de_cliente == currentNumCliente, "VisaMaster_finiciomora" ]
+  
+  if ( all(is.na( y )) || all( is.null(y) )) {
+    t = rbind( t, c(currentNumCliente, NA) )
+  } else {
+    y[ is.na(y) ] = 0
+    
+    if ( sum(y) == y[1]*length(y) ) {
+      t = rbind( t, c(currentNumCliente, 0) )
+    } else {
+      x = 0:(length(y)-1)
+      y = scale(y, center = y[1])
+      
+      data = as.data.frame( cbind(x,y) )
+      model = lm( y ~ x, data, qr = F )
+      
+      t = rbind( t, c(currentNumCliente, model$coefficients[2]) )
+    }
+  }
+  
+  currentClienteNum = currentClienteNum + 1
+  if ( currentClienteNum %% 1000 == 0 ) {
+    cat(  currentClienteNum, "/", cantClientes, "\n", sep = " " )
+  }
+  
+}
+##################################################
+
+#esto es para todo paralelo
 t0 =  Sys.time()  
 t <- foreach( currentNumCliente = unique(df$numero_de_cliente), .combine = "rbind" ) %dopar% {
   currentCliente =  df[ df$numero_de_cliente == currentNumCliente, ]
@@ -61,7 +96,26 @@ t1 =  Sys.time()
 
 cat("Tardó ", as.numeric(t1-t0, units="hours"), "horas", "\n") #5.6 horas 180 variables
 colnames(t) = c("numero_de_cliente",columnas)
-write.table(t, file = "tendencias.tsv", sep = "\t", row.names = F)
+write.table(t, file = "tendencias_new_VisaMaster_iniciomora.tsv", sep = "\t", row.names = F)
+
+t.df = as.data.frame(t)
+head(t)
+
+malosCampos = c()
+for ( i in colnames(t.df) ) {
+  if ( all( is.na( t.df[, i] ) ) || length(unique( t.df[, i] )) == 1 ) {
+    malosCampos = c(malosCampos, i)
+  }
+}
+malosCamposIndex = which ( colnames(t.df) %in% malosCampos )
+
+t.df = t.df[, -malosCamposIndex]
+head(t.df)
+
+colnames(t.df) = c("numero_de_cliente",paste( colnames(t.df)[-1], "_tend", sep = "" ))
+
+# 
+# df[df$numero_de_cliente == 5520041,]
 
 # write.csv(tendencies, file = "tendencies.csv", sep = "\t", row.names = F)
 
