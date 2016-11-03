@@ -1,4 +1,46 @@
 ## Funciones de ganancia
+
+ganancia = function( probs, clases, prob )
+{
+  suma = 0 ;
+  largo = length( clases ) ;
+  
+  for( i in 1:largo )
+  {
+    if( probs[ i, "BAJA+2"]  > prob   ){ suma <- suma + if( clases[i]=="BAJA+2" ) { 7750 } else { -250 }  
+    } ;
+  }
+  
+  return( suma )
+}
+
+
+#Busca el punto de corte optimo, desde 0.02 a 0.10 
+umbral_ganancia_optimo = function( probs, clases)
+{
+  
+  vgan_maxima = -9999999.0 ;
+  vumbral =  0 ;
+  
+  
+  #itero de 0.02 a 0.10  en incrementos de 0.01
+  for( i in seq(0.3,0.6,0.01) ) 
+  {
+    vgan = ganancia(  probs, clases, i )
+    
+    if( vgan > vgan_maxima )
+    {
+      vgan_maxima =  vgan ;
+      vumbral =  i ;
+    }
+    
+  }
+  
+  return( vumbral )
+}
+
+
+
 #definicion  funcion ganancia_puntual para nuestro problema
 ganancia_puntual = function( probs, clases, prob_puntual )
 {

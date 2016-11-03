@@ -74,7 +74,7 @@ db.discretize.tend = function(df) {
     x = df[,col]
     if ( !is.factor(x) ) {
       if ( length(unique(x)) <= maxbins ) {
-        df[,col] = factor(x, exclude = NULL)
+        df[,col] = factor(x, exclude = NULL, ordered = T)
       } else {
         df[,col] = discretize(x, categories = maxbins, method = "interval", ordered = T)
         df[,col] = addNA( df[,col], ifany = T )

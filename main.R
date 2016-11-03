@@ -4,6 +4,7 @@ library(caret)
 source("db.R")
 source("log.R")
 source("ganancias.R")
+source("ternaria.funciones.R")
 seeds <- c( 442619, 664579, 235813 , 502841, 351551 )
 
 
