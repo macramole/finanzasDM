@@ -54,60 +54,106 @@ db.discretize = function(df, bins = 10) {
   df_discr
 }
 
+db.discretize.soft = function(df, maxbins = 10) {
+  for ( col in colnames(df) ) {
+    x = df[,col]
+    if ( !is.factor(x) && length(unique(x)) <= maxbins ) {
+      df[,col] = factor(x, exclude = NULL)
+    }
+  }
+  df
+}
+
+db.discretize.tend = function(df) {
+  library(arules)
+  primerCampo = which(colnames(df) == "marketing_activo_ultimos90dias_tend" )
+  colnames(df)[primerCampo:ncol(df)]
+  maxbins = 5
+  
+  for ( col in colnames(df)[primerCampo:ncol(df)] ) {
+    x = df[,col]
+    if ( !is.factor(x) ) {
+      if ( length(unique(x)) <= maxbins ) {
+        df[,col] = factor(x, exclude = NULL, ordered = T)
+      } else {
+        df[,col] = discretize(x, categories = maxbins, method = "interval", ordered = T)
+        df[,col] = addNA( df[,col], ifany = T )
+      }
+    } 
+  }
+  df
+}
+
 db.doDump = function() {
-  sql = "SELECT * FROM data ORDER BY numero_de_cliente"
+  con = dbConnect(RSQLite::SQLite(), "db/producto_premium_201511_201604.sqlite")
+  
+  sql = "SELECT * FROM data_visamaster_new WHERE foto_mes = 201604 ORDER BY numero_de_cliente"
   res = dbSendQuery(con, sql)
   data = dbFetch(res, n = -1 )
   
-  sql = "SELECT * FROM historicas WHERE numero_de_cliente IN ( SELECT numero_de_cliente FROM data ) ORDER BY numero_de_cliente"
+  sql = "SELECT * FROM data_historicas WHERE numero_de_cliente IN ( SELECT numero_de_cliente FROM data_visamaster_new WHERE foto_mes = 201604 ) ORDER BY numero_de_cliente"
   res = dbSendQuery(con, sql)
   historicas = dbFetch(res, n = -1 )
   
+  # sql = "SELECT * FROM tendencias WHERE numero_de_cliente IN ( SELECT numero_de_cliente FROM data ) ORDER BY numero_de_cliente"
+  # res = dbSendQuery(con, sql)
+  # tendencias = dbFetch(res, n = -1 )
+  # colnames(tendencias) = paste(colnames(tendencias),"_tend", sep = "")
+  # colnames(tendencias)[1] = "numero_de_cliente"
   
-  sql = "SELECT * FROM tendencias WHERE numero_de_cliente IN ( SELECT numero_de_cliente FROM data ) ORDER BY numero_de_cliente"
-  res = dbSendQuery(con, sql)
-  tendencias = dbFetch(res, n = -1 )
+  tendencias = read.table("tendencias_new.tsv", header = T)
   colnames(tendencias) = paste(colnames(tendencias),"_tend", sep = "")
   colnames(tendencias)[1] = "numero_de_cliente"
   
-  trunc(tendencias[10, "mrentabilidad_tend"]) 
+  # trunc(tendencias[10, "mrentabilidad_tend"]) 
   
-  sql = "SELECT * FROM visamaster WHERE numero_de_cliente IN ( SELECT numero_de_cliente FROM data ) ORDER BY numero_de_cliente"
-  res = dbSendQuery(con, sql)
-  visamaster = dbFetch(res, n = -1 )
+  # sql = "SELECT * FROM visamaster WHERE numero_de_cliente IN ( SELECT numero_de_cliente FROM data ) ORDER BY numero_de_cliente"
+  # res = dbSendQuery(con, sql)
+  # visamaster = dbFetch(res, n = -1 )
   
   head(data$numero_de_cliente, n = 50)
   head(historicas$numero_de_cliente, n = 50)
   head(tendencias$numero_de_cliente, n = 50)
-  head(visamaster$numero_de_cliente, n = 50)
+  # head(visamaster$numero_de_cliente, n = 50)
   
   any((data$numero_de_cliente == historicas$numero_de_cliente) == FALSE)
   any((data$numero_de_cliente == tendencias$numero_de_cliente) == FALSE)
-  any((data$numero_de_cliente == visamaster$numero_de_cliente) == FALSE)
+  # any((data$numero_de_cliente == visamaster$numero_de_cliente) == FALSE)
   
-  joined = cbind(data, historicas, tendencias, visamaster)
-  sum( ncol(data), ncol(historicas), ncol(tendencias), ncol(visamaster) )
+  joined = cbind(data, historicas, tendencias)
+  sum( ncol(data), ncol(historicas), ncol(tendencias) )
   
   which(colnames(joined) == "numero_de_cliente")
-  #1 174 618 800
+  # 1 192 667
   
-  joined = joined[,-c(174,618,800)]
+  joined = joined[,-c(192,667)]
   colnames(joined)
   
   rownames(joined) = joined$numero_de_cliente
   joined = joined [ , -1]
+  head(joined)
   
-  write.table(joined, "db/joined.tsv", sep = "\t", row.names = T)
+  head(joined$VisaMaster_finiciomora_tend, n =50)
+  head(inicioMora$VisaMaster_finiciomora, n =50)
+  
+  inicioMora = read.table("tendencias_new_VisaMaster_iniciomora.tsv", header = T)
+  joined$VisaMaster_finiciomora_tend = inicioMora$VisaMaster_finiciomora
+  
+  write.table(joined, "db/joined_new.tsv", sep = "\t", row.names = T, append = F)
 }
 
 db.getBigDataset = function(cual = db.TERNARIA) {
-  df = read.table("db/joined.tsv", row.names = 1)
+  df = read.table("db/joined_new.tsv", row.names = 1)
   
   df = df[,colnames(df) != "numero_de_cliente" ]
   df = df[,colnames(df) != "foto_mes" ]
   df = df[,colnames(df) != "participa" ]
   
   df$clase = as.factor(df$clase)
+  
+  df = db.discretize.soft(df)
+  df = db.discretize.tend(df)
+  df = db.clean(df)
   
   if ( cual == db.TERNARIA) {
     df$clasebinaria1 = NULL
@@ -121,7 +167,19 @@ db.getBigDataset = function(cual = db.TERNARIA) {
   df
 }
 
-db.getDataset = function(cual = db.TERNARIA, historicas = T) {
+db.clean = function(df) {
+  colsToRemove = c()
+  
+  for ( col in 1:ncol(df) )  {
+    if ( length(unique(df[,col])) == 1 ) {
+      colsToRemove = c(colsToRemove, col)
+    }
+  }
+  
+  df[,-colsToRemove]
+}
+
+db.getDataset = function(cual = db.TERNARIA, historicas = F) {
   # res = dbSendQuery(con, "SELECT * FROM data")
   
   #sql = "SELECT * FROM data d INNER JOIN historicas h ON d.numero_de_cliente = h.numero_de_cliente INNER JOIN visamaster vm ON d.numero_de_cliente = h.numero_de_cliente"

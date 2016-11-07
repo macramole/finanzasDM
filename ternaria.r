@@ -1,8 +1,11 @@
 source("ternaria.funciones.R")
 
-abril_dataset = db.getDataset(db.TERNARIA, F)
-abril_dataset = db.nonulls(abril_dataset)
-db.cantnulls(abril_dataset)
+#abril_dataset = db.getDataset(db.TERNARIA, F)
+#abril_dataset = db.nonulls(abril_dataset) HACE PEOR
+#db.cantnulls(abril_dataset)
+#abril_dataset = db.discretize.soft(abril_dataset) #hace mejor
+
+abril_dataset = db.getBigDataset(db.TERNARIA)
 
 # head(abril_dataset)
 
@@ -24,7 +27,7 @@ for ( vminbucket in vminbucketValues ) {
   for ( vcp in vcpValues ) {
     for ( vminsplit in vminsplitValues ) {
       for ( vmaxdepth in vmaxdepthValues ) {
-
+        
         vcp = 0.005
         vminsplit = 400
         vminbucket = 1
@@ -66,7 +69,8 @@ for ( vminbucket in vminbucketValues ) {
           t1 =  Sys.time()
           tiempos[s] <-  as.numeric(  t1 - t0, units = "secs" )
           
-          #prp(model, type = 1, extra = 4)
+          library(rpart.plot)
+          prp(model, type = 1, extra = 4)
           
           #determino las hojas con ganancia positiva en VALIDATION
           abril_validation_prediccion  = predict(  model, abril_dataset_validation , type = "prob")
@@ -75,9 +79,14 @@ for ( vminbucket in vminbucketValues ) {
           #calculo la ganancia en TESTING
           abril_testing_prediccion  = predict(  model, abril_dataset_testing , type = "prob")
           ganancias[s] <- ganancia_lista( abril_testing_prediccion,  abril_dataset_testing$clase,  vhojas_positivas  ) / 0.30
+          
+          cat(tiempos[s], " | ", ganancias[s], "\n")
+          
+          rm(abril_inTraining, abril_dataset_training, abril_dataset_testing, abril_dataset_train, abril_inTraining, abril_inValidation, abril_dataset_validation, model, abril_testing_prediccion, vweights, abril_validation_prediccion )
+          gc()
         }
         
-        log.add("ternaria_VisaMaster_weights_corteProb", vcp, vminsplit, vminbucket, vmaxdepth, ganancias, tiempos)
+        log.add("ternaria_VisaMaster_NEW_DISCRET_ORDERED_weights_corteProb", vcp, vminsplit, vminbucket, vmaxdepth, ganancias, tiempos)
       }
     }
   }
