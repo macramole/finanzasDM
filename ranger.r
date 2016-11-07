@@ -15,7 +15,7 @@ for ( canttrees in c(500) ) {
 	  tiempos = c()
 	  
 	  vimportance = "impurity"
-	  for( s in  1:5 ) {
+	  for( s in  1:4 ) {
   		set.seed( seeds[s] )
   		abril_inTraining <- createDataPartition( abril_dataset$clase, p = .70, list = FALSE)
   		abril_dataset_training <- abril_dataset[ abril_inTraining,]
