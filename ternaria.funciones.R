@@ -23,7 +23,7 @@ umbral_ganancia_optimo = function( probs, clases)
   
   
   #itero de 0.02 a 0.10  en incrementos de 0.01
-  for( i in seq(0.1,0.9,0.1) ) 
+  for( i in seq(0,0.1,0.001) ) 
   {
     vgan = ganancia(  probs, clases, i )
     
@@ -34,28 +34,28 @@ umbral_ganancia_optimo = function( probs, clases)
     }
     
   }
-  for( i in seq(vumbral - 0.1,vumbral + 0.1,0.01) ) 
-  {
-    vgan = ganancia(  probs, clases, i )
-    
-    if( vgan > vgan_maxima )
-    {
-      vgan_maxima =  vgan ;
-      vumbral =  i ;
-    }
-    
-  }
-  for( i in seq(vumbral - 0.01,vumbral + 0.01,0.001) ) 
-  {
-    vgan = ganancia(  probs, clases, i )
-    
-    if( vgan > vgan_maxima )
-    {
-      vgan_maxima =  vgan ;
-      vumbral =  i ;
-    }
-    
-  }
+  # for( i in seq(vumbral - 0.1,vumbral + 0.1,0.01) ) 
+  # {
+  #   vgan = ganancia(  probs, clases, i )
+  #   
+  #   if( vgan > vgan_maxima )
+  #   {
+  #     vgan_maxima =  vgan ;
+  #     vumbral =  i ;
+  #   }
+  #   
+  # }
+  # for( i in seq(vumbral - 0.01,vumbral + 0.01,0.001) ) 
+  # {
+  #   vgan = ganancia(  probs, clases, i )
+  #   
+  #   if( vgan > vgan_maxima )
+  #   {
+  #     vgan_maxima =  vgan ;
+  #     vumbral =  i ;
+  #   }
+  #   
+  # }
   
   return( vumbral )
 }

@@ -6,9 +6,9 @@ library(ranger)
 
 abril_dataset = db.getBigDataset()
 # abril_dataset = db.getBigDataset(db = db.DICIEMBRE, discret = F)
-# abril_dataset = db.discretize.soft(abril_dataset)
-# abril_dataset = db.discretize.tend(abril_dataset)
-# abril_dataset = db.clean(abril_dataset)
+abril_dataset = db.discretize.soft(abril_dataset)
+abril_dataset = db.discretize.tend(abril_dataset)
+abril_dataset = db.clean(abril_dataset)
 
 
 abril_dataset = db.nonulls(abril_dataset)
@@ -16,12 +16,11 @@ db.cantnulls(abril_dataset)
 
 # head(abril_dataset)
 
-<<<<<<< HEAD
-for ( canttrees in c(500) ) {
-  for ( vmin.node.size in c(1950, 1900) ) {
+for ( canttrees in c(500, 1000) ) {
+  for ( vmin.node.size in c(20, 50, 100) ) {
     # for ( vmtry in c(10,30,50) ) {
-      canttrees = 300
-      vmin.node.size = 2200
+      # canttrees = 300
+      # vmin.node.size = 2200
       # vmtry = 20
       #s = 1
       
@@ -75,7 +74,7 @@ for ( canttrees in c(500) ) {
         gc()
       }
     # }  
-	  log.add.ranger("abril_mejor_discret_noweights", canttrees, vmin.node.size, "NA", ganancias, tiempos, umbrales)
+	  log.add.ranger("abril_menos_dos_noweights", canttrees, vmin.node.size, "NA", ganancias, tiempos, umbrales)
 	  # log.add.ranger("abril_joined_new_discret_order_umbral", canttrees, vmin.node.size, vmtry, ganancias, tiempos, umbrales)
 	  gc()
 	}
