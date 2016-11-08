@@ -9,6 +9,11 @@ db.TERNARIA = 1
 db.BINARIA1 = 2
 db.BINARIA2 = 3
 
+db.ABRIL = 1
+db.DICIEMBRE = 2
+
+db.NULL_VALUE = -99999999
+
 db.connect = function() {
   con <<- dbConnect(RSQLite::SQLite(), "db/producto_premium_201604.sqlite")
 }
@@ -22,36 +27,42 @@ db.cantnulls = function(df) {
 }
 
 db.nonulls = function(df) {
-  db.NOT_NULL <- -99999999
+  db.NOT_NULL <- db.NULL_VALUE
   df[ is.na(df) ] <- db.NOT_NULL
   df
 }
 
-db.getTendencias = function() {
-  # dfHistoricas = read.table("db/tendencias.tsv", sep = "\t", header = T)
-  # rownames(dfHistoricas) = dfHistoricas$numero_de_cliente
-  # dfHistoricasClase = merge( x = dfHistoricas, y = abril_dataset[,c("clase")], by = 0, all.x = T )
-  # dfHistoricasClase = dfHistoricasClase[, -colnames(abril_dataset)]
-  # dfHistoricasClase$y
-}
-
-db.discretize = function(df, bins = 10) {
+db.discretize = function(df, maxbins = 10) {
   library(arules)
   
-  discretizeIfYouCan = function(x) {
-    # head(x)
-    if ( length(unique(x)) <= bins ) {
-      return( as.factor(x) )
-    } else {
-      return( discretize(x, categories = bins, method = "interval") )
-    }
-  }
+  # discretizeIfYouCan = function(x) {
+  #   # head(x)
+  #   if ( length(unique(x)) <= bins ) {
+  #     return( factor(x, exclude = NULL, ordered = T ) )
+  #   } else {
+  #     return( discretize(x, categories = bins, method = "interval") )
+  #   }
+  # }
+  # 
+  # df_discr = as.data.frame(apply( df, 2, discretizeIfYouCan ))
+  # for ( i in 1:ncol(df_discr) ) {
+  #   df_discr[,i] = addNA( df_discr[,i], ifany = T )
+  # }
+  # df_discr
   
-  df_discr = as.data.frame(apply( df, 2, discretizeIfYouCan ))
-  for ( i in 1:ncol(df_discr) ) {
-    df_discr[,i] = addNA( df_discr[,i], ifany = T )
+  
+  for ( col in colnames(df) ) {
+    x = df[,col]
+    if ( !is.factor(x) ) {
+      if ( length(unique(x)) <= maxbins ) {
+        df[,col] = factor(x, exclude = NULL, ordered = T)
+      } else {
+        df[,col] = discretize(x, categories = maxbins, method = "interval", ordered = T)
+        df[,col] = addNA( df[,col], ifany = T )
+      }
+    } 
   }
-  df_discr
+  df
 }
 
 db.discretize.soft = function(df, maxbins = 10) {
@@ -76,7 +87,7 @@ db.discretize.tend = function(df) {
       if ( length(unique(x)) <= maxbins ) {
         df[,col] = factor(x, exclude = NULL, ordered = T)
       } else {
-        df[,col] = discretize(x, categories = maxbins, method = "interval", ordered = T)
+        df[,col] = discretize(x, categories = c(-Inf,-1,-0.1,0.1,1,Inf), method = "fixed", ordered = T)
         df[,col] = addNA( df[,col], ifany = T )
       }
     } 
@@ -85,13 +96,18 @@ db.discretize.tend = function(df) {
 }
 
 db.doDump = function() {
-  con = dbConnect(RSQLite::SQLite(), "db/producto_premium_201511_201604.sqlite")
+  # con = dbConnect(RSQLite::SQLite(), "db/producto_premium_201511_201604.sqlite")
+  con = dbConnect(RSQLite::SQLite(), "db/data_all.sqlite")
   
-  sql = "SELECT * FROM data_visamaster_new WHERE foto_mes = 201604 ORDER BY numero_de_cliente"
+  # sql = "SELECT * FROM data_visamaster_new WHERE foto_mes = 201604 ORDER BY numero_de_cliente"
+  # sql = "SELECT * FROM visamaster WHERE foto_mes = 201604 ORDER BY numero_de_cliente"
+  sql = "SELECT * FROM abril_mdos_visamaster WHERE foto_mes = 201604 ORDER BY numero_de_cliente"
   res = dbSendQuery(con, sql)
   data = dbFetch(res, n = -1 )
   
-  sql = "SELECT * FROM data_historicas WHERE numero_de_cliente IN ( SELECT numero_de_cliente FROM data_visamaster_new WHERE foto_mes = 201604 ) ORDER BY numero_de_cliente"
+  # sql = "SELECT * FROM historicas WHERE numero_de_cliente IN ( SELECT numero_de_cliente FROM visamaster WHERE foto_mes = 201604 ) ORDER BY numero_de_cliente"
+  # sql = "SELECT * FROM diciembre_historicas_posta WHERE numero_de_cliente IN ( SELECT numero_de_cliente FROM diciembre_historicas WHERE foto_mes = 201512 ) ORDER BY numero_de_cliente"
+  sql = "SELECT * FROM abril_mdos_historicas WHERE numero_de_cliente IN ( SELECT numero_de_cliente FROM abril_mdos_visamaster WHERE foto_mes = 201604 ) ORDER BY numero_de_cliente"
   res = dbSendQuery(con, sql)
   historicas = dbFetch(res, n = -1 )
   
@@ -101,7 +117,8 @@ db.doDump = function() {
   # colnames(tendencias) = paste(colnames(tendencias),"_tend", sep = "")
   # colnames(tendencias)[1] = "numero_de_cliente"
   
-  tendencias = read.table("tendencias_new.tsv", header = T)
+  # tendencias = read.table("tendencias_new.tsv", header = T)
+  tendencias = as.data.frame(t)
   colnames(tendencias) = paste(colnames(tendencias),"_tend", sep = "")
   colnames(tendencias)[1] = "numero_de_cliente"
   
@@ -129,21 +146,30 @@ db.doDump = function() {
   joined = joined[,-c(192,667)]
   colnames(joined)
   
+  # joined = read.table("db/diciembre_joined.tsv", header = T)
+  
   rownames(joined) = joined$numero_de_cliente
   joined = joined [ , -1]
   head(joined)
   
-  head(joined$VisaMaster_finiciomora_tend, n =50)
-  head(inicioMora$VisaMaster_finiciomora, n =50)
+  # head(joined$VisaMaster_finiciomora_tend, n =50)
+  # head(inicioMora$VisaMaster_finiciomora, n =50)
   
-  inicioMora = read.table("tendencias_new_VisaMaster_iniciomora.tsv", header = T)
-  joined$VisaMaster_finiciomora_tend = inicioMora$VisaMaster_finiciomora
+  # inicioMora = read.table("tendencias_new_VisaMaster_iniciomora.tsv", header = T)
+  # joined$VisaMaster_finiciomora_tend = inicioMora$VisaMaster_finiciomora
   
-  write.table(joined, "db/joined_new.tsv", sep = "\t", row.names = T, append = F)
-}
+  # write.table(joined, "db/checkpoint/checkpoint.2.joined.tsv", sep = "\t", row.names = T, append = F)
+  write.table(joined, "db/abril_dos_joined.tsv", sep = "\t", row.names = T, append = F)
+rm}
 
-db.getBigDataset = function(cual = db.TERNARIA) {
-  df = read.table("db/joined_new.tsv", row.names = 1)
+db.getBigDataset = function(db = db.ABRIL, cual = db.TERNARIA, discret = T) {
+  filename = "db/joined_new.tsv"
+  
+  if( db == db.DICIEMBRE ) {
+    filename = "db/diciembre_joined.tsv"
+  }
+  
+  df = read.table(filename, row.names = 1)
   
   df = df[,colnames(df) != "numero_de_cliente" ]
   df = df[,colnames(df) != "foto_mes" ]
@@ -151,15 +177,21 @@ db.getBigDataset = function(cual = db.TERNARIA) {
   
   df$clase = as.factor(df$clase)
   
-  df = db.discretize.soft(df)
-  df = db.discretize.tend(df)
-  df = db.clean(df)
+  if ( discret ) {
+    df = db.discretize.soft(df)
+    df = db.discretize.tend(df)
+    df = db.clean(df)
+  }
   
   if ( cual == db.TERNARIA) {
-    df$clasebinaria1 = NULL
-    df$clasebinaria2 = NULL
+    # df$clasebinaria1 = NULL
+    # df$clasebinaria2 = NULL
   } else if ( cual == db.BINARIA1 ) {
-    df$clasebinaria2 = NULL
+    df$clasebinaria1 = as.factor ( ifelse( df$clase == "BAJA+2", "POS", "NEG" ) )
+    claseIndex = which( colnames(df) == "clase" )
+    df = df[, -claseIndex]
+    claseIndex = which( colnames(df) == "clasebinaria1" )
+    colnames(df)[claseIndex] = "clase"
   } else if ( cual == db.BINARIA2 ) {
     df$clasebinaria1 = NULL
   }

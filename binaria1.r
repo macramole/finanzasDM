@@ -57,11 +57,12 @@ hojas_positivas = function( probs, clases )
 
 
 
-abril_dataset = db.getDataset(db.BINARIA1, F)
-abril_dataset = db.nonulls(abril_dataset)
-db.cantnulls(abril_dataset)
+abril_dataset = db.getBigDataset(db.BINARIA1)
+# abril_dataset = db.getDataset(db.BINARIA1, F)
+# abril_dataset = db.nonulls(abril_dataset)
+# db.cantnulls(abril_dataset)
 
-head(abril_dataset)
+# head(abril_dataset)
 
 #me armo un dataset solo con la clase
 # abril_dataset.clase = abril_dataset$clase
@@ -70,10 +71,13 @@ head(abril_dataset)
 
 8*4*2*4*4*7/60/60
 
-vcpValues = c(0, 0.001)
-vminsplitValues = c(10,20,50,100)
-vminbucketValues = c(1,2,3,4) #padre / cada número
-vmaxdepthValues = c(4,5,6,7,8,9,10)
+176*3*2*2*3*3/60/60
+
+
+vcpValues = c(0.001, 0.005)
+vminsplitValues = c(200,400,800)
+vminbucketValues = c(1,3) #padre / cada número
+vmaxdepthValues = c(4,6,8)
 
 tiempoTotal0 =  Sys.time()  
 
@@ -82,16 +86,17 @@ for ( vminbucket in vminbucketValues ) {
     for ( vminsplit in vminsplitValues ) {
       for ( vmaxdepth in vmaxdepthValues ) {
 
-        # vminbucket = 1
-        # vcp = 0
-        # vminsplit = 18
-        # vmaxdepth = 9
-        # s = 1
+        vminbucket = 3
+        vcp = 0.005
+        vminsplit = 400
+        vmaxdepth = 6
+        s = 1
         
         tiempos = c()
         ganancias = c()
         
-        for ( s in 1:4 ) {
+        for ( s in 1:3 ) {
+          t0 =  Sys.time()
           #armo datasets
           set.seed( seeds[s] )
           abril_inTraining <- createDataPartition( abril_dataset$clasebinaria1, p = .70, list = FALSE)
@@ -109,7 +114,7 @@ for ( vminbucket in vminbucketValues ) {
           #Asigno pesos <7750, 250>  es equivalente a  <31, 1>  
           vweights <- ifelse( abril_dataset_training$clasebinaria1 =='POS', 31, 1 )
           
-          t0 =  Sys.time()  
+            
           model <- rpart( clasebinaria1 ~ .,
                           data = abril_dataset_training,  
                           method="class", 
@@ -121,10 +126,9 @@ for ( vminbucket in vminbucketValues ) {
                           weights = vweights,
                           cp=vcp, 
                           minsplit=vminsplit, 
-                          minbucket=vminbucket, 
+                          minbucket=vminsplit/vminbucket, 
                           maxdepth=vmaxdepth ) 
-          t1 =  Sys.time()
-          tiempos[s] <-  as.numeric(  t1 - t0, units = "secs" )
+          
           
           #determino las hojas con ganancia positiva en VALIDATION
           abril_validation_prediccion  = predict(  model, abril_dataset_validation , type = "prob")
@@ -133,10 +137,21 @@ for ( vminbucket in vminbucketValues ) {
           #calculo la ganancia en TESTING
           abril_testing_prediccion  = predict(  model, abril_dataset_testing , type = "prob")
           ganancias[s] <- ganancia_lista( abril_testing_prediccion,  abril_dataset_testing$clase,  vhojas_positivas  ) / 0.30
+          
+          t1 =  Sys.time()
+          tiempos[s] <-  as.numeric(  t1 - t0, units = "secs" )
+          
+          cat(tiempos[s], " | ", ganancias[s], "\n")
+          
+          plot(model)
+          text(model)
+          
+          rm(abril_inTraining, abril_dataset_training, abril_dataset_testing, abril_dataset_train, abril_inTraining, abril_inValidation, abril_dataset_validation, model, abril_testing_prediccion, vweights, abril_validation_prediccion )
+          gc()
         
         }
         
-        log.add("binaria1_VisaMaster_weights_corteProb", vcp, vminsplit, vminbucket, vmaxdepth, ganancias, tiempos )
+        log.add("binaria1_joined_new", vcp, vminsplit, vminbucket, vmaxdepth, ganancias, tiempos )
       }
     }
   }

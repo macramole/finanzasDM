@@ -1,0 +1,869 @@
+
+Call:
+glm(formula = clase ~ ., family = binomial(link = "logit"), data = df_small, 
+    na.action = na.exclude)
+
+Deviance Residuals: 
+   Min      1Q  Median      3Q     Max  
+ -8.49    0.00    0.00    0.00    8.49  
+
+Coefficients: (98 not defined because of singularities)
+                                                  Estimate Std. Error    z value Pr(>|z|)    
+(Intercept)                                     -7.898e+20  1.359e+13  -58121461   <2e-16 ***
+marketing_activo_ultimos90dias                  -7.631e+14  1.194e+07  -63907031   <2e-16 ***
+cliente_vip                                     -2.034e+16  7.125e+08  -28553109   <2e-16 ***
+cliente_sucursal                                -1.040e+11  2.147e+04   -4842642   <2e-16 ***
+cliente_edad                                    -5.133e+13  1.368e+06  -37514803   <2e-16 ***
+cliente_antiguedad                               1.014e+14  2.250e+06   45085105   <2e-16 ***
+mrentabilidad                                    2.658e+15  8.958e+07   29669718   <2e-16 ***
+mrentabilidad_annual                                    NA         NA         NA       NA    
+mcomisiones                                     -2.663e+15  8.958e+07  -29730607   <2e-16 ***
+mactivos_margen                                 -3.056e+15  1.030e+08  -29669763   <2e-16 ***
+mpasivos_margen                                 -3.056e+15  1.030e+08  -29669783   <2e-16 ***
+marketing_coss_selling                          -4.096e+13  1.243e+06  -32940034   <2e-16 ***
+tpaquete1                                               NA         NA         NA       NA    
+tpaquete2                                               NA         NA         NA       NA    
+tpaquete3                                               NA         NA         NA       NA    
+tpaquete4                                               NA         NA         NA       NA    
+tpaquete5                                               NA         NA         NA       NA    
+tpaquete6                                               NA         NA         NA       NA    
+tpaquete7                                        1.242e+14  5.369e+07    2313562   <2e-16 ***
+tpaquete8                                               NA         NA         NA       NA    
+tpaquete9                                        1.405e+15  5.401e+07   26018817   <2e-16 ***
+tcuentas                                         1.628e+14  3.653e+07    4455868   <2e-16 ***
+tcuenta_corriente                               -1.758e+15  8.457e+07  -20783438   <2e-16 ***
+mcuenta_corriente_Nopaquete                      1.468e+10  2.060e+03    7127449   <2e-16 ***
+mcuenta_corriente_Paquete                        1.169e+09  4.059e+01   28804955   <2e-16 ***
+mcuenta_corriente_dolares                               NA         NA         NA       NA    
+tcaja_ahorro                                    -5.296e+14  1.981e+07  -26735245   <2e-16 ***
+mcaja_ahorro_Paquete                             3.248e+08  3.368e+01    9641834   <2e-16 ***
+mcaja_ahorro_Nopaquete                          -2.667e+09  1.569e+02  -16993994   <2e-16 ***
+mcaja_ahorro_dolares                            -8.982e+07  9.981e+00   -8998736   <2e-16 ***
+mdescubierto_preacordado                         2.346e+15  4.191e+07   55966433   <2e-16 ***
+mcuentas_saldo                                  -1.425e+08  5.650e+00  -25221231   <2e-16 ***
+ttarjeta_debito                                 -1.951e+14  4.130e+06  -47235674   <2e-16 ***
+ctarjeta_debito_transacciones                    9.681e+11  1.533e+05    6317188   <2e-16 ***
+mautoservicio                                   -2.366e+09  1.616e+02  -14637911   <2e-16 ***
+ttarjeta_visa                                   -3.642e+14  4.213e+07   -8644107   <2e-16 ***
+ctarjeta_visa_transacciones                      8.772e+12  1.391e+05   63066385   <2e-16 ***
+mtarjeta_visa_consumo                           -2.033e+10  2.235e+02  -90941427   <2e-16 ***
+ttarjeta_master                                 -7.144e+14  4.554e+07  -15687103   <2e-16 ***
+ctarjeta_master_transacciones                   -7.787e+11  3.621e+05   -2150287   <2e-16 ***
+mtarjeta_master_consumo                         -9.151e+09  3.303e+02  -27702399   <2e-16 ***
+cprestamos_personales                           -9.860e+13  1.556e+06  -63367663   <2e-16 ***
+mprestamos_personales                           -1.160e+09  5.848e+01  -19834931   <2e-16 ***
+cprestamos_prendarios                           -2.777e+15  5.033e+07  -55179355   <2e-16 ***
+mprestamos_prendarios                           -8.946e+09  1.461e+02  -61212244   <2e-16 ***
+cprestamos_hipotecarios                         -1.517e+15  1.455e+08  -10427390   <2e-16 ***
+mprestamos_hipotecarios                          8.194e+07  1.363e+02     600998   <2e-16 ***
+tplazo_fijo                                      8.278e+12  9.953e+05    8317143   <2e-16 ***
+mplazo_fijo_dolares                             -1.732e+08  6.393e+00  -27088545   <2e-16 ***
+mplazo_fijo_pesos                                1.050e+08  5.439e+00   19302531   <2e-16 ***
+tfondos_comunes_inversion                        2.978e+13  6.446e+06    4620655   <2e-16 ***
+mfondos_comunes_inversion_pesos                  1.662e+08  1.067e+01   15573490   <2e-16 ***
+mfondos_comunes_inversion_dolares               -2.899e+10  2.531e+03  -11455405   <2e-16 ***
+ttitulos                                         1.066e+14  3.057e+06   34870943   <2e-16 ***
+mtitulos                                         1.215e+08  9.506e+00   12776420   <2e-16 ***
+tseguro_vida_mercado_abierto                     1.559e+14  5.594e+06   27866757   <2e-16 ***
+tseguro_auto                                    -3.905e+14  2.326e+07  -16791718   <2e-16 ***
+tseguro_vivienda                                 3.113e+14  1.466e+07   21231911   <2e-16 ***
+tseguro_accidentes_personales                    1.867e+14  1.472e+07   12681133   <2e-16 ***
+tcaja_seguridad                                 -1.457e+15  2.317e+07  -62871144   <2e-16 ***
+mbonos_corporativos                                     NA         NA         NA       NA    
+mmonedas_extranjeras                                    NA         NA         NA       NA    
+minversiones_otras                                      NA         NA         NA       NA    
+tplan_sueldo                                    -7.265e+13  1.259e+06  -57722264   <2e-16 ***
+mplan_sueldo                                    -3.823e+08  6.994e+00  -54666364   <2e-16 ***
+mplan_sueldo_manual                              1.499e+11  3.259e+03   45981324   <2e-16 ***
+cplan_sueldo_transaccion                        -4.253e+15  1.513e+08  -28101928   <2e-16 ***
+tcuenta_debitos_automaticos                      2.526e+12  1.153e+06    2189529   <2e-16 ***
+mcuenta_debitos_automaticos                     -6.425e+07  2.483e+02    -258716   <2e-16 ***
+ttarjeta_visa_debitos_automaticos               -2.687e+13  7.964e+05  -33743625   <2e-16 ***
+mttarjeta_visa_debitos_automaticos               2.439e+10  5.638e+02   43262385   <2e-16 ***
+ttarjeta_master_debitos_automaticos             -1.408e+12  1.235e+06   -1139649   <2e-16 ***
+mttarjeta_master_debitos_automaticos            -6.242e+10  8.721e+02  -71576519   <2e-16 ***
+tpagodeservicios                                 5.150e+13  8.340e+05   61748518   <2e-16 ***
+mpagodeservicios                                -3.781e+10  3.221e+02 -117409403   <2e-16 ***
+tpagomiscuentas                                 -1.704e+12  3.081e+05   -5531020   <2e-16 ***
+mpagomiscuentas                                  1.415e+09  4.025e+01   35149705   <2e-16 ***
+ccajeros_propios_descuentos                     -1.564e+13  8.222e+05  -19019723   <2e-16 ***
+mcajeros_propios_descuentos                      1.142e+10  5.371e+03    2125867   <2e-16 ***
+ctarjeta_visa_descuentos                        -1.310e+12  6.430e+05   -2037269   <2e-16 ***
+mtarjeta_visa_descuentos                        -1.506e+10  1.341e+03  -11235969   <2e-16 ***
+ctarjeta_master_descuentos                       6.011e+13  1.218e+06   49356944   <2e-16 ***
+mtarjeta_master_descuentos                       3.511e+10  2.115e+03   16600166   <2e-16 ***
+ccuenta_descuentos                                      NA         NA         NA       NA    
+mcuenta_descuentos                                      NA         NA         NA       NA    
+ccomisiones_mantenimiento                        1.842e+13  1.409e+06   13080193   <2e-16 ***
+mcomisiones_mantenimiento                       -5.712e+11  9.084e+03  -62873935   <2e-16 ***
+ccomisiones_otras                               -3.213e+12  2.665e+05  -12058090   <2e-16 ***
+mcomisiones_otras                                5.352e+12  1.377e+05   38870629   <2e-16 ***
+tcambio_monedas                                  6.026e+13  1.151e+06   52355281   <2e-16 ***
+ccambio_monedas_compra                          -8.507e+13  1.887e+06  -45092093   <2e-16 ***
+mcambio_monedas_compra                           1.143e+10  2.452e+02   46618641   <2e-16 ***
+ccambio_monedas_venta                                   NA         NA         NA       NA    
+mcambio_monedas_venta                           -6.426e+09  2.376e+02  -27046480   <2e-16 ***
+ctransferencias_recibidas                        8.198e+14  1.170e+07   70046862   <2e-16 ***
+mtransferencias_recibidas                       -2.675e+10  9.304e+02  -28750313   <2e-16 ***
+ctransferencias_emitidas                        -5.491e+12  7.842e+05   -7002389   <2e-16 ***
+mtransferencias_emitidas                        -1.246e+08  4.603e+01   -2706919   <2e-16 ***
+cextraccion_autoservicio                        -5.563e+13  1.367e+07   -4068305   <2e-16 ***
+mextraccion_autoservicio                         3.701e+10  2.985e+03   12398131   <2e-16 ***
+ccheques_depositados                            -3.645e+13  5.418e+05  -67268749   <2e-16 ***
+mcheques_depositados                             3.516e+08  2.226e+01   15795997   <2e-16 ***
+ccheques_emitidos                                1.514e+13  5.932e+05   25516420   <2e-16 ***
+mcheques_emitidos                                2.250e+08  1.572e+01   14314229   <2e-16 ***
+ccheques_depositados_rechazados                  2.502e+14  4.031e+06   62063670   <2e-16 ***
+mcheques_depositados_rechazados                  1.103e+10  1.507e+02   73196128   <2e-16 ***
+ccheques_emitidos_rechazados                     1.569e+14  4.366e+06   35927726   <2e-16 ***
+mcheques_emitidos_rechazados                     1.856e+09  1.128e+02   16453436   <2e-16 ***
+tcallcenter                                      8.945e+12  1.790e+06    4997084   <2e-16 ***
+ccallcenter_transacciones                       -1.373e+13  2.048e+05  -67016674   <2e-16 ***
+thomebanking                                    -1.928e+13  2.802e+06   -6881657   <2e-16 ***
+chomebanking_transacciones                      -7.791e+11  1.254e+04  -62117470   <2e-16 ***
+tautoservicio                                           NA         NA         NA       NA    
+cautoservicio_transacciones                             NA         NA         NA       NA    
+tcajas                                           2.694e+12  1.763e+06    1528260   <2e-16 ***
+tcajas_consultas                                        NA         NA         NA       NA    
+tcajas_depositos                                -3.409e+13  8.802e+05  -38731665   <2e-16 ***
+tcajas_extracciones                              2.629e+13  8.696e+05   30231386   <2e-16 ***
+tcajas_otras                                    -8.570e+13  1.093e+06  -78400432   <2e-16 ***
+ccajeros_propio_transacciones                    3.664e+13  1.367e+07    2681072   <2e-16 ***
+mcajeros_propio                                 -2.924e+10  2.979e+03   -9815069   <2e-16 ***
+ccajeros_ajenos_transacciones                    9.395e+13  1.368e+07    6868084   <2e-16 ***
+mcajeros_ajenos                                 -4.552e+10  2.997e+03  -15189786   <2e-16 ***
+tmovimientos_ultimos90dias                       7.190e+10  2.610e+04    2755209   <2e-16 ***
+Master_marca_atraso                             -3.575e+18  2.978e+12   -1200595   <2e-16 ***
+Master_cuenta_estado                            -1.151e+14  3.200e+06  -35957543   <2e-16 ***
+Master_mfinanciacion_limite                     -4.478e+14  1.642e+07  -27272910   <2e-16 ***
+Master_Fvencimiento                              3.284e+10  5.295e+02   62024188   <2e-16 ***
+Master_Finiciomora                              -3.946e+12  6.794e+04  -58079252   <2e-16 ***
+Master_msaldototal                              -7.448e+15  1.384e+08  -53803127   <2e-16 ***
+Master_msaldopesos                              -1.375e+15  1.186e+08  -11595884   <2e-16 ***
+Master_msaldodolares                             1.578e+16  6.799e+08   23210640   <2e-16 ***
+Master_mconsumospesos                            1.521e+16  4.288e+08   35470539   <2e-16 ***
+Master_mconsumosdolares                          6.740e+17  1.363e+12     494433   <2e-16 ***
+Master_mlimitecompra                            -1.246e+14  1.453e+07   -8574405   <2e-16 ***
+Master_madelantopesos                           -9.244e+17  8.470e+11   -1091360   <2e-16 ***
+Master_madelantodolares                          5.567e+17  3.559e+11    1564354   <2e-16 ***
+Master_fultimo_cierre                           -1.447e+11  1.479e+03  -97854045   <2e-16 ***
+Master_mpagado                                  -4.000e+15  9.949e+08   -4020215   <2e-16 ***
+Master_mpagospesos                              -1.149e+16  3.734e+08  -30759600   <2e-16 ***
+Master_mpagosdolares                             1.074e+18  1.333e+12     805272   <2e-16 ***
+Master_fechaalta                                -4.808e+09  1.658e+02  -28991986   <2e-16 ***
+Master_mconsumototal                                    NA         NA         NA       NA    
+Master_tconsumos                                 6.050e+17  5.656e+11    1069641   <2e-16 ***
+Master_tadelantosefectivo                       -1.989e+18  1.297e+12   -1532601   <2e-16 ***
+Master_mpagominimo                               3.573e+18  2.978e+12    1199832   <2e-16 ***
+Visa_marca_atraso                               -3.576e+18  2.978e+12   -1200763   <2e-16 ***
+Visa_cuenta_estado                               3.848e+14  2.958e+06  130088944   <2e-16 ***
+Visa_mfinanciacion_limite                       -4.477e+14  1.642e+07  -27268224   <2e-16 ***
+Visa_Fvencimiento                               -4.622e+07  1.161e+00  -39793790   <2e-16 ***
+Visa_Finiciomora                                -3.946e+12  6.794e+04  -58079182   <2e-16 ***
+Visa_msaldototal                                -7.448e+15  1.384e+08  -53802192   <2e-16 ***
+Visa_msaldopesos                                -1.375e+15  1.186e+08  -11596868   <2e-16 ***
+Visa_msaldodolares                               1.578e+16  6.799e+08   23210491   <2e-16 ***
+Visa_mconsumospesos                              1.521e+16  4.288e+08   35470559   <2e-16 ***
+Visa_mconsumosdolares                            6.740e+17  1.363e+12     494433   <2e-16 ***
+Visa_mlimitecompra                              -1.247e+14  1.453e+07   -8579107   <2e-16 ***
+Visa_madelantopesos                             -9.244e+17  8.470e+11   -1091360   <2e-16 ***
+Visa_madelantodolares                            5.567e+17  3.559e+11    1564353   <2e-16 ***
+Visa_fultimo_cierre                             -6.289e+10  1.258e+03  -49993905   <2e-16 ***
+Visa_mpagado                                    -4.000e+15  9.949e+08   -4020206   <2e-16 ***
+Visa_mpagospesos                                -1.149e+16  3.734e+08  -30759616   <2e-16 ***
+Visa_mpagosdolares                               1.074e+18  1.333e+12     805272   <2e-16 ***
+Visa_fechaalta                                   7.482e+09  1.345e+02   55645485   <2e-16 ***
+Visa_mconsumototal                                      NA         NA         NA       NA    
+Visa_tconsumos                                   6.050e+17  5.656e+11    1069652   <2e-16 ***
+Visa_tadelantosefectivo                         -1.989e+18  1.297e+12   -1532605   <2e-16 ***
+Visa_mpagominimo                                 3.573e+18  2.978e+12    1199832   <2e-16 ***
+VisaMaster_mfinanciacion_limite                  4.478e+14  1.642e+07   27270532   <2e-16 ***
+VisaMaster_msaldototal                           7.448e+15  1.384e+08   53802557   <2e-16 ***
+VisaMaster_msaldopesos                           1.375e+15  1.186e+08   11596523   <2e-16 ***
+VisaMaster_msaldodolares                        -1.578e+16  6.799e+08  -23210537   <2e-16 ***
+VisaMaster_mconsumototal                        -1.521e+16  4.288e+08  -35470538   <2e-16 ***
+VisaMaster_mconsumospesos                               NA         NA         NA       NA    
+VisaMaster_mconsumosdolares                     -6.740e+17  1.363e+12    -494433   <2e-16 ***
+VisaMaster_mlimitecompra                         1.246e+14  1.453e+07    8576699   <2e-16 ***
+VisaMaster_madelantopesos                        9.244e+17  8.470e+11    1091360   <2e-16 ***
+VisaMaster_madelantodolares                     -5.567e+17  3.559e+11   -1564355   <2e-16 ***
+VisaMaster_mpagado                               4.000e+15  9.949e+08    4020215   <2e-16 ***
+VisaMaster_mpagospesos                           1.149e+16  3.734e+08   30759613   <2e-16 ***
+VisaMaster_mpagosdolares                        -1.074e+18  1.333e+12    -805272   <2e-16 ***
+VisaMaster_mpagominimo                          -3.573e+18  2.978e+12   -1199832   <2e-16 ***
+VisaMaster_tconsumos                            -6.050e+17  5.656e+11   -1069656   <2e-16 ***
+VisaMaster_tadelantosefectivo                    1.989e+18  1.297e+12    1532633   <2e-16 ***
+VisaMaster_marca_atraso                          4.777e+20  8.684e+12   55012843   <2e-16 ***
+VisaMaster_cuenta_estado                        -7.613e+14  2.634e+07  -28904441   <2e-16 ***
+VisaMaster_finiciomora                                  NA         NA         NA       NA    
+VisaMaster_mconsumototal_div_mlimitecompra      -2.819e+06  1.415e-01  -19921709   <2e-16 ***
+marketing_activo_ultimos90dias_avg              -2.513e+15  1.740e+07 -144418009   <2e-16 ***
+cliente_vip_avg                                  1.493e+16  5.899e+08   25304259   <2e-16 ***
+cliente_sucursal_avg                             6.338e+10  2.474e+04    2561602   <2e-16 ***
+cliente_edad_avg                                 4.625e+13  2.310e+06   20018965   <2e-16 ***
+cliente_antiguedad_avg                          -1.012e+14  2.250e+06  -44993317   <2e-16 ***
+mrentabilidad_avg                               -2.235e+15  7.519e+07  -29727079   <2e-16 ***
+mrentabilidad_annual_avg                         3.321e+10  4.112e+02   80769194   <2e-16 ***
+mcomisiones_avg                                  2.235e+15  7.519e+07   29732920   <2e-16 ***
+mactivos_margen_avg                              2.570e+15  8.646e+07   29727712   <2e-16 ***
+mpasivos_margen_avg                              2.570e+15  8.646e+07   29727925   <2e-16 ***
+marketing_coss_selling_avg                       8.515e+13  2.116e+06   40237590   <2e-16 ***
+tpaquete1_avg                                           NA         NA         NA       NA    
+tpaquete2_avg                                           NA         NA         NA       NA    
+tpaquete3_avg                                           NA         NA         NA       NA    
+tpaquete4_avg                                           NA         NA         NA       NA    
+tpaquete5_avg                                           NA         NA         NA       NA    
+tpaquete6_avg                                           NA         NA         NA       NA    
+tpaquete7_avg                                    4.263e+14  5.004e+07    8518410   <2e-16 ***
+tpaquete8_avg                                           NA         NA         NA       NA    
+tpaquete9_avg                                   -2.171e+14  5.449e+07   -3984397   <2e-16 ***
+tcuentas_avg                                    -7.205e+14  2.472e+07  -29151402   <2e-16 ***
+tcuenta_corriente_avg                            6.843e+14  6.513e+07   10506345   <2e-16 ***
+mcuenta_corriente_Nopaquete_avg                 -2.183e+11  1.260e+04  -17330514   <2e-16 ***
+mcuenta_corriente_Paquete_avg                   -4.129e+08  1.328e+02   -3109606   <2e-16 ***
+mcuenta_corriente_dolares_avg                           NA         NA         NA       NA    
+tcaja_ahorro_avg                                 2.715e+14  1.786e+07   15205380   <2e-16 ***
+mcaja_ahorro_Paquete_avg                        -4.961e+09  6.932e+01  -71559772   <2e-16 ***
+mcaja_ahorro_Nopaquete_avg                      -1.281e+10  5.859e+02  -21869428   <2e-16 ***
+mcaja_ahorro_dolares_avg                        -1.172e+09  2.239e+01  -52363094   <2e-16 ***
+mdescubierto_preacordado_avg                    -1.760e+15  3.264e+07  -53932437   <2e-16 ***
+mcuentas_saldo_avg                               9.265e+08  1.534e+01   60396520   <2e-16 ***
+ttarjeta_debito_avg                             -9.580e+13  6.098e+06  -15709218   <2e-16 ***
+ctarjeta_debito_transacciones_avg               -6.360e+12  3.191e+05  -19931205   <2e-16 ***
+mautoservicio_avg                               -2.695e+08  9.539e+01   -2825143   <2e-16 ***
+ttarjeta_visa_avg                                2.013e+15  3.912e+07   51466296   <2e-16 ***
+ctarjeta_visa_transacciones_avg                 -2.581e+13  3.316e+05  -77837951   <2e-16 ***
+mtarjeta_visa_consumo_avg                        4.108e+10  4.243e+02   96815484   <2e-16 ***
+ttarjeta_master_avg                              1.931e+14  3.904e+07    4946150   <2e-16 ***
+ctarjeta_master_transacciones_avg                1.262e+13  7.179e+05   17580636   <2e-16 ***
+mtarjeta_master_consumo_avg                     -1.613e+09  5.200e+02   -3101485   <2e-16 ***
+cprestamos_personales_avg                        3.599e+13  2.814e+06   12790894   <2e-16 ***
+mprestamos_personales_avg                        2.724e+08  1.027e+02    2653732   <2e-16 ***
+cprestamos_prendarios_avg                        3.459e+15  4.099e+07   84392763   <2e-16 ***
+mprestamos_prendarios_avg                       -1.040e+10  2.244e+02  -46323789   <2e-16 ***
+cprestamos_hipotecarios_avg                      1.923e+15  8.573e+07   22428841   <2e-16 ***
+mprestamos_hipotecarios_avg                     -5.202e+09  2.843e+02  -18298740   <2e-16 ***
+tplazo_fijo_avg                                  2.538e+13  2.493e+06   10178859   <2e-16 ***
+mplazo_fijo_dolares_avg                          9.572e+07  1.481e+01    6462186   <2e-16 ***
+mplazo_fijo_pesos_avg                           -5.285e+08  1.447e+01  -36518612   <2e-16 ***
+tfondos_comunes_inversion_avg                   -3.984e+14  1.074e+07  -37082972   <2e-16 ***
+mfondos_comunes_inversion_pesos_avg             -3.895e+08  3.321e+01  -11728864   <2e-16 ***
+mfondos_comunes_inversion_dolares_avg            4.572e+09  5.086e+02    8990107   <2e-16 ***
+ttitulos_avg                                    -1.229e+14  5.404e+06  -22740787   <2e-16 ***
+mtitulos_avg                                     3.094e+08  2.661e+01   11626762   <2e-16 ***
+tseguro_vida_mercado_abierto_avg                -4.824e+14  7.382e+06  -65348426   <2e-16 ***
+tseguro_auto_avg                                 2.523e+14  2.381e+07   10592821   <2e-16 ***
+tseguro_vivienda_avg                            -1.187e+13  1.445e+07    -821540   <2e-16 ***
+tseguro_accidentes_personales_avg               -2.376e+14  1.562e+07  -15212727   <2e-16 ***
+tcaja_seguridad_avg                              1.682e+15  2.068e+07   81338733   <2e-16 ***
+mmonedas_extranjeras_avg                                NA         NA         NA       NA    
+minversiones_otras_avg                                  NA         NA         NA       NA    
+tplan_sueldo_avg                                 2.915e+13  2.738e+06   10645012   <2e-16 ***
+mplan_sueldo_avg                                 4.519e+08  5.644e+01    8005518   <2e-16 ***
+mplan_sueldo_manual_avg                          1.714e+10  4.793e+02   35749674   <2e-16 ***
+cplan_sueldo_transaccion_avg                    -6.437e+15  2.134e+08  -30161642   <2e-16 ***
+tcuenta_debitos_automaticos_avg                  7.921e+13  2.391e+06   33120756   <2e-16 ***
+mcuenta_debitos_automaticos_avg                 -3.065e+09  5.500e+02   -5572618   <2e-16 ***
+ttarjeta_visa_debitos_automaticos_avg           -2.804e+13  1.766e+06  -15873619   <2e-16 ***
+mttarjeta_visa_debitos_automaticos_avg          -3.285e+09  1.295e+03   -2537321   <2e-16 ***
+ttarjeta_master_debitos_automaticos_avg          5.754e+12  3.252e+06    1769570   <2e-16 ***
+mttarjeta_master_debitos_automaticos_avg         9.549e+10  2.061e+03   46329214   <2e-16 ***
+tpagodeservicios_avg                            -1.216e+14  2.097e+06  -58005884   <2e-16 ***
+mpagodeservicios_avg                             1.143e+10  1.110e+03   10300344   <2e-16 ***
+tpagomiscuentas_avg                              5.067e+13  7.785e+05   65087248   <2e-16 ***
+mpagomiscuentas_avg                              8.812e+09  1.508e+02   58429103   <2e-16 ***
+ccajeros_propios_descuentos_avg                  5.411e+13  1.876e+06   28849377   <2e-16 ***
+mcajeros_propios_descuentos_avg                 -3.736e+11  2.874e+04  -13000246   <2e-16 ***
+ctarjeta_visa_descuentos_avg                    -2.450e+12  1.689e+06   -1450116   <2e-16 ***
+mtarjeta_visa_descuentos_avg                     1.678e+11  8.916e+03   18818173   <2e-16 ***
+ctarjeta_master_descuentos_avg                  -2.772e+14  3.173e+06  -87371760   <2e-16 ***
+mtarjeta_master_descuentos_avg                  -8.910e+11  1.908e+04  -46697837   <2e-16 ***
+ccuenta_descuentos_avg                                  NA         NA         NA       NA    
+mcuenta_descuentos_avg                                  NA         NA         NA       NA    
+ccomisiones_mantenimiento_avg                   -4.691e+12  3.616e+06   -1297355   <2e-16 ***
+mcomisiones_mantenimiento_avg                   -7.970e+11  1.596e+04  -49924838   <2e-16 ***
+ccomisiones_otras_avg                            4.088e+12  6.603e+05    6190221   <2e-16 ***
+mcomisiones_otras_avg                           -4.011e+11  2.249e+04  -17834455   <2e-16 ***
+tcambio_monedas_avg                              2.530e+20  8.119e+12   31162029   <2e-16 ***
+ccambio_monedas_compra_avg                      -2.530e+20  8.119e+12  -31162019   <2e-16 ***
+mcambio_monedas_compra_avg                       5.339e+10  2.215e+03   24099424   <2e-16 ***
+ccambio_monedas_venta_avg                       -2.530e+20  8.119e+12  -31162022   <2e-16 ***
+mcambio_monedas_venta_avg                       -2.485e+10  1.358e+03  -18296806   <2e-16 ***
+ctransferencias_recibidas_avg                   -1.521e+15  3.571e+07  -42598292   <2e-16 ***
+mtransferencias_recibidas_avg                    8.073e+10  3.608e+03   22374751   <2e-16 ***
+ctransferencias_emitidas_avg                     1.118e+14  1.941e+06   57608900   <2e-16 ***
+mtransferencias_emitidas_avg                    -6.780e+09  1.577e+02  -42992088   <2e-16 ***
+cextraccion_autoservicio_avg                     4.292e+14  7.042e+06   60952960   <2e-16 ***
+mextraccion_autoservicio_avg                    -1.081e+11  2.120e+03  -50970751   <2e-16 ***
+ccheques_depositados_avg                         6.971e+13  1.394e+06   50016481   <2e-16 ***
+mcheques_depositados_avg                        -1.978e+08  6.426e+01   -3077901   <2e-16 ***
+ccheques_emitidos_avg                           -3.563e+13  1.665e+06  -21398946   <2e-16 ***
+mcheques_emitidos_avg                            1.575e+08  4.677e+01    3367714   <2e-16 ***
+ccheques_depositados_rechazados_avg             -1.522e+15  2.148e+07  -70842564   <2e-16 ***
+mcheques_depositados_rechazados_avg              3.839e+10  1.191e+03   32248261   <2e-16 ***
+ccheques_emitidos_rechazados_avg                 1.274e+15  2.477e+07   51453236   <2e-16 ***
+mcheques_emitidos_rechazados_avg                -2.021e+10  1.090e+03  -18539821   <2e-16 ***
+tcallcenter_avg                                 -1.406e+14  3.670e+06  -38308521   <2e-16 ***
+ccallcenter_transacciones_avg                    1.797e+13  5.943e+05   30236857   <2e-16 ***
+thomebanking_avg                                 1.946e+14  4.479e+06   43454520   <2e-16 ***
+chomebanking_transacciones_avg                  -1.158e+12  3.233e+04  -35809423   <2e-16 ***
+tautoservicio_avg                                       NA         NA         NA       NA    
+cautoservicio_transacciones_avg                         NA         NA         NA       NA    
+tcajas_avg                                       4.862e+13  3.098e+06   15692827   <2e-16 ***
+tcajas_consultas_avg                                    NA         NA         NA       NA    
+tcajas_depositos_avg                            -1.380e+14  2.117e+06  -65175206   <2e-16 ***
+tcajas_extracciones_avg                         -1.595e+14  2.186e+06  -72957972   <2e-16 ***
+tcajas_otras_avg                                 1.129e+14  2.638e+06   42793853   <2e-16 ***
+ccajeros_propio_transacciones_avg               -4.803e+14  7.099e+06  -67662764   <2e-16 ***
+mcajeros_propio_avg                              1.276e+11  2.147e+03   59424736   <2e-16 ***
+ccajeros_ajenos_transacciones_avg               -5.092e+14  7.113e+06  -71575361   <2e-16 ***
+mcajeros_ajenos_avg                              9.209e+10  2.209e+03   41691414   <2e-16 ***
+tmovimientos_ultimos90dias_avg                  -5.310e+11  8.963e+04   -5923934   <2e-16 ***
+Master_marca_atraso_avg                         -4.800e+15  5.356e+07  -89625580   <2e-16 ***
+Master_cuenta_estado_avg                         7.425e+14  1.216e+07   61057604   <2e-16 ***
+Master_Fvencimiento_avg                         -3.780e+09  2.354e+02  -16059837   <2e-16 ***
+Master_Finiciomora_avg                           5.088e+11  7.858e+03   64747206   <2e-16 ***
+Master_fultimo_cierre_avg                       -1.430e+11  2.259e+03  -63322133   <2e-16 ***
+Master_fechaalta_avg                             1.749e+11  4.207e+03   41567629   <2e-16 ***
+Master_tconsumos_avg                            -3.350e+13  9.679e+05  -34612470   <2e-16 ***
+Master_tadelantosefectivo_avg                    2.852e+14  7.342e+06   38848805   <2e-16 ***
+Visa_marca_atraso_avg                           -3.078e+15  5.162e+07  -59624040   <2e-16 ***
+Visa_cuenta_estado_avg                           6.526e+13  1.048e+07    6228782   <2e-16 ***
+Visa_Fvencimiento_avg                            2.169e+07  1.307e+00   16598060   <2e-16 ***
+Visa_Finiciomora_avg                            -3.828e+11  9.651e+03  -39661676   <2e-16 ***
+Visa_fultimo_cierre_avg                         -3.234e+10  2.070e+03  -15621284   <2e-16 ***
+Visa_fechaalta_avg                               4.297e+10  1.620e+03   26521716   <2e-16 ***
+Visa_tconsumos_avg                              -3.693e+13  8.672e+05  -42589073   <2e-16 ***
+Visa_tadelantosefectivo_avg                     -7.708e+13  7.300e+06  -10559662   <2e-16 ***
+VisaMaster_mfinanciacion_limite_avg              3.408e+09  2.983e+02   11425868   <2e-16 ***
+VisaMaster_msaldototal_avg                       4.143e+10  1.444e+03   28692555   <2e-16 ***
+VisaMaster_msaldopesos_avg                      -2.624e+10  1.310e+03  -20028228   <2e-16 ***
+VisaMaster_msaldodolares_avg                    -5.680e+10  1.552e+03  -36601248   <2e-16 ***
+VisaMaster_mconsumototal_avg                    -1.733e+10  4.400e+02  -39381047   <2e-16 ***
+VisaMaster_mconsumospesos_avg                           NA         NA         NA       NA    
+VisaMaster_mconsumosdolares_avg                  5.398e+10  1.067e+04    5061196   <2e-16 ***
+VisaMaster_mlimitecompra_avg                    -4.149e+09  2.728e+02  -15206099   <2e-16 ***
+VisaMaster_madelantopesos_avg                    1.381e+11  2.962e+03   46629022   <2e-16 ***
+VisaMaster_madelantodolares_avg                 -1.169e+12  4.589e+04  -25467228   <2e-16 ***
+VisaMaster_mpagado_avg                          -1.782e+10  3.126e+02  -57006745   <2e-16 ***
+VisaMaster_mpagospesos_avg                       9.757e+09  2.293e+02   42546361   <2e-16 ***
+VisaMaster_mpagosdolares_avg                     2.888e+11  5.624e+03   51344595   <2e-16 ***
+VisaMaster_mpagominimo_avg                       2.185e+10  5.495e+02   39761095   <2e-16 ***
+VisaMaster_tconsumos_avg                         5.007e+13  8.497e+05   58922514   <2e-16 ***
+VisaMaster_tadelantosefectivo_avg               -1.839e+14  7.206e+06  -25521272   <2e-16 ***
+VisaMaster_marca_atraso_avg                      2.158e+15  5.541e+07   38948685   <2e-16 ***
+VisaMaster_cuenta_estado_avg                    -3.147e+15  5.388e+07  -58403572   <2e-16 ***
+VisaMaster_finiciomora_avg                              NA         NA         NA       NA    
+VisaMaster_mconsumototal_div_mlimitecompra_avg  -3.189e+14  1.985e+07  -16064121   <2e-16 ***
+marketing_activo_ultimos90dias_max               2.421e+15  1.016e+07  238184520   <2e-16 ***
+cliente_vip_max                                         NA         NA         NA       NA    
+cliente_sucursal_max                            -2.905e+11  1.710e+04  -16983098   <2e-16 ***
+cliente_edad_max                                        NA         NA         NA       NA    
+cliente_antiguedad_max                                  NA         NA         NA       NA    
+mrentabilidad_max                                1.794e+10  8.868e+02   20226932   <2e-16 ***
+mrentabilidad_annual_max                        -1.954e+10  2.712e+02  -72048041   <2e-16 ***
+mcomisiones_max                                 -6.480e+11  9.089e+03  -71292733   <2e-16 ***
+mactivos_margen_max                             -9.512e+10  1.504e+03  -63234757   <2e-16 ***
+mpasivos_margen_max                             -7.128e+10  1.344e+03  -53039998   <2e-16 ***
+marketing_coss_selling_max                      -8.307e+11  1.076e+06    -771972   <2e-16 ***
+tpaquete1_max                                           NA         NA         NA       NA    
+tpaquete2_max                                           NA         NA         NA       NA    
+tpaquete3_max                                           NA         NA         NA       NA    
+tpaquete4_max                                           NA         NA         NA       NA    
+tpaquete5_max                                           NA         NA         NA       NA    
+tpaquete6_max                                           NA         NA         NA       NA    
+tpaquete7_max                                   -4.533e+14  1.992e+07  -22753888   <2e-16 ***
+tpaquete8_max                                           NA         NA         NA       NA    
+tpaquete9_max                                   -5.651e+14  2.237e+07  -25267584   <2e-16 ***
+tcuentas_max                                     4.191e+14  8.287e+06   50569375   <2e-16 ***
+tcuenta_corriente_max                            3.998e+14  2.667e+07   14989909   <2e-16 ***
+mcuenta_corriente_Nopaquete_max                  7.588e+10  4.402e+03   17238845   <2e-16 ***
+mcuenta_corriente_Paquete_max                   -9.424e+07  5.225e+01   -1803824   <2e-16 ***
+mcuenta_corriente_dolares_max                           NA         NA         NA       NA    
+tcaja_ahorro_max                                 8.169e+13  5.753e+06   14200272   <2e-16 ***
+mcaja_ahorro_Paquete_max                         1.963e+09  2.536e+01   77391080   <2e-16 ***
+mcaja_ahorro_Nopaquete_max                       3.573e+09  2.143e+02   16677679   <2e-16 ***
+mcaja_ahorro_dolares_max                         4.479e+08  1.229e+01   36461740   <2e-16 ***
+mdescubierto_preacordado_max                    -5.790e+14  2.073e+07  -27926032   <2e-16 ***
+mcuentas_saldo_max                              -9.826e+07  5.197e+00  -18906670   <2e-16 ***
+ttarjeta_debito_max                              5.532e+13  2.427e+06   22789496   <2e-16 ***
+ctarjeta_debito_transacciones_max               -1.890e+12  1.248e+05  -15139613   <2e-16 ***
+mautoservicio_max                                2.062e+07  2.090e+01     986773   <2e-16 ***
+ttarjeta_visa_max                               -9.319e+14  2.308e+07  -40379660   <2e-16 ***
+ctarjeta_visa_transacciones_max                  4.252e+12  1.488e+05   28573499   <2e-16 ***
+mtarjeta_visa_consumo_max                       -4.632e+09  1.224e+02  -37856523   <2e-16 ***
+ttarjeta_master_max                             -1.087e+15  2.727e+07  -39855316   <2e-16 ***
+ctarjeta_master_transacciones_max                1.277e+13  3.662e+05   34872275   <2e-16 ***
+mtarjeta_master_consumo_max                      6.086e+09  1.333e+02   45666032   <2e-16 ***
+cprestamos_personales_max                        2.239e+13  1.284e+06   17445246   <2e-16 ***
+mprestamos_personales_max                        5.182e+08  7.014e+01    7387674   <2e-16 ***
+cprestamos_prendarios_max                       -3.666e+13  1.955e+07   -1875142   <2e-16 ***
+mprestamos_prendarios_max                        1.262e+10  1.568e+02   80504753   <2e-16 ***
+cprestamos_hipotecarios_max                      4.296e+14  3.198e+07   13431881   <2e-16 ***
+mprestamos_hipotecarios_max                     -6.916e+07  9.658e+01    -716114   <2e-16 ***
+tplazo_fijo_max                                 -8.350e+12  1.212e+06   -6889374   <2e-16 ***
+mplazo_fijo_dolares_max                         -1.094e+08  8.883e+00  -12314578   <2e-16 ***
+mplazo_fijo_pesos_max                            2.958e+08  7.488e+00   39501268   <2e-16 ***
+tfondos_comunes_inversion_max                    2.152e+14  4.964e+06   43360800   <2e-16 ***
+mfondos_comunes_inversion_pesos_max              1.982e+08  1.212e+01   16348170   <2e-16 ***
+mfondos_comunes_inversion_dolares_max            2.791e+10  2.548e+03   10954525   <2e-16 ***
+ttitulos_max                                    -4.659e+13  2.797e+06  -16653366   <2e-16 ***
+mtitulos_max                                    -3.637e+08  1.452e+01  -25051243   <2e-16 ***
+tseguro_vida_mercado_abierto_max                 2.721e+14  3.617e+06   75213935   <2e-16 ***
+tseguro_auto_max                                -4.134e+13  1.099e+07   -3760763   <2e-16 ***
+tseguro_vivienda_max                            -2.154e+14  7.069e+06  -30467923   <2e-16 ***
+tseguro_accidentes_personales_max               -5.796e+12  8.472e+06    -684152   <2e-16 ***
+tcaja_seguridad_max                             -6.515e+13  7.472e+06   -8719962   <2e-16 ***
+mmonedas_extranjeras_max                                NA         NA         NA       NA    
+minversiones_otras_max                                  NA         NA         NA       NA    
+tplan_sueldo_max                                -1.529e+12  9.098e+05   -1680750   <2e-16 ***
+mplan_sueldo_max                                -3.824e+07  1.171e+01   -3267182   <2e-16 ***
+mplan_sueldo_manual_max                         -1.195e+10  3.156e+02  -37867878   <2e-16 ***
+cplan_sueldo_transaccion_max                     1.086e+15  3.976e+07   27310797   <2e-16 ***
+tcuenta_debitos_automaticos_max                 -2.462e+13  1.121e+06  -21960769   <2e-16 ***
+mcuenta_debitos_automaticos_max                  2.759e+08  9.719e+01    2838855   <2e-16 ***
+ttarjeta_visa_debitos_automaticos_max            2.531e+13  8.457e+05   29932299   <2e-16 ***
+mttarjeta_visa_debitos_automaticos_max          -1.615e+10  6.131e+02  -26347483   <2e-16 ***
+ttarjeta_master_debitos_automaticos_max          2.790e+12  1.440e+06    1937749   <2e-16 ***
+mttarjeta_master_debitos_automaticos_max        -7.639e+09  9.227e+02   -8279036   <2e-16 ***
+tpagodeservicios_max                             3.854e+13  8.005e+05   48147065   <2e-16 ***
+mpagodeservicios_max                            -2.248e+09  3.155e+02   -7125277   <2e-16 ***
+tpagomiscuentas_max                             -1.597e+13  3.161e+05  -50517074   <2e-16 ***
+mpagomiscuentas_max                             -3.369e+09  6.361e+01  -52955509   <2e-16 ***
+ccajeros_propios_descuentos_max                 -1.974e+11  6.361e+05    -310311   <2e-16 ***
+mcajeros_propios_descuentos_max                 -2.761e+10  6.039e+03   -4572598   <2e-16 ***
+ctarjeta_visa_descuentos_max                     3.386e+12  5.558e+05    6091528   <2e-16 ***
+mtarjeta_visa_descuentos_max                    -5.774e+10  1.770e+03  -32614391   <2e-16 ***
+ctarjeta_master_descuentos_max                   9.488e+13  9.638e+05   98441467   <2e-16 ***
+mtarjeta_master_descuentos_max                   1.524e+11  3.593e+03   42427658   <2e-16 ***
+ccuenta_descuentos_max                                  NA         NA         NA       NA    
+mcuenta_descuentos_max                                  NA         NA         NA       NA    
+ccomisiones_mantenimiento_max                   -3.535e+13  1.319e+06  -26791471   <2e-16 ***
+mcomisiones_mantenimiento_max                    7.172e+11  1.027e+04   69806805   <2e-16 ***
+ccomisiones_otras_max                           -2.937e+13  2.675e+05 -109819190   <2e-16 ***
+mcomisiones_otras_max                            6.347e+11  9.037e+03   70239787   <2e-16 ***
+tcambio_monedas_max                             -5.642e+13  1.715e+06  -32902926   <2e-16 ***
+ccambio_monedas_compra_max                       6.492e+12  1.927e+06    3369363   <2e-16 ***
+mcambio_monedas_compra_max                      -1.547e+10  4.822e+02  -32078697   <2e-16 ***
+ccambio_monedas_venta_max                        2.760e+13  1.824e+06   15131011   <2e-16 ***
+mcambio_monedas_venta_max                        6.018e+09  2.793e+02   21543828   <2e-16 ***
+ctransferencias_recibidas_max                    1.704e+14  9.572e+06   17798321   <2e-16 ***
+mtransferencias_recibidas_max                   -1.719e+10  6.456e+02  -26630073   <2e-16 ***
+ctransferencias_emitidas_max                    -2.559e+13  7.798e+05  -32816515   <2e-16 ***
+mtransferencias_emitidas_max                     5.412e+08  4.448e+01   12168805   <2e-16 ***
+cextraccion_autoservicio_max                    -5.783e+12  5.491e+05  -10533015   <2e-16 ***
+mextraccion_autoservicio_max                     1.153e+10  2.594e+02   44430796   <2e-16 ***
+ccheques_depositados_max                        -1.390e+12  5.444e+05   -2553087   <2e-16 ***
+mcheques_depositados_max                        -3.316e+08  1.979e+01  -16756663   <2e-16 ***
+ccheques_emitidos_max                            1.106e+13  7.404e+05   14943309   <2e-16 ***
+mcheques_emitidos_max                           -2.965e+08  2.015e+01  -14712822   <2e-16 ***
+ccheques_depositados_rechazados_max              2.501e+14  4.463e+06   56046404   <2e-16 ***
+mcheques_depositados_rechazados_max             -7.077e+09  2.158e+02  -32792588   <2e-16 ***
+ccheques_emitidos_rechazados_max                -2.533e+14  5.209e+06  -48620145   <2e-16 ***
+mcheques_emitidos_rechazados_max                 1.922e+09  2.146e+02    8952656   <2e-16 ***
+tcallcenter_max                                  3.496e+13  1.232e+06   28371225   <2e-16 ***
+ccallcenter_transacciones_max                   -1.779e+12  1.544e+05  -11522607   <2e-16 ***
+thomebanking_max                                -3.856e+14  2.454e+06 -157088578   <2e-16 ***
+chomebanking_transacciones_max                   5.487e+11  1.546e+04   35492677   <2e-16 ***
+tautoservicio_max                                       NA         NA         NA       NA    
+cautoservicio_transacciones_max                         NA         NA         NA       NA    
+tcajas_max                                      -1.598e+13  1.292e+06  -12372392   <2e-16 ***
+tcajas_consultas_max                                    NA         NA         NA       NA    
+tcajas_depositos_max                             6.236e+13  7.485e+05   83305833   <2e-16 ***
+tcajas_extracciones_max                          5.095e+13  7.793e+05   65375253   <2e-16 ***
+tcajas_otras_max                                -4.981e+12  8.050e+05   -6187413   <2e-16 ***
+ccajeros_propio_transacciones_max                2.281e+13  6.439e+05   35421593   <2e-16 ***
+mcajeros_propio_max                             -2.000e+10  2.799e+02  -71468664   <2e-16 ***
+ccajeros_ajenos_transacciones_max                3.749e+13  6.386e+05   58702895   <2e-16 ***
+mcajeros_ajenos_max                             -1.639e+09  3.318e+02   -4939269   <2e-16 ***
+tmovimientos_ultimos90dias_max                   1.253e+12  4.381e+04   28613041   <2e-16 ***
+Master_marca_atraso_max                         -1.271e+15  3.000e+07  -42375204   <2e-16 ***
+Master_cuenta_estado_max                        -1.679e+14  3.696e+06  -45434668   <2e-16 ***
+Master_Fvencimiento_max                         -3.882e+10  5.438e+02  -71386208   <2e-16 ***
+Master_Finiciomora_max                          -2.853e+11  4.313e+03  -66144661   <2e-16 ***
+Master_fultimo_cierre_max                        2.596e+11  1.877e+03  138347133   <2e-16 ***
+Master_fechaalta_max                            -5.958e+10  1.859e+03  -32050641   <2e-16 ***
+Master_tconsumos_max                            -1.643e+12  4.098e+05   -4009148   <2e-16 ***
+Master_tadelantosefectivo_max                   -8.118e+12  2.837e+06   -2861397   <2e-16 ***
+Visa_marca_atraso_max                            9.010e+14  3.975e+07   22668313   <2e-16 ***
+Visa_cuenta_estado_max                          -1.287e+14  3.504e+06  -36716313   <2e-16 ***
+Visa_Fvencimiento_max                            1.012e+07  7.402e-01   13671668   <2e-16 ***
+Visa_Finiciomora_max                             2.913e+11  5.437e+03   53567465   <2e-16 ***
+Visa_fultimo_cierre_max                          8.189e+10  1.045e+03   78336562   <2e-16 ***
+Visa_fechaalta_max                              -5.592e+10  1.076e+03  -51985944   <2e-16 ***
+Visa_tconsumos_max                               3.678e+12  2.406e+05   15284619   <2e-16 ***
+Visa_tadelantosefectivo_max                      9.073e+13  2.820e+06   32177637   <2e-16 ***
+VisaMaster_mfinanciacion_limite_max             -6.057e+08  5.339e+01  -11345405   <2e-16 ***
+VisaMaster_msaldototal_max                      -7.633e+08  1.015e+02   -7521793   <2e-16 ***
+VisaMaster_msaldopesos_max                      -3.269e+09  8.500e+01  -38455810   <2e-16 ***
+VisaMaster_msaldodolares_max                     2.234e+09  1.808e+02   12356910   <2e-16 ***
+VisaMaster_mconsumototal_max                    -1.018e+09  1.359e+02   -7495462   <2e-16 ***
+VisaMaster_mconsumospesos_max                           NA         NA         NA       NA    
+VisaMaster_mconsumosdolares_max                  1.594e+10  2.390e+03    6671433   <2e-16 ***
+VisaMaster_mlimitecompra_max                     2.393e+09  8.645e+01   27677412   <2e-16 ***
+VisaMaster_madelantopesos_max                   -2.339e+10  1.021e+03  -22916793   <2e-16 ***
+VisaMaster_madelantodolares_max                  3.875e+11  1.144e+04   33874879   <2e-16 ***
+VisaMaster_mpagado_max                           2.418e+09  8.691e+01   27821250   <2e-16 ***
+VisaMaster_mpagospesos_max                      -7.929e+09  1.424e+02  -55684659   <2e-16 ***
+VisaMaster_mpagosdolares_max                    -4.840e+10  1.361e+03  -35562795   <2e-16 ***
+VisaMaster_mpagominimo_max                      -7.676e+09  1.702e+02  -45102152   <2e-16 ***
+VisaMaster_tconsumos_max                        -1.025e+13  2.033e+05  -50446964   <2e-16 ***
+VisaMaster_tadelantosefectivo_max               -5.482e+13  2.721e+06  -20150249   <2e-16 ***
+VisaMaster_marca_atraso_max                      7.623e+14  1.365e+07   55839728   <2e-16 ***
+VisaMaster_cuenta_estado_max                     5.771e+14  1.377e+07   41904144   <2e-16 ***
+VisaMaster_finiciomora_max                              NA         NA         NA       NA    
+VisaMaster_mconsumototal_div_mlimitecompra_max   3.500e+14  6.626e+06   52831032   <2e-16 ***
+marketing_activo_ultimos90dias_min               7.153e+14  6.358e+06  112499679   <2e-16 ***
+cliente_vip_min                                  5.518e+15  1.553e+08   35526131   <2e-16 ***
+cliente_sucursal_min                             3.200e+11  9.371e+03   34145515   <2e-16 ***
+cliente_edad_min                                 5.800e+12  1.349e+06    4300641   <2e-16 ***
+cliente_antiguedad_min                                  NA         NA         NA       NA    
+mrentabilidad_min                                9.585e+09  1.670e+03    5740579   <2e-16 ***
+mrentabilidad_annual_min                         6.540e+10  1.274e+03   51333115   <2e-16 ***
+mcomisiones_min                                 -1.171e+11  7.728e+03  -15157286   <2e-16 ***
+mactivos_margen_min                              3.929e+09  2.309e+03    1701166   <2e-16 ***
+mpasivos_margen_min                             -7.764e+10  2.262e+03  -34322741   <2e-16 ***
+marketing_coss_selling_min                      -1.964e+13  1.024e+06  -19185304   <2e-16 ***
+tpaquete1_min                                           NA         NA         NA       NA    
+tpaquete2_min                                           NA         NA         NA       NA    
+tpaquete3_min                                           NA         NA         NA       NA    
+tpaquete4_min                                           NA         NA         NA       NA    
+tpaquete5_min                                           NA         NA         NA       NA    
+tpaquete6_min                                           NA         NA         NA       NA    
+tpaquete7_min                                   -5.012e+14  2.653e+07  -18888585   <2e-16 ***
+tpaquete8_min                                           NA         NA         NA       NA    
+tpaquete9_min                                   -6.002e+14  2.995e+07  -20044392   <2e-16 ***
+tcuentas_min                                     2.027e+14  3.618e+07    5602537   <2e-16 ***
+tcuenta_corriente_min                            8.006e+14  3.486e+07   22964718   <2e-16 ***
+mcuenta_corriente_Nopaquete_min                  1.319e+11  6.540e+03   20162648   <2e-16 ***
+mcuenta_corriente_Paquete_min                   -6.915e+08  9.745e+01   -7096114   <2e-16 ***
+mcuenta_corriente_dolares_min                           NA         NA         NA       NA    
+tcaja_ahorro_min                                 1.875e+14  9.752e+06   19227569   <2e-16 ***
+mcaja_ahorro_Paquete_min                         4.273e+09  4.348e+01   98276647   <2e-16 ***
+mcaja_ahorro_Nopaquete_min                       2.034e+10  5.621e+02   36189807   <2e-16 ***
+mcaja_ahorro_dolares_min                         3.215e+08  1.833e+01   17538894   <2e-16 ***
+mdescubierto_preacordado_min                    -4.948e+14  2.091e+07  -23659121   <2e-16 ***
+mcuentas_saldo_min                              -3.374e+08  1.514e+01  -22281031   <2e-16 ***
+ttarjeta_debito_min                              2.188e+14  3.685e+06   59395607   <2e-16 ***
+ctarjeta_debito_transacciones_min                1.039e+13  2.528e+05   41124385   <2e-16 ***
+mautoservicio_min                               -2.965e+09  3.180e+02   -9322291   <2e-16 ***
+ttarjeta_visa_min                               -6.561e+14  1.638e+07  -40061729   <2e-16 ***
+ctarjeta_visa_transacciones_min                  1.384e+13  1.986e+05   69705971   <2e-16 ***
+mtarjeta_visa_consumo_min                       -1.314e+10  2.934e+02  -44765249   <2e-16 ***
+ttarjeta_master_min                             -7.713e+13  1.490e+07   -5175501   <2e-16 ***
+ctarjeta_master_transacciones_min               -1.696e+13  4.374e+05  -38780102   <2e-16 ***
+mtarjeta_master_consumo_min                      6.118e+09  4.497e+02   13603393   <2e-16 ***
+cprestamos_personales_min                        4.948e+13  1.794e+06   27574396   <2e-16 ***
+mprestamos_personales_min                       -4.617e+08  6.219e+01   -7423947   <2e-16 ***
+cprestamos_prendarios_min                       -1.128e+15  2.802e+07  -40256079   <2e-16 ***
+mprestamos_prendarios_min                        6.429e+09  1.622e+02   39647671   <2e-16 ***
+cprestamos_hipotecarios_min                     -1.031e+15  7.660e+07  -13454102   <2e-16 ***
+mprestamos_hipotecarios_min                      5.491e+09  1.805e+02   30418414   <2e-16 ***
+tplazo_fijo_min                                 -1.984e+13  1.407e+06  -14103628   <2e-16 ***
+mplazo_fijo_dolares_min                          4.176e+08  9.044e+00   46175125   <2e-16 ***
+mplazo_fijo_pesos_min                            2.239e+08  7.153e+00   31294412   <2e-16 ***
+tfondos_comunes_inversion_min                    2.169e+14  6.486e+06   33441974   <2e-16 ***
+mfondos_comunes_inversion_pesos_min             -6.321e+08  2.859e+01  -22109591   <2e-16 ***
+mfondos_comunes_inversion_dolares_min           -9.046e+09  5.913e+02  -15297479   <2e-16 ***
+ttitulos_min                                     6.160e+13  3.235e+06   19043992   <2e-16 ***
+mtitulos_min                                    -3.862e+07  1.973e+01   -1957751   <2e-16 ***
+tseguro_vida_mercado_abierto_min                 9.815e+13  1.839e+06   53373288   <2e-16 ***
+tseguro_auto_min                                 2.453e+14  1.299e+07   18881510   <2e-16 ***
+tseguro_vivienda_min                            -9.887e+13  7.463e+06  -13248314   <2e-16 ***
+tseguro_accidentes_personales_min               -1.026e+13  8.624e+06   -1189247   <2e-16 ***
+tcaja_seguridad_min                             -2.443e+14  1.001e+07  -24399306   <2e-16 ***
+mmonedas_extranjeras_min                                NA         NA         NA       NA    
+minversiones_otras_min                                  NA         NA         NA       NA    
+tplan_sueldo_min                                -1.906e+13  1.745e+06  -10926369   <2e-16 ***
+mplan_sueldo_min                                -8.178e+08  5.940e+01  -13769523   <2e-16 ***
+mplan_sueldo_manual_min                          2.896e+10  1.355e+03   21363321   <2e-16 ***
+cplan_sueldo_transaccion_min                            NA         NA         NA       NA    
+tcuenta_debitos_automaticos_min                 -5.426e+13  1.304e+06  -41605117   <2e-16 ***
+mcuenta_debitos_automaticos_min                 -1.172e+09  4.116e+02   -2847978   <2e-16 ***
+ttarjeta_visa_debitos_automaticos_min            2.776e+13  9.253e+05   29997437   <2e-16 ***
+mttarjeta_visa_debitos_automaticos_min          -2.294e+09  7.716e+02   -2972943   <2e-16 ***
+ttarjeta_master_debitos_automaticos_min         -7.832e+13  1.749e+06  -44792664   <2e-16 ***
+mttarjeta_master_debitos_automaticos_min        -4.563e+10  1.390e+03  -32837992   <2e-16 ***
+tpagodeservicios_min                             6.232e+13  1.713e+06   36374469   <2e-16 ***
+mpagodeservicios_min                            -1.606e+10  1.203e+03  -13352334   <2e-16 ***
+tpagomiscuentas_min                             -3.719e+13  5.439e+05  -68376573   <2e-16 ***
+mpagomiscuentas_min                             -7.711e+09  1.577e+02  -48899185   <2e-16 ***
+ccajeros_propios_descuentos_min                 -6.488e+13  1.993e+06  -32551944   <2e-16 ***
+mcajeros_propios_descuentos_min                  1.048e+12  3.711e+04   28243012   <2e-16 ***
+ctarjeta_visa_descuentos_min                     4.337e+12  1.864e+06    2326672   <2e-16 ***
+mtarjeta_visa_descuentos_min                    -2.110e+11  1.712e+04  -12325373   <2e-16 ***
+ctarjeta_master_descuentos_min                   3.430e+13  3.869e+06    8864474   <2e-16 ***
+mtarjeta_master_descuentos_min                  -3.349e+11  6.707e+04   -4993999   <2e-16 ***
+ccuenta_descuentos_min                                  NA         NA         NA       NA    
+mcuenta_descuentos_min                                  NA         NA         NA       NA    
+ccomisiones_mantenimiento_min                    2.938e+13  2.755e+06   10663781   <2e-16 ***
+mcomisiones_mantenimiento_min                    5.803e+11  8.660e+03   67011022   <2e-16 ***
+ccomisiones_otras_min                            2.148e+13  3.607e+05   59544326   <2e-16 ***
+mcomisiones_otras_min                            2.426e+11  8.064e+03   30079969   <2e-16 ***
+tcambio_monedas_min                             -8.594e+13  5.915e+06  -14529835   <2e-16 ***
+ccambio_monedas_compra_min                       1.020e+14  9.661e+06   10555430   <2e-16 ***
+mcambio_monedas_compra_min                       1.084e+11  9.134e+03   11868910   <2e-16 ***
+ccambio_monedas_venta_min                       -7.138e+13  6.741e+06  -10588586   <2e-16 ***
+mcambio_monedas_venta_min                        5.734e+09  3.046e+03    1882593   <2e-16 ***
+ctransferencias_recibidas_min                    1.227e+15  3.541e+07   34660144   <2e-16 ***
+mtransferencias_recibidas_min                   -2.826e+10  4.811e+03   -5873729   <2e-16 ***
+ctransferencias_emitidas_min                    -1.020e+14  1.392e+06  -73299318   <2e-16 ***
+mtransferencias_emitidas_min                     9.662e+09  1.703e+02   56739867   <2e-16 ***
+cextraccion_autoservicio_min                     4.445e+13  8.404e+05   52894098   <2e-16 ***
+mextraccion_autoservicio_min                    -1.151e+10  4.354e+02  -26427242   <2e-16 ***
+ccheques_depositados_min                        -2.493e+13  1.162e+06  -21451605   <2e-16 ***
+mcheques_depositados_min                        -4.181e+08  6.949e+01   -6016200   <2e-16 ***
+ccheques_emitidos_min                           -4.972e+12  1.217e+06   -4084706   <2e-16 ***
+mcheques_emitidos_min                            3.896e+08  5.122e+01    7605877   <2e-16 ***
+ccheques_depositados_rechazados_min              1.047e+15  2.430e+07   43095181   <2e-16 ***
+mcheques_depositados_rechazados_min             -4.555e+10  1.016e+03  -44826975   <2e-16 ***
+ccheques_emitidos_rechazados_min                -7.141e+14  6.061e+07  -11782918   <2e-16 ***
+mcheques_emitidos_rechazados_min                -7.579e+10  3.508e+03  -21608667   <2e-16 ***
+tcallcenter_min                                 -7.851e+13  3.065e+06  -25615093   <2e-16 ***
+ccallcenter_transacciones_min                    9.720e+12  6.356e+05   15291324   <2e-16 ***
+thomebanking_min                                -1.170e+14  1.779e+06  -65762143   <2e-16 ***
+chomebanking_transacciones_min                   1.499e+12  2.998e+04   50012612   <2e-16 ***
+tautoservicio_min                                       NA         NA         NA       NA    
+cautoservicio_transacciones_min                         NA         NA         NA       NA    
+tcajas_min                                       3.206e+13  1.906e+06   16822928   <2e-16 ***
+tcajas_consultas_min                                    NA         NA         NA       NA    
+tcajas_depositos_min                             5.461e+13  1.696e+06   32199850   <2e-16 ***
+tcajas_extracciones_min                          2.078e+13  2.000e+06   10388208   <2e-16 ***
+tcajas_otras_min                                -1.749e+14  2.590e+06  -67529586   <2e-16 ***
+ccajeros_propio_transacciones_min                4.615e+12  1.090e+06    4235221   <2e-16 ***
+mcajeros_propio_min                             -8.867e+08  5.092e+02   -1741241   <2e-16 ***
+ccajeros_ajenos_transacciones_min               -6.510e+13  1.178e+06  -55286167   <2e-16 ***
+mcajeros_ajenos_min                              4.887e+10  6.976e+02   70054511   <2e-16 ***
+tmovimientos_ultimos90dias_min                  -1.058e+12  4.954e+04  -21358261   <2e-16 ***
+Master_marca_atraso_min                          6.069e+15  4.691e+07  129392470   <2e-16 ***
+Master_cuenta_estado_min                        -5.726e+14  9.727e+06  -58860843   <2e-16 ***
+Master_Fvencimiento_min                          9.718e+09  1.924e+02   50499774   <2e-16 ***
+Master_Finiciomora_min                          -2.235e+11  3.881e+03  -57584349   <2e-16 ***
+Master_fultimo_cierre_min                        3.595e+10  9.717e+02   36993368   <2e-16 ***
+Master_fechaalta_min                            -1.114e+11  2.566e+03  -43402003   <2e-16 ***
+Master_tconsumos_min                            -2.437e+13  6.133e+05  -39743007   <2e-16 ***
+Master_tadelantosefectivo_min                   -2.176e+14  5.961e+06  -36501774   <2e-16 ***
+Visa_marca_atraso_min                            2.459e+15  5.369e+07   45795186   <2e-16 ***
+Visa_cuenta_estado_min                          -2.186e+14  8.498e+06  -25728053   <2e-16 ***
+Visa_Fvencimiento_min                            1.299e+07  1.262e+00   10295856   <2e-16 ***
+Visa_Finiciomora_min                             9.149e+10  4.573e+03   20007732   <2e-16 ***
+Visa_fultimo_cierre_min                          3.449e+10  9.819e+02   35131855   <2e-16 ***
+Visa_fechaalta_min                               5.925e+09  8.821e+02    6716737   <2e-16 ***
+Visa_tconsumos_min                              -8.043e+12  3.854e+05  -20872365   <2e-16 ***
+Visa_tadelantosefectivo_min                      2.765e+13  6.027e+06    4587279   <2e-16 ***
+VisaMaster_mfinanciacion_limite_min             -6.449e+09  2.089e+02  -30869531   <2e-16 ***
+VisaMaster_msaldototal_min                      -7.675e+09  1.462e+02  -52493483   <2e-16 ***
+VisaMaster_msaldopesos_min                      -1.395e+09  1.120e+02  -12450116   <2e-16 ***
+VisaMaster_msaldodolares_min                     1.599e+10  3.577e+02   44708705   <2e-16 ***
+VisaMaster_mconsumototal_min                    -4.122e+09  3.240e+02  -12722291   <2e-16 ***
+VisaMaster_mconsumospesos_min                           NA         NA         NA       NA    
+VisaMaster_mconsumosdolares_min                 -3.060e+11  9.680e+03  -31609778   <2e-16 ***
+VisaMaster_mlimitecompra_min                     5.926e+09  1.912e+02   30991510   <2e-16 ***
+VisaMaster_madelantopesos_min                   -4.860e+10  3.052e+03  -15925094   <2e-16 ***
+VisaMaster_madelantodolares_min                 -6.161e+11  5.471e+04  -11261237   <2e-16 ***
+VisaMaster_mpagado_min                           7.057e+09  2.997e+02   23548816   <2e-16 ***
+VisaMaster_mpagospesos_min                      -2.468e+09  6.397e+01  -38579614   <2e-16 ***
+VisaMaster_mpagosdolares_min                    -2.106e+10  1.168e+04   -1802525   <2e-16 ***
+VisaMaster_mpagominimo_min                      -2.953e+10  4.920e+02  -60016375   <2e-16 ***
+VisaMaster_tconsumos_min                         8.461e+12  3.487e+05   24262929   <2e-16 ***
+VisaMaster_tadelantosefectivo_min                1.247e+14  6.906e+06   18062240   <2e-16 ***
+VisaMaster_marca_atraso_min                     -5.247e+15  6.729e+07  -77977862   <2e-16 ***
+VisaMaster_cuenta_estado_min                     2.716e+15  5.246e+07   51771993   <2e-16 ***
+VisaMaster_finiciomora_min                              NA         NA         NA       NA    
+VisaMaster_mconsumototal_div_mlimitecompra_min  -3.111e+13  1.428e+07   -2179172   <2e-16 ***
+marketing_activo_ultimos90dias_tend              9.150e+14  1.372e+07   66708766   <2e-16 ***
+cliente_vip_tend                                 4.083e+16  1.146e+09   35632081   <2e-16 ***
+cliente_sucursal_tend                            1.299e+15  1.499e+07   86617092   <2e-16 ***
+mrentabilidad_tend                               1.771e+14  1.947e+06   90952083   <2e-16 ***
+mrentabilidad_annual_tend                       -1.107e+14  3.179e+06  -34815694   <2e-16 ***
+mcomisiones_tend                                -2.701e+14  1.241e+07  -21767901   <2e-16 ***
+mactivos_margen_tend                            -6.303e+13  1.521e+06  -41434599   <2e-16 ***
+mpasivos_margen_tend                            -1.790e+14  2.027e+06  -88306199   <2e-16 ***
+marketing_coss_selling_tend                      8.027e+13  2.460e+06   32632224   <2e-16 ***
+tpaquete1_tend                                          NA         NA         NA       NA    
+tpaquete2_tend                                          NA         NA         NA       NA    
+tpaquete3_tend                                          NA         NA         NA       NA    
+tpaquete4_tend                                          NA         NA         NA       NA    
+tpaquete5_tend                                          NA         NA         NA       NA    
+tpaquete6_tend                                          NA         NA         NA       NA    
+tpaquete7_tend                                   8.272e+13  6.446e+07    1283232   <2e-16 ***
+tpaquete8_tend                                          NA         NA         NA       NA    
+tpaquete9_tend                                  -7.783e+14  6.154e+07  -12646996   <2e-16 ***
+tcuentas_tend                                    9.848e+14  1.746e+07   56388224   <2e-16 ***
+tcuenta_corriente_tend                           2.798e+15  1.218e+08   22960865   <2e-16 ***
+mcuenta_corriente_Nopaquete_tend                -5.209e+14  4.249e+07  -12259057   <2e-16 ***
+mcuenta_corriente_Paquete_tend                  -2.122e+14  1.579e+06 -134361282   <2e-16 ***
+mcuenta_corriente_dolares_tend                          NA         NA         NA       NA    
+tcaja_ahorro_tend                                8.049e+14  3.777e+07   21310871   <2e-16 ***
+mcaja_ahorro_Paquete_tend                        1.709e+13  1.747e+06    9786689   <2e-16 ***
+mcaja_ahorro_Nopaquete_tend                     -3.118e+14  1.089e+07  -28634592   <2e-16 ***
+mcaja_ahorro_dolares_tend                        2.087e+13  1.970e+06   10593575   <2e-16 ***
+mdescubierto_preacordado_tend                   -4.627e+15  7.193e+07  -64323882   <2e-16 ***
+mcuentas_saldo_tend                             -2.846e+12  1.499e+06   -1898365   <2e-16 ***
+ttarjeta_debito_tend                             1.498e+14  6.948e+06   21561463   <2e-16 ***
+ctarjeta_debito_transacciones_tend               1.578e+13  2.519e+06    6262428   <2e-16 ***
+mautoservicio_tend                              -7.604e+13  2.301e+06  -33047310   <2e-16 ***
+ttarjeta_visa_tend                               1.292e+15  6.639e+07   19457987   <2e-16 ***
+ctarjeta_visa_transacciones_tend                -1.054e+14  2.228e+06  -47296537   <2e-16 ***
+mtarjeta_visa_consumo_tend                       1.194e+14  2.848e+06   41924676   <2e-16 ***
+ttarjeta_master_tend                            -9.156e+14  7.039e+07  -13007640   <2e-16 ***
+ctarjeta_master_transacciones_tend              -8.773e+13  3.570e+06  -24573539   <2e-16 ***
+mtarjeta_master_consumo_tend                     1.764e+14  4.015e+06   43937701   <2e-16 ***
+cprestamos_personales_tend                      -2.309e+13  4.499e+06   -5133088   <2e-16 ***
+mprestamos_personales_tend                       5.821e+13  2.820e+06   20645440   <2e-16 ***
+cprestamos_prendarios_tend                       5.358e+15  7.549e+07   70977242   <2e-16 ***
+mprestamos_prendarios_tend                      -6.651e+14  1.550e+07  -42900165   <2e-16 ***
+cprestamos_hipotecarios_tend                     4.331e+15  2.032e+08   21313399   <2e-16 ***
+mprestamos_hipotecarios_tend                    -3.195e+14  2.920e+07  -10942770   <2e-16 ***
+tplazo_fijo_tend                                 2.959e+14  5.485e+06   53949992   <2e-16 ***
+mplazo_fijo_dolares_tend                        -2.742e+14  4.482e+06  -61179080   <2e-16 ***
+mplazo_fijo_pesos_tend                          -4.086e+14  6.992e+06  -58435769   <2e-16 ***
+tfondos_comunes_inversion_tend                   3.913e+14  1.567e+07   24965609   <2e-16 ***
+mfondos_comunes_inversion_pesos_tend             8.994e+13  9.995e+06    8998965   <2e-16 ***
+mfondos_comunes_inversion_dolares_tend          -3.176e+14  1.660e+07  -19136762   <2e-16 ***
+ttitulos_tend                                    2.048e+14  1.295e+07   15812772   <2e-16 ***
+mtitulos_tend                                   -5.942e+14  7.979e+06  -74466421   <2e-16 ***
+tseguro_vida_mercado_abierto_tend               -8.914e+13  1.149e+07   -7754672   <2e-16 ***
+tseguro_auto_tend                                1.138e+15  3.581e+07   31769196   <2e-16 ***
+tseguro_vivienda_tend                           -5.259e+14  2.344e+07  -22439114   <2e-16 ***
+tseguro_accidentes_personales_tend               1.360e+14  1.916e+07    7094988   <2e-16 ***
+tcaja_seguridad_tend                             1.613e+15  3.341e+07   48270692   <2e-16 ***
+mbonos_corporativos_tend                                NA         NA         NA       NA    
+mmonedas_extranjeras_tend                               NA         NA         NA       NA    
+minversiones_otras_tend                                 NA         NA         NA       NA    
+tplan_sueldo_tend                               -1.189e+13  3.376e+06   -3522465   <2e-16 ***
+mplan_sueldo_tend                               -1.165e+14  2.093e+06  -55645788   <2e-16 ***
+mplan_sueldo_manual_tend                         2.763e+15  1.603e+08   17234800   <2e-16 ***
+cplan_sueldo_transaccion_tend                   -7.141e+15  1.888e+08  -37817619   <2e-16 ***
+tcuenta_debitos_automaticos_tend                 2.620e+13  3.906e+06    6707885   <2e-16 ***
+mcuenta_debitos_automaticos_tend                -6.352e+13  2.623e+06  -24220561   <2e-16 ***
+ttarjeta_visa_debitos_automaticos_tend          -1.408e+13  2.882e+06   -4883441   <2e-16 ***
+mttarjeta_visa_debitos_automaticos_tend         -3.673e+13  2.072e+06  -17730442   <2e-16 ***
+ttarjeta_master_debitos_automaticos_tend        -3.851e+14  5.498e+06  -70049320   <2e-16 ***
+mttarjeta_master_debitos_automaticos_tend        6.027e+14  3.839e+06  156992055   <2e-16 ***
+tpagodeservicios_tend                           -3.628e+13  6.349e+06   -5713084   <2e-16 ***
+mpagodeservicios_tend                           -1.159e+14  5.716e+06  -20280820   <2e-16 ***
+tpagomiscuentas_tend                            -5.059e+12  2.914e+06   -1735958   <2e-16 ***
+mpagomiscuentas_tend                            -3.403e+13  2.527e+06  -13464104   <2e-16 ***
+ccajeros_propios_descuentos_tend                 8.677e+13  3.162e+06   27442591   <2e-16 ***
+mcajeros_propios_descuentos_tend                -7.659e+13  3.369e+06  -22736406   <2e-16 ***
+ctarjeta_visa_descuentos_tend                   -2.777e+13  2.654e+06  -10462380   <2e-16 ***
+mtarjeta_visa_descuentos_tend                    3.610e+13  3.015e+06   11972446   <2e-16 ***
+ctarjeta_master_descuentos_tend                 -2.978e+14  4.277e+06  -69610484   <2e-16 ***
+mtarjeta_master_descuentos_tend                 -1.347e+14  5.477e+06  -24596500   <2e-16 ***
+ccuenta_descuentos_tend                                 NA         NA         NA       NA    
+mcuenta_descuentos_tend                                 NA         NA         NA       NA    
+ccomisiones_mantenimiento_tend                  -9.413e+13  5.075e+06  -18546284   <2e-16 ***
+mcomisiones_mantenimiento_tend                   1.082e+14  4.220e+06   25647100   <2e-16 ***
+ccomisiones_otras_tend                          -3.355e+13  1.939e+06  -17297567   <2e-16 ***
+mcomisiones_otras_tend                           2.989e+14  1.240e+07   24098895   <2e-16 ***
+tcambio_monedas_tend                            -1.163e+14  9.197e+06  -12646253   <2e-16 ***
+ccambio_monedas_compra_tend                     -8.972e+13  1.779e+07   -5043026   <2e-16 ***
+mcambio_monedas_compra_tend                      4.706e+13  1.611e+07    2921669   <2e-16 ***
+ccambio_monedas_venta_tend                      -4.432e+13  1.011e+07   -4384637   <2e-16 ***
+mcambio_monedas_venta_tend                       1.065e+13  5.209e+06    2044160   <2e-16 ***
+ctransferencias_recibidas_tend                   9.888e+14  4.864e+07   20331605   <2e-16 ***
+mtransferencias_recibidas_tend                  -1.816e+15  4.274e+07  -42492468   <2e-16 ***
+ctransferencias_emitidas_tend                   -1.664e+14  3.938e+06  -42266728   <2e-16 ***
+mtransferencias_emitidas_tend                    9.863e+13  3.370e+06   29271255   <2e-16 ***
+cextraccion_autoservicio_tend                   -1.199e+14  3.719e+06  -32238755   <2e-16 ***
+mextraccion_autoservicio_tend                    2.115e+14  3.636e+06   58165315   <2e-16 ***
+ccheques_depositados_tend                        2.732e+14  6.241e+06   43779023   <2e-16 ***
+mcheques_depositados_tend                       -1.709e+14  5.901e+06  -28965554   <2e-16 ***
+ccheques_emitidos_tend                           3.168e+14  8.277e+06   38271095   <2e-16 ***
+mcheques_emitidos_tend                          -2.497e+14  7.763e+06  -32168689   <2e-16 ***
+ccheques_depositados_rechazados_tend             4.882e+14  3.288e+07   14847746   <2e-16 ***
+mcheques_depositados_rechazados_tend            -1.123e+15  3.255e+07  -34485041   <2e-16 ***
+ccheques_emitidos_rechazados_tend                1.304e+15  5.858e+07   22268961   <2e-16 ***
+mcheques_emitidos_rechazados_tend               -2.175e+15  5.824e+07  -37352322   <2e-16 ***
+tcallcenter_tend                                -6.676e+13  4.556e+06  -14654473   <2e-16 ***
+ccallcenter_transacciones_tend                   1.347e+14  3.940e+06   34178000   <2e-16 ***
+thomebanking_tend                               -5.251e+14  4.524e+06 -116052814   <2e-16 ***
+chomebanking_transacciones_tend                  8.094e+13  1.560e+06   51874866   <2e-16 ***
+tautoservicio_tend                                      NA         NA         NA       NA    
+cautoservicio_transacciones_tend                        NA         NA         NA       NA    
+tcajas_tend                                      1.416e+14  3.754e+06   37709861   <2e-16 ***
+tcajas_consultas_tend                                   NA         NA         NA       NA    
+tcajas_depositos_tend                           -9.204e+13  3.224e+06  -28553537   <2e-16 ***
+tcajas_extracciones_tend                        -7.927e+13  3.287e+06  -24115149   <2e-16 ***
+tcajas_otras_tend                                1.814e+13  4.627e+06    3921272   <2e-16 ***
+ccajeros_propio_transacciones_tend              -2.555e+13  3.956e+06   -6459176   <2e-16 ***
+mcajeros_propio_tend                            -3.401e+13  3.953e+06   -8605234   <2e-16 ***
+ccajeros_ajenos_transacciones_tend               2.434e+13  4.049e+06    6011130   <2e-16 ***
+mcajeros_ajenos_tend                            -3.660e+13  3.789e+06   -9659420   <2e-16 ***
+tmovimientos_ultimos90dias_tend                 -2.099e+13  1.493e+06  -14058544   <2e-16 ***
+Master_marca_atraso_tend                        -8.486e+14  2.473e+07  -34312550   <2e-16 ***
+Master_cuenta_estado_tend                        2.247e+15  5.387e+07   41708320   <2e-16 ***
+Master_mfinanciacion_limite_tend                 1.871e+14  3.584e+07    5220151   <2e-16 ***
+Master_Fvencimiento_tend                         6.912e+14  1.390e+07   49718061   <2e-16 ***
+Master_Finiciomora_tend                         -1.821e+06  9.788e-02  -18601736   <2e-16 ***
+Master_msaldototal_tend                          1.198e+14  5.841e+06   20503472   <2e-16 ***
+Master_msaldopesos_tend                         -1.577e+14  5.074e+06  -31070391   <2e-16 ***
+Master_msaldodolares_tend                        3.383e+14  9.393e+06   36015629   <2e-16 ***
+Master_mconsumospesos_tend                      -7.447e+13  3.957e+06  -18818667   <2e-16 ***
+Master_mconsumosdolares_tend                    -1.473e+14  9.595e+06  -15356107   <2e-16 ***
+Master_mlimitecompra_tend                       -2.715e+14  3.591e+07   -7561203   <2e-16 ***
+Master_madelantopesos_tend                       1.721e+15  3.636e+07   47331698   <2e-16 ***
+Master_madelantodolares_tend                     2.626e+14  2.627e+07    9995418   <2e-16 ***
+Master_fultimo_cierre_tend                      -9.465e+09  2.781e+02  -34036135   <2e-16 ***
+Master_mpagado_tend                             -1.655e+14  6.983e+06  -23696029   <2e-16 ***
+Master_mpagospesos_tend                         -4.794e+13  2.254e+06  -21264258   <2e-16 ***
+Master_mpagosdolares_tend                        1.834e+14  5.358e+06   34226511   <2e-16 ***
+Master_fechaalta_tend                           -1.962e+15  6.594e+07  -29758874   <2e-16 ***
+Master_mconsumototal_tend                               NA         NA         NA       NA    
+Master_tconsumos_tend                            2.092e+14  4.247e+06   49268598   <2e-16 ***
+Master_tadelantosefectivo_tend                  -2.106e+15  3.669e+07  -57410828   <2e-16 ***
+Master_mpagominimo_tend                         -1.778e+14  2.833e+06  -62776289   <2e-16 ***
+Visa_marca_atraso_tend                           2.100e+15  2.421e+07   86743917   <2e-16 ***
+Visa_cuenta_estado_tend                         -1.662e+15  4.342e+07  -38274382   <2e-16 ***
+Visa_mfinanciacion_limite_tend                  -1.588e+15  5.938e+07  -26745816   <2e-16 ***
+Visa_Fvencimiento_tend                           1.514e+14  3.925e+06   38573598   <2e-16 ***
+Visa_Finiciomora_tend                            6.746e+06  9.901e-02   68129524   <2e-16 ***
+Visa_msaldototal_tend                           -1.504e+14  5.920e+06  -25412108   <2e-16 ***
+Visa_msaldopesos_tend                           -5.354e+12  5.393e+06    -992730   <2e-16 ***
+Visa_msaldodolares_tend                         -1.722e+14  8.264e+06  -20835796   <2e-16 ***
+Visa_mconsumospesos_tend                         6.984e+13  3.919e+06   17822373   <2e-16 ***
+Visa_mconsumosdolares_tend                       1.993e+14  8.269e+06   24101749   <2e-16 ***
+Visa_mlimitecompra_tend                          1.673e+15  6.005e+07   27853616   <2e-16 ***
+Visa_madelantopesos_tend                         9.474e+14  3.732e+07   25386166   <2e-16 ***
+Visa_madelantodolares_tend                       8.460e+14  2.913e+07   29043900   <2e-16 ***
+Visa_fultimo_cierre_tend                        -2.541e+10  3.321e+02  -76515090   <2e-16 ***
+Visa_mpagado_tend                               -2.243e+14  8.107e+06  -27672113   <2e-16 ***
+Visa_mpagospesos_tend                           -5.278e+13  3.297e+06  -16009210   <2e-16 ***
+Visa_mpagosdolares_tend                          2.318e+14  6.102e+06   37992805   <2e-16 ***
+Visa_fechaalta_tend                              1.532e+14  5.311e+07    2883715   <2e-16 ***
+Visa_mconsumototal_tend                                 NA         NA         NA       NA    
+Visa_tconsumos_tend                             -8.684e+12  4.196e+06   -2069442   <2e-16 ***
+Visa_tadelantosefectivo_tend                    -2.233e+15  3.516e+07  -63498215   <2e-16 ***
+Visa_mpagominimo_tend                           -2.744e+14  3.497e+06  -78453591   <2e-16 ***
+VisaMaster_mfinanciacion_limite_tend            -3.407e+14  6.063e+07   -5619938   <2e-16 ***
+VisaMaster_msaldototal_tend                     -2.726e+13  5.632e+06   -4839458   <2e-16 ***
+VisaMaster_msaldopesos_tend                      1.479e+14  5.350e+06   27647911   <2e-16 ***
+VisaMaster_msaldodolares_tend                    2.427e+14  8.504e+06   28535754   <2e-16 ***
+VisaMaster_mconsumototal_tend                   -1.830e+14  3.893e+06  -47003689   <2e-16 ***
+VisaMaster_mconsumospesos_tend                          NA         NA         NA       NA    
+VisaMaster_mconsumosdolares_tend                -2.021e+14  8.581e+06  -23557633   <2e-16 ***
+VisaMaster_mlimitecompra_tend                    4.851e+14  6.085e+07    7972561   <2e-16 ***
+VisaMaster_madelantopesos_tend                  -1.224e+15  3.489e+07  -35093081   <2e-16 ***
+VisaMaster_madelantodolares_tend                -5.735e+14  3.350e+07  -17120650   <2e-16 ***
+VisaMaster_mpagado_tend                          2.046e+14  8.365e+06   24462992   <2e-16 ***
+VisaMaster_mpagospesos_tend                      8.392e+13  3.461e+06   24249145   <2e-16 ***
+VisaMaster_mpagosdolares_tend                   -1.770e+14  6.387e+06  -27712418   <2e-16 ***
+VisaMaster_mpagominimo_tend                      4.045e+14  3.604e+06  112228582   <2e-16 ***
+VisaMaster_tconsumos_tend                        3.260e+13  4.226e+06    7714249   <2e-16 ***
+VisaMaster_tadelantosefectivo_tend               2.245e+15  3.321e+07   67593444   <2e-16 ***
+VisaMaster_marca_atraso_tend                     2.786e+14  2.313e+07   12043188   <2e-16 ***
+VisaMaster_cuenta_estado_tend                    6.359e+14  3.290e+07   19329250   <2e-16 ***
+VisaMaster_finiciomora_tend                             NA         NA         NA       NA    
+VisaMaster_mconsumototal_div_mlimitecompra_tend  1.227e+06  5.912e-01    2075734   <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 1673.0  on 38858  degrees of freedom
+Residual deviance: 9155.1  on 38110  degrees of freedom
+AIC: 10653
+
+Number of Fisher Scoring iterations: 17
+
