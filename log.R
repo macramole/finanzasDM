@@ -29,8 +29,8 @@ log.add = function(dataset, vcp, vminsplit, vminbucket, vmaxdepth, ganancias, ti
   # cat( format(Sys.time(), "%Y%m%d %H%M%S"), dataset, algo, vcp , vminsplit, vminsplit/vminbucket, vmaxdepth, mean(ganancias), mean(tiempos), ganancias , "\n", sep="\t" ) 
 }
 
-log.add.ranger = function(dataset, cantTrees, importance, ganancias, tiempos, umbrales) {
-  cat( format(Sys.time(), "%Y%m%d %H%M%S"), dataset, cantTrees, importance, mean(ganancias), mean(tiempos), ganancias, umbrales, "\n", sep="\t", file=log.file.ranger, fill=FALSE, append=TRUE ) 
+log.add.ranger = function(dataset, cantTrees, nodesize, mtry, ganancias, tiempos, umbrales) {
+  cat( format(Sys.time(), "%Y%m%d %H%M%S"), dataset, cantTrees, nodesize, mtry, mean(ganancias), mean(tiempos), ganancias, umbrales, "\n", sep="\t", file=log.file.ranger, fill=FALSE, append=TRUE ) 
   # cat( format(Sys.time(), "%Y%m%d %H%M%S"), dataset, cantTrees, importance, mean(ganancias), mean(tiempos), ganancias , "\n", sep="\t", fill=FALSE, append=TRUE ) 
 }
 

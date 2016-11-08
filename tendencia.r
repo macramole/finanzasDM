@@ -1,15 +1,18 @@
 library(DBI)
 # library(RcppEigen)
 library(doMC)
-registerDoMC(3)
+registerDoMC(4)
 
-con = dbConnect(RSQLite::SQLite(), "db/producto_premium_201511_201604.sqlite")
+# con = dbConnect(RSQLite::SQLite(), "db/producto_premium_201511_201604.sqlite")
+# con = dbConnect(RSQLite::SQLite(), "db/checkpoint/checkpoint.2.sqlite")
+con = dbConnect(RSQLite::SQLite(), "db/data_all.sqlite")
 
-# sql = "SELECT * FROM data_visamaster_new WHERE numero_de_cliente IN ( SELECT numero_de_cliente FROM data_visamaster_new WHERE foto_mes = 201604 ) AND foto_mes >= 201511 AND foto_mes <> 201512 ORDER BY numero_de_cliente ASC, foto_mes ASC"
-sql = "SELECT numero_de_cliente, VisaMaster_finiciomora FROM data_visamaster_new WHERE numero_de_cliente IN ( SELECT numero_de_cliente FROM data_visamaster_new WHERE foto_mes = 201604 ) AND foto_mes >= 201511 AND foto_mes <> 201512 ORDER BY numero_de_cliente ASC, foto_mes ASC"
+sql = "SELECT * FROM diciembre_historicas WHERE numero_de_cliente IN ( SELECT numero_de_cliente FROM diciembre_historicas WHERE foto_mes = 201512 ) ORDER BY numero_de_cliente ASC, foto_mes ASC"
+# sql = "SELECT * FROM visamaster WHERE numero_de_cliente IN ( SELECT numero_de_cliente FROM visamaster WHERE foto_mes = 201604 ) AND foto_mes >= 201511 ORDER BY numero_de_cliente ASC, foto_mes ASC"
+# sql = "SELECT numero_de_cliente, VisaMaster_finiciomora FROM data_visamaster_new WHERE numero_de_cliente IN ( SELECT numero_de_cliente FROM data_visamaster_new WHERE foto_mes = 201604 ) AND foto_mes >= 201511 AND foto_mes <> 201512 ORDER BY numero_de_cliente ASC, foto_mes ASC"
 res = dbSendQuery(con, sql)
 df = dbFetch(res, n = -1 )
- df = df[,colnames(df) != "participa" ]
+df = df[,colnames(df) != "participa" ]
 
 ignoreCols = c("numero_de_cliente","foto_mes", "participa", "cliente_edad", "cliente_antiguedad", "clase")
 columnas = colnames( df )
@@ -96,23 +99,24 @@ t1 =  Sys.time()
 
 cat("Tardó ", as.numeric(t1-t0, units="hours"), "horas", "\n") #5.6 horas 180 variables
 colnames(t) = c("numero_de_cliente",columnas)
-write.table(t, file = "tendencias_new_VisaMaster_iniciomora.tsv", sep = "\t", row.names = F)
-
-t.df = as.data.frame(t)
-head(t)
-
-malosCampos = c()
-for ( i in colnames(t.df) ) {
-  if ( all( is.na( t.df[, i] ) ) || length(unique( t.df[, i] )) == 1 ) {
-    malosCampos = c(malosCampos, i)
-  }
-}
-malosCamposIndex = which ( colnames(t.df) %in% malosCampos )
-
-t.df = t.df[, -malosCamposIndex]
-head(t.df)
-
-colnames(t.df) = c("numero_de_cliente",paste( colnames(t.df)[-1], "_tend", sep = "" ))
+# write.table(t, file = "db/checkpoint/checkpoint.2.tend.tsv", sep = "\t", row.names = F)
+write.table(t, file = "db/diciembre.tend.tsv", sep = "\t", row.names = F)
+# 
+# t.df = as.data.frame(t)
+# head(t)
+# 
+# malosCampos = c()
+# for ( i in colnames(t.df) ) {
+#   if ( all( is.na( t.df[, i] ) ) || length(unique( t.df[, i] )) == 1 ) {
+#     malosCampos = c(malosCampos, i)
+#   }
+# }
+# malosCamposIndex = which ( colnames(t.df) %in% malosCampos )
+# 
+# t.df = t.df[, -malosCamposIndex]
+# head(t.df)
+# 
+# colnames(t.df) = c("numero_de_cliente",paste( colnames(t.df)[-1], "_tend", sep = "" ))
 
 # 
 # df[df$numero_de_cliente == 5520041,]

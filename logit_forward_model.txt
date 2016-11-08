@@ -1,0 +1,74 @@
+Call:
+glm(formula = clase ~ VisaMaster_marca_atraso + tmovimientos_ultimos90dias + 
+    ttarjeta_visa + mcuentas_saldo + ccheques_emitidos_rechazados + 
+    VisaMaster_finiciomora + Visa_mconsumospesos + tplan_sueldo + 
+    VisaMaster_mpagosdolares + ttarjeta_master + mprestamos_prendarios + 
+    VisaMaster_mconsumototal + mpagodeservicios + tplazo_fijo + 
+    mactivos_margen + tcajas + ctarjeta_visa_descuentos + mdescubierto_preacordado + 
+    mextraccion_autoservicio + VisaMaster_mconsumosdolares + 
+    tcallcenter + tcuentas + mprestamos_hipotecarios + tcaja_seguridad + 
+    mautoservicio + tpaquete7 + ccheques_emitidos + tseguro_accidentes_personales + 
+    thomebanking + tseguro_vida_mercado_abierto + tcuenta_corriente + 
+    ccomisiones_otras + mcuenta_debitos_automaticos + mtarjeta_visa_descuentos + 
+    cprestamos_personales + VisaMaster_mconsumototal_div_mlimitecompra + 
+    VisaMaster_cuenta_estado + ctarjeta_master_transacciones + 
+    Master_mconsumospesos + cliente_vip, family = binomial(link = "logit"), 
+    data = df[df.indexes, ], na.action = na.exclude)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-1.7291  -0.0668  -0.0351  -0.0129   4.7372  
+
+Coefficients:
+                                             Estimate Std. Error z value Pr(>|z|)    
+(Intercept)                                -3.190e+00  5.988e-01  -5.328 9.95e-08 ***
+VisaMaster_marca_atraso                     2.116e+00  1.068e-01  19.823  < 2e-16 ***
+tmovimientos_ultimos90dias                 -5.881e-04  1.712e-03  -0.344 0.731128    
+ttarjeta_visa                              -1.348e-01  2.677e-01  -0.504 0.614420    
+mcuentas_saldo                             -1.255e-05  3.064e-06  -4.094 4.23e-05 ***
+ccheques_emitidos_rechazados                4.999e-01  1.627e-01   3.072 0.002124 ** 
+VisaMaster_finiciomora                     -8.033e-01  1.267e-01  -6.341 2.28e-10 ***
+Visa_mconsumospesos                        -6.142e-09  1.600e-09  -3.840 0.000123 ***
+tplan_sueldo                               -5.211e-01  1.274e-01  -4.089 4.33e-05 ***
+VisaMaster_mpagosdolares                   -2.322e-02  1.288e-02  -1.803 0.071313 .  
+ttarjeta_master                            -2.356e-01  1.625e-01  -1.450 0.147150    
+mprestamos_prendarios                      -2.385e-05  9.636e-06  -2.475 0.013340 *  
+VisaMaster_mconsumototal                   -7.353e-05  1.734e-05  -4.240 2.24e-05 ***
+mpagodeservicios                           -1.300e-03  7.858e-04  -1.655 0.097998 .  
+tplazo_fijo                                -7.531e-01  3.193e-01  -2.358 0.018367 *  
+mactivos_margen                             1.919e-04  5.957e-05   3.221 0.001276 ** 
+tcajas                                     -4.130e-01  1.366e-01  -3.024 0.002494 ** 
+ctarjeta_visa_descuentos                   -2.506e-01  1.697e-01  -1.477 0.139809    
+mdescubierto_preacordado                   -2.438e-01  1.557e-01  -1.566 0.117278    
+mextraccion_autoservicio                   -2.933e-05  1.327e-05  -2.210 0.027087 *  
+VisaMaster_mconsumosdolares                 8.886e-04  2.517e-04   3.530 0.000415 ***
+tcallcenter                                -4.077e-01  1.715e-01  -2.377 0.017440 *  
+tcuentas                                   -9.584e-01  3.532e-01  -2.714 0.006652 ** 
+mprestamos_hipotecarios                    -1.044e-05  7.365e-06  -1.418 0.156156    
+tcaja_seguridad                            -4.851e-01  2.700e-01  -1.796 0.072420 .  
+mautoservicio                              -5.315e-05  3.124e-05  -1.701 0.088887 .  
+tpaquete7                                   7.094e-01  3.579e-01   1.982 0.047448 *  
+ccheques_emitidos                          -1.100e-01  6.007e-02  -1.831 0.067099 .  
+tseguro_accidentes_personales              -2.317e-01  1.510e-01  -1.535 0.124853    
+thomebanking                               -1.824e-01  1.160e-01  -1.572 0.116035    
+tseguro_vida_mercado_abierto                1.913e-01  7.628e-02   2.508 0.012138 *  
+tcuenta_corriente                           7.939e-01  3.350e-01   2.370 0.017805 *  
+ccomisiones_otras                          -3.848e-02  1.752e-02  -2.197 0.028053 *  
+mcuenta_debitos_automaticos                -7.475e-05  5.628e-05  -1.328 0.184077    
+mtarjeta_visa_descuentos                   -1.408e-03  1.134e-03  -1.241 0.214463    
+cprestamos_personales                       4.177e-02  2.846e-02   1.468 0.142131    
+VisaMaster_mconsumototal_div_mlimitecompra -1.009e-08  3.245e-09  -3.110 0.001870 ** 
+VisaMaster_cuenta_estado                    6.670e-01  2.060e-01   3.238 0.001204 ** 
+ctarjeta_master_transacciones               2.623e-02  1.264e-02   2.075 0.037980 *  
+Master_mconsumospesos                      -2.225e-09  1.538e-09  -1.446 0.148059    
+cliente_vip                                -1.202e+00  1.020e+00  -1.179 0.238587    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 5832.4  on 136002  degrees of freedom
+Residual deviance: 4212.7  on 135962  degrees of freedom
+AIC: 4294.7
+
+Number of Fisher Scoring iterations: 15
