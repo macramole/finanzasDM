@@ -16,6 +16,7 @@ db.cantnulls(abril_dataset)
 
 # head(abril_dataset)
 
+<<<<<<< HEAD
 for ( canttrees in c(500) ) {
   for ( vmin.node.size in c(1950, 1900) ) {
     # for ( vmtry in c(10,30,50) ) {
@@ -73,8 +74,7 @@ for ( canttrees in c(500) ) {
         rm(abril_inTraining, abril_dataset_train, abril_dataset_training, abril_dataset_testing, abril_inValidation, abril_dataset_validation, model, abril_testing_prediccion, vweights, abril_validation_prediccion )
         gc()
       }
-    # }
-	  
+    # }  
 	  log.add.ranger("abril_mejor_discret_noweights", canttrees, vmin.node.size, "NA", ganancias, tiempos, umbrales)
 	  # log.add.ranger("abril_joined_new_discret_order_umbral", canttrees, vmin.node.size, vmtry, ganancias, tiempos, umbrales)
 	  gc()
