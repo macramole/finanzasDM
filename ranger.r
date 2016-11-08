@@ -8,8 +8,8 @@ abril_dataset = db.getBigDataset()
 abril_dataset = db.nonulls(abril_dataset)
 # head(abril_dataset)
 
-for ( canttrees in c(200,300,500) ) {
-  for ( vmin.node.size in c(2000, 2200, 2500, 2800) ) {
+for ( canttrees in c(300, 500) ) {
+  for ( vmin.node.size in c(10, 50, 100, 200, 300) ) {
 	  # canttrees = 300
 	  # vmin.node.size = 1000
     # s = 1
