@@ -16,8 +16,8 @@ db.cantnulls(abril_dataset)
 
 # head(abril_dataset)
 
-for ( canttrees in c(500, 1000) ) {
-  for ( vmin.node.size in c(20, 50, 100) ) {
+for ( canttrees in c(500, 400) ) {
+  for ( vmin.node.size in c(150, 200) ) {
     # for ( vmtry in c(10,30,50) ) {
       # canttrees = 300
       # vmin.node.size = 2200
