@@ -163,7 +163,7 @@ db.doDump = function() {
 rm}
 
 db.getBigDataset = function(db = db.ABRIL, cual = db.TERNARIA, discret = T) {
-  filename = "db/joined_new.tsv"
+  filename = "db/abril_dos_joined.tsv"
   
   if( db == db.DICIEMBRE ) {
     filename = "db/diciembre_joined.tsv"

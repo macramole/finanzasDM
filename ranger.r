@@ -6,9 +6,9 @@ library(ranger)
 
 abril_dataset = db.getBigDataset()
 # abril_dataset = db.getBigDataset(db = db.DICIEMBRE, discret = F)
-abril_dataset = db.discretize.soft(abril_dataset)
-abril_dataset = db.discretize.tend(abril_dataset)
-abril_dataset = db.clean(abril_dataset)
+# abril_dataset = db.discretize.soft(abril_dataset)
+# abril_dataset = db.discretize.tend(abril_dataset)
+# abril_dataset = db.clean(abril_dataset)
 
 
 abril_dataset = db.nonulls(abril_dataset)
@@ -16,8 +16,8 @@ db.cantnulls(abril_dataset)
 
 # head(abril_dataset)
 
-for ( canttrees in c(500, 1000) ) {
-  for ( vmin.node.size in c(20, 50, 100) ) {
+for ( canttrees in c(300, 500) ) {
+  for ( vmin.node.size in c(2000, 2200, 2500) ) {
     # for ( vmtry in c(10,30,50) ) {
       # canttrees = 300
       # vmin.node.size = 2200
@@ -39,7 +39,7 @@ for ( canttrees in c(500, 1000) ) {
         abril_dataset_training    <- abril_dataset_train[  abril_inValidation, ]
         abril_dataset_validation  <- abril_dataset_train[ -abril_inValidation, ]
         
-        # vweights <- ifelse( abril_dataset_training$clase =='BAJA+2', 31, 1 )
+        vweights <- ifelse( abril_dataset_training$clase =='BAJA+2', 31, 1 )
         
         t0 =  Sys.time()  
         model = ranger( 
@@ -47,7 +47,7 @@ for ( canttrees in c(500, 1000) ) {
           data = abril_dataset_training, 
           num.trees = canttrees,
           importance = "impurity",
-          # case.weights = vweights,
+          case.weights = vweights,
           num.threads = 1,
           min.node.size = vmin.node.size,
           probability = T
@@ -68,13 +68,13 @@ for ( canttrees in c(500, 1000) ) {
         
         ganancias[s] = ganancia.ternaria( abril_testing_prediccion$predictions,  abril_dataset_testing$clase, umbrales[s] ) / 0.30
         
-        cat(tiempos[s], " | ", ganancias[s], " | ", umbrales[s], "\n")
+        cat(canttrees, " | ", vmin.node.size, " | ", tiempos[s], " | ", ganancias[s], " | ", umbrales[s], "\n")
         
         rm(abril_inTraining, abril_dataset_train, abril_dataset_training, abril_dataset_testing, abril_inValidation, abril_dataset_validation, model, abril_testing_prediccion, vweights, abril_validation_prediccion )
         gc()
       }
     # }  
-	  log.add.ranger("abril_menos_dos_noweights", canttrees, vmin.node.size, "NA", ganancias, tiempos, umbrales)
+	  log.add.ranger("abril_menos_dos_weights", canttrees, vmin.node.size, "NA", ganancias, tiempos, umbrales)
 	  # log.add.ranger("abril_joined_new_discret_order_umbral", canttrees, vmin.node.size, vmtry, ganancias, tiempos, umbrales)
 	  gc()
 	}
