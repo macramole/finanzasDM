@@ -4,12 +4,13 @@ library(ranger)
 
 # abril_dataset = db.getDataset(historicas = F)
 
-abril_dataset = db.getBigDataset()
+# abril_dataset = db.getBigDataset()
+abril_dataset = db.getDatasetImportantes()
 # abril_dataset = db.getBigDataset(db = db.DICIEMBRE, discret = F)
-abril_dataset = db.discretize.soft(abril_dataset)
-abril_dataset = db.discretize.tend(abril_dataset)
-abril_dataset = db.clean(abril_dataset)
-
+# abril_dataset = db.discretize.soft(abril_dataset)
+# abril_dataset = db.discretize.tend(abril_dataset)
+# abril_dataset = db.clean(abril_dataset)
+# str(abril_dataset, list.len = ncol(abril_dataset))
 
 abril_dataset = db.nonulls(abril_dataset)
 db.cantnulls(abril_dataset)
@@ -19,10 +20,10 @@ db.cantnulls(abril_dataset)
 for ( canttrees in c(500, 400) ) {
   for ( vmin.node.size in c(150, 200) ) {
     # for ( vmtry in c(10,30,50) ) {
-      # canttrees = 300
-      # vmin.node.size = 2200
+      canttrees = 300
+      vmin.node.size = 2200
       # vmtry = 20
-      #s = 1
+      s = 2
       
       ganancias = c()
       tiempos = c()
@@ -39,7 +40,7 @@ for ( canttrees in c(500, 400) ) {
         abril_dataset_training    <- abril_dataset_train[  abril_inValidation, ]
         abril_dataset_validation  <- abril_dataset_train[ -abril_inValidation, ]
         
-        # vweights <- ifelse( abril_dataset_training$clase =='BAJA+2', 31, 1 )
+        vweights <- ifelse( abril_dataset_training$clase =='BAJA+2', 31, 1 )
         
         t0 =  Sys.time()  
         model = ranger( 
@@ -47,7 +48,7 @@ for ( canttrees in c(500, 400) ) {
           data = abril_dataset_training, 
           num.trees = canttrees,
           importance = "impurity",
-          # case.weights = vweights,
+          case.weights = vweights,
           num.threads = 1,
           min.node.size = vmin.node.size,
           probability = T
@@ -74,7 +75,7 @@ for ( canttrees in c(500, 400) ) {
         gc()
       }
     # }  
-	  log.add.ranger("abril_menos_dos_noweights", canttrees, vmin.node.size, "NA", ganancias, tiempos, umbrales)
+	  # log.add.ranger("abril_menos_dos_noweights", canttrees, vmin.node.size, "NA", ganancias, tiempos, umbrales)
 	  # log.add.ranger("abril_joined_new_discret_order_umbral", canttrees, vmin.node.size, vmtry, ganancias, tiempos, umbrales)
 	  gc()
 	}

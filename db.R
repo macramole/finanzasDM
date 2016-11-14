@@ -18,6 +18,30 @@ db.connect = function() {
   con <<- dbConnect(RSQLite::SQLite(), "db/producto_premium_201604.sqlite")
 }
 
+db.getDatasetImportantes = function( cual = db.TERNARIA, discret = T ) {
+  filename = "db/abril_importantes.tsv"
+  
+  # if( db == db.DICIEMBRE ) {
+  #   filename = "db/diciembre_joined.tsv"
+  # }
+  
+  df = read.table(filename, row.names = 1)
+  
+  if ( cual == db.BINARIA1 ) {
+    df$clasebinaria1 = as.factor ( ifelse( df$clase == "BAJA+2", "POS", "NEG" ) )
+    claseIndex = which( colnames(df) == "clase" )
+    df = df[, -claseIndex]
+    claseIndex = which( colnames(df) == "clasebinaria1" )
+    colnames(df)[claseIndex] = "clase"
+  }
+  
+  if ( discret ) {
+    df = db.discretize.soft(df)
+  }
+  
+  df
+}
+
 # db.save = function( filename = "dataset_save.csv" ) {
 #   write.csv()
 # }
@@ -59,6 +83,8 @@ db.discretize = function(df, maxbins = 10) {
       } else {
         df[,col] = discretize(x, categories = maxbins, method = "interval", ordered = T)
         df[,col] = addNA( df[,col], ifany = T )
+        
+        df_discr[,i] = addNA( df_discr[,i], ifany = T )
       }
     } 
   }
@@ -70,6 +96,8 @@ db.discretize.soft = function(df, maxbins = 10) {
     x = df[,col]
     if ( !is.factor(x) && length(unique(x)) <= maxbins ) {
       df[,col] = factor(x, exclude = NULL)
+    } else if ( is.factor(x) ) {
+      df[,col] = addNA( x, ifany = T )
     }
   }
   df
