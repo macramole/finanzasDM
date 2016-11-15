@@ -14,6 +14,8 @@ abril_dataset = db.getBigDataset(db.TERNARIA)
 # names(abril_dataset.clase) = rownames(abril_dataset)
 # head(abril_dataset.clase)
 
+
+
 8*4*2*4*4*7/60/60
 
 vcpValues = c(0.001, 0.005, 0.0001)

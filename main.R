@@ -14,7 +14,8 @@ seeds <- c( 442619, 664579, 235813 , 502841, 351551 )
        ########################
 
 db.connect()
-abril_dataset = db.getDataset(historicas = F)
+abril_dataset = db.getDataset()
+
 
 # vcpValues = c(0, 0.0001, 0.001, 0.005)
 # vminsplitValues = c(20,50,200)

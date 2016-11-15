@@ -18,6 +18,30 @@ db.connect = function() {
   con <<- dbConnect(RSQLite::SQLite(), "db/producto_premium_201604.sqlite")
 }
 
+db.getDatasetImportantes = function( cual = db.TERNARIA, discret = T ) {
+  filename = "db/abril_importantes.tsv"
+  
+  # if( db == db.DICIEMBRE ) {
+  #   filename = "db/diciembre_joined.tsv"
+  # }
+  
+  df = read.table(filename, row.names = 1)
+  
+  if ( cual == db.BINARIA1 ) {
+    df$clasebinaria1 = as.factor ( ifelse( df$clase == "BAJA+2", "POS", "NEG" ) )
+    claseIndex = which( colnames(df) == "clase" )
+    df = df[, -claseIndex]
+    claseIndex = which( colnames(df) == "clasebinaria1" )
+    colnames(df)[claseIndex] = "clase"
+  }
+  
+  if ( discret ) {
+    df = db.discretize.soft(df)
+  }
+  
+  df
+}
+
 # db.save = function( filename = "dataset_save.csv" ) {
 #   write.csv()
 # }
@@ -26,7 +50,7 @@ db.cantnulls = function(df) {
   sum(is.na(df)) #cant na
 }
 
-db.nonulls = function(df) {
+db.nonulls = function(df, nullValue = db.NULL_VALUE) {
   db.NOT_NULL <- db.NULL_VALUE
   df[ is.na(df) ] <- db.NOT_NULL
   df
@@ -59,6 +83,8 @@ db.discretize = function(df, maxbins = 10) {
       } else {
         df[,col] = discretize(x, categories = maxbins, method = "interval", ordered = T)
         df[,col] = addNA( df[,col], ifany = T )
+        
+        df_discr[,i] = addNA( df_discr[,i], ifany = T )
       }
     } 
   }
@@ -70,6 +96,8 @@ db.discretize.soft = function(df, maxbins = 10) {
     x = df[,col]
     if ( !is.factor(x) && length(unique(x)) <= maxbins ) {
       df[,col] = factor(x, exclude = NULL)
+    } else if ( is.factor(x) ) {
+      df[,col] = addNA( x, ifany = T )
     }
   }
   df
@@ -101,13 +129,12 @@ db.doDump = function() {
   
   # sql = "SELECT * FROM data_visamaster_new WHERE foto_mes = 201604 ORDER BY numero_de_cliente"
   # sql = "SELECT * FROM visamaster WHERE foto_mes = 201604 ORDER BY numero_de_cliente"
-  sql = "SELECT * FROM abril_mdos_visamaster WHERE foto_mes = 201604 ORDER BY numero_de_cliente"
+  sql = "SELECT * FROM diciembre_historicas WHERE foto_mes = 201512 ORDER BY numero_de_cliente"
   res = dbSendQuery(con, sql)
   data = dbFetch(res, n = -1 )
   
   # sql = "SELECT * FROM historicas WHERE numero_de_cliente IN ( SELECT numero_de_cliente FROM visamaster WHERE foto_mes = 201604 ) ORDER BY numero_de_cliente"
-  # sql = "SELECT * FROM diciembre_historicas_posta WHERE numero_de_cliente IN ( SELECT numero_de_cliente FROM diciembre_historicas WHERE foto_mes = 201512 ) ORDER BY numero_de_cliente"
-  sql = "SELECT * FROM abril_mdos_historicas WHERE numero_de_cliente IN ( SELECT numero_de_cliente FROM abril_mdos_visamaster WHERE foto_mes = 201604 ) ORDER BY numero_de_cliente"
+  sql = "SELECT * FROM diciembre_historicas_posta WHERE numero_de_cliente IN ( SELECT numero_de_cliente FROM diciembre_historicas WHERE foto_mes = 201512 ) ORDER BY numero_de_cliente"
   res = dbSendQuery(con, sql)
   historicas = dbFetch(res, n = -1 )
   
@@ -141,7 +168,7 @@ db.doDump = function() {
   sum( ncol(data), ncol(historicas), ncol(tendencias) )
   
   which(colnames(joined) == "numero_de_cliente")
-  # 1 192 667
+  # 1 191 666
   
   joined = joined[,-c(192,667)]
   colnames(joined)
@@ -159,8 +186,8 @@ db.doDump = function() {
   # joined$VisaMaster_finiciomora_tend = inicioMora$VisaMaster_finiciomora
   
   # write.table(joined, "db/checkpoint/checkpoint.2.joined.tsv", sep = "\t", row.names = T, append = F)
-  write.table(joined, "db/abril_dos_joined.tsv", sep = "\t", row.names = T, append = F)
-rm}
+  write.table(joined, "db/diciembre_joined.tsv", sep = "\t", row.names = T, append = F)
+}
 
 db.getBigDataset = function(db = db.ABRIL, cual = db.TERNARIA, discret = T) {
   filename = "db/abril_dos_joined.tsv"
