@@ -2,17 +2,18 @@
 # ENSAMBLE
 #########
 
-library(C50)
-library(rpart)
+# library(C50)
+# library(rpart)
 library(ranger)
 library(xgboost)
 
 # abril_dataset = db.getDataset(db.TERNARIA, F)
 # abril_dataset = db.getBigDataset()
 df.all = db.getDatasetImportantes(discret = F)
-df.training = NULL
+# df.training = NULL
 claseIndex = which( colnames(df.all) == "clase" )
 
+umbralesModels = c(0.05875, 250/8000)
 trainModels = list (
   # c50 = function(trainIds) {
   #   df = abril_dataset[ trainIds,]
@@ -78,8 +79,8 @@ trainModels = list (
     df = discretized[ trainIds,]
     dfTest = discretized[ -trainIds,] 
     
-    canttrees = 200
-    vmin.node.size = 2500
+    canttrees = 300
+    vmin.node.size = 100
     vimportance = "impurity"
     
     # vweights <- ifelse( df$clase =='BAJA+2', 31, 1 )
@@ -98,10 +99,11 @@ trainModels = list (
     
     result = predict(  model, dfTest , type = "response")
     
-    rm(df, dfTest,vweights,model, discretized)
+    rm(df, dfTest,model, discretized)
     gc()
     
-    result$predictions[,2]
+    predictions = result$predictions
+    predictions[,2]
   },
   xgboost = function(trainIds) {
     dfNoNulls = db.nonulls( df.all, nullValue = 0 )
@@ -197,21 +199,29 @@ tiempos = c()
     predictions = list()
     
     for( t in 1:length(trainModels) ) {
-      predictions[[t]] = trainModels[[t]](df.indexes) * pesosEnsamble[p,t] #prediciones ya ponderadas
-      # predictions[[t]] = trainModels[[t]](abril_inTraining)
+      # predictions[[t]] = trainModels[[t]](df.indexes) * pesosEnsamble[p,t] #prediciones ya ponderadas
+      predictions[[t]] = trainModels[[t]](df.indexes)
+      
     }
     
-    ensamblePrediction = Reduce('+', predictions)
+    votosPredictions = list()
     
-    ganancias[s] = ganancia.binaria1(predictions[[2]]*2, df.all[-df.indexes, ]$clase) / 0.3 #c(0.55,0.45) 1491667
+    for( t in 1:length(trainModels) ) {
+      # predictions[[t]] = trainModels[[t]](df.indexes) * pesosEnsamble[p,t] #prediciones ya ponderadas
+      votosPredictions[[t]] = ifelse( predictions[[t]] > umbralesModels[t], 1, 0 )
+      
+    }
+    
+    ensamblePrediction = Reduce('+', votosPredictions) #esto me queda 0 1 2 , 2 es si los dos modelos estan de acuerdo
+    
+    ganancias[s] = ganancia.ensamble(ensamblePrediction, df.all[-df.indexes, ]$clase, length(trainModels) - 0.1) / 0.3 #c(0.55,0.45) 1491667
     
     t1 =  Sys.time()
     tiempos[s] <-  as.numeric(  t1 - t0, units = "secs" )
     
     cat(ganancias[s]," | ",tiempos[s],"\n")
+    
+    log.add.ensamble("abril_importantes", paste(names(trainModels), collapse = " "), paste(pesosEnsamble[p,], collapse = " "), ganancias, tiempos)
   }
-  
-  log.add.ensamble("joined_new", paste(names(trainModels), collapse = " "), paste(pesosEnsamble[p,], collapse = " "), ganancias, tiempos)
-}
 
 
