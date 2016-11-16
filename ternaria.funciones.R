@@ -23,7 +23,8 @@ umbral_ganancia_optimo = function( probs, clases)
   
   
   #itero de 0.02 a 0.10  en incrementos de 0.01
-  for( i in seq(0,0.6,0.01) ) 
+
+  for( i in seq(0.02,0.09,0.001) ) 
   {
     vgan = ganancia(  probs, clases, i )
     

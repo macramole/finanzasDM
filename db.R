@@ -50,7 +50,8 @@ db.cantnulls = function(df) {
   sum(is.na(df)) #cant na
 }
 
-db.nonulls = function(df) {
+
+db.nonulls = function(df, nullValue = db.NULL_VALUE) {
   df[ is.na(df) ] <- db.NULL_VALUE
   df
 }
@@ -189,7 +190,7 @@ db.doDump = function() {
 }
 
 db.getBigDataset = function(db = db.ABRIL, cual = db.TERNARIA, discret = T) {
-  filename = "db/joined_new.tsv"
+  filename = "db/abril_dos_joined.tsv"
   
   if( db == db.DICIEMBRE ) {
     filename = "db/diciembre_joined.tsv"

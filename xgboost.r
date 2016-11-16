@@ -9,6 +9,8 @@ claseIndex = which( colnames(df) == "clase" )
 
 # vweights <- ifelse( df.training$clase =='BAJA+2', 31, 1 )
 
+20*4*3*3/60
+
 for(  vmax_depth  in  c( 6, 10, 15 ) )
 {
   for(  vmin_child_weight  in  c( 5, 20, 50 ) )
@@ -81,7 +83,7 @@ for(  vmax_depth  in  c( 6, 10, 15 ) )
     for( i in 1:50 )
     {
       cat( format(Sys.time(), "%Y%m%d %H%M%S"), 
-           "joined_new", 
+           "abril_importantes", 
            "0",  
            vmax_depth, 
            vmin_child_weight, 
