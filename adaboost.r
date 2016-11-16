@@ -5,7 +5,8 @@ vminsplit = 400
 vminbucket = 1
 vmaxdepth = 6
 
-df = db.getBigDataset()
+# df = db.getBigDataset()
+df = db.getDatasetImportantes()
 
 s = 1
 
@@ -16,15 +17,20 @@ umbrales = c()
 for ( s in 1:4 ) {
   #armo datasets
   set.seed( seeds[s] )
-  df.training <- createDataPartition( df$clase, p = .70, list = FALSE)
-  df.validation <- createDataPartition( df[df.training, "clase"], p = .70, list = FALSE)
+  df.trainingAndValidation.indexes = createDataPartition( df$clase, p = .70, list = FALSE) 
+  df.trainingAndValidation = df[ df.trainingAndValidation.indexes, ]
+  df.training.indexes = createDataPartition( df.trainingAndValidation$clase, p = .70, list = FALSE) 
+  df.training = df.trainingAndValidation[ df.training.indexes, ]
+  df.validation = df.trainingAndValidation[ -df.training.indexes, ]
+  df.testing = df[ -df.trainingAndValidation.indexes, ]
+  rm(df.trainingAndValidation, df.trainingAndValidation.indexes)
   
   #Asigno pesos <7750, 250>  es equivalente a  <31, 1>  , le pongo 15 porque algunos son neg
   # vweights <- ifelse( abril_dataset_training$clase =='BAJA+2', 31, 1 )
   
   t0 =  Sys.time() 
   model = boosting(clase ~ ., 
-                   data = df[ -df.validation, ],  
+                   data = df.training,  
                    boos = F,
                    mfinal = 3,
                    coeflearn = "Breiman",
@@ -43,7 +49,7 @@ for ( s in 1:4 ) {
   tiempos[s] <-  as.numeric(  t1 - t0, units = "secs" )
   
   #determino las hojas con ganancia positiva en VALIDATION
-  validation.pred  = predict(  model, df[ df.validation, ] , type = "prob")
+  validation.pred  = predict(  model, df. , type = "prob")
   validation.prob = validation.pred$prob
   colnames(validation.prob) = c("BAJA+1", "BAJA+2", "CONTINUA")
   # vhojas_positivas = hojas_positivas( abril_validation_prediccion,  abril_dataset_validation$clase )
@@ -64,4 +70,4 @@ for ( s in 1:4 ) {
   gc()
 }
 
-log.add("ternaria_VisaMaster_NEW_DISCRET_ORDERED_weights_corteProb", vcp, vminsplit, vminbucket, vmaxdepth, ganancias, tiempos)
+log.add("abril_importantes", vcp, vminsplit, vminbucket, vmaxdepth, ganancias, tiempos)

@@ -51,8 +51,7 @@ db.cantnulls = function(df) {
 }
 
 db.nonulls = function(df) {
-  db.NOT_NULL <- db.NULL_VALUE
-  df[ is.na(df) ] <- db.NOT_NULL
+  df[ is.na(df) ] <- db.NULL_VALUE
   df
 }
 
