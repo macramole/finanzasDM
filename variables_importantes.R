@@ -1,4 +1,5 @@
-df = db.getBigDataset(discret = F)
+# df = db.getBigDataset(discret = F)
+df = read.table("db/checkpoint/checkpoint.2.joined.tsv", sep = "\t", row.names = 1)
 
 variables_importantes = c(  "mpasivos_margen",
                             "VisaMaster_finiciomora_avg",
@@ -510,4 +511,4 @@ ncol( df[10, variables_importante.union] )
 
 variables_importante.union = c(variables_importante.union, "clase")
 
-write.table( df[, variables_importante.union], row.names = T, col.names = T, sep = "\t", file = "db/abril_importantes.tsv" )
+write.table( df[, variables_importante.union], row.names = T, col.names = T, sep = "\t", file = "db/checkpoint/checkpoint.2.importantes.tsv" )

@@ -16,9 +16,10 @@ db.cantnulls(abril_dataset)
 
 # head(abril_dataset)
 
+400*5*3*4/60/60
 
-for ( canttrees in c(300, 200, 400) ) {
-  for ( vmin.node.size in c(100, 150, 200, 250) ) {
+for ( canttrees in c(500, 800) ) {
+  for ( vmin.node.size in c(100,200,300) ) {
     # for ( vmtry in c(10,30,50) ) {
       # canttrees = 300
       # vmin.node.size = 2200
@@ -30,7 +31,7 @@ for ( canttrees in c(300, 200, 400) ) {
       umbrales = c()
       
       
-      for( s in  1:4 ) {
+      for( s in  1:5 ) {
         set.seed( seeds[s] )
         abril_inTraining <- createDataPartition( abril_dataset$clase, p = .70, list = FALSE)
         abril_dataset_train    <- abril_dataset[ abril_inTraining,]

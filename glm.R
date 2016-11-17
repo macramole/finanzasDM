@@ -92,7 +92,7 @@ model.null = glm(formula = clase ~ 1, family = binomial(link = "logit"), na.acti
 model.full = glm(formula = clase ~ ., family = binomial(link = "logit"), na.action = na.exclude, data = df.training)
 model.step = step( model.null, 
               scope = list( lower = model.null, upper = model.full ) , 
-              direction = c("forward"),
+              direction = c("both"),
               k = 2,
-              steps = 200 )
+              steps = 300 )
 
