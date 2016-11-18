@@ -106,4 +106,4 @@ votos.ensamble = Reduce('+', list(votos.ranger, votos.xgboost))
 names(votos.ensamble) = rownames(df.checkpoint)
 
 ids = names( Filter( function(x) { x == 2 }, votos.ensamble ) )
-write.table(ids, file = "garber_2.txt", quote = F, row.names = F)
+write.table(ids, file = "garber_2.txt", quote = F, row.names = F, col.names = F)
