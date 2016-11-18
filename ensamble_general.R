@@ -174,7 +174,7 @@ tiempos = c()
 
 # for ( p in 1:nrow(pesosEnsamble) ) {
   p = 1
-  s = 1
+  s = 2
   
   # paste(pesosEnsamble[p,], collapse = " ")
   
@@ -221,7 +221,10 @@ tiempos = c()
     
     cat(ganancias[s]," | ",tiempos[s],"\n")
     
-    log.add.ensamble("abril_importantes", paste(names(trainModels), collapse = " "), paste(pesosEnsamble[p,], collapse = " "), ganancias, tiempos)
+    rm(predictions, votosPredictions, ensamblePrediction, df.indexes)
+    gc()
   }
+  
+  log.add.ensamble("abril_importantes", paste(names(trainModels), collapse = " "), paste(pesosEnsamble[p,], collapse = " "), ganancias, tiempos)
 
 
