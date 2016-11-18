@@ -67,3 +67,32 @@ write.table(model$coefficients, file = "glmcoef.tsv")
 head(model$residuals, n = 100)
 plot(model$residuals)
 plot(density(model$residuals))
+
+
+####################3
+
+
+df = db.getDatasetImportantes(cual = db.BINARIA1)
+db.NULL_VALUE = 0
+df = db.nonulls(df)
+str(df)
+
+df.trainingAndValidation.indexes = createDataPartition( df$clase, p = .70, list = FALSE) 
+df.trainingAndValidation = df[ df.trainingAndValidation.indexes, ]
+df.training.indexes = createDataPartition( df.trainingAndValidation$clase, p = .70, list = FALSE) 
+df.training = df.trainingAndValidation
+# df.training = df.trainingAndValidation[ df.training.indexes, ]
+# df.validation = df.trainingAndValidation[ -df.training.indexes, ]
+df.testing = df[ -df.trainingAndValidation.indexes, ]
+rm(df.trainingAndValidation, df.trainingAndValidation.indexes, df.training.indexes)
+
+# library(MASS)
+
+model.null = glm(formula = clase ~ 1, family = binomial(link = "logit"), na.action = na.exclude, data = df.training)
+model.full = glm(formula = clase ~ ., family = binomial(link = "logit"), na.action = na.exclude, data = df.training)
+model.step = step( model.null, 
+              scope = list( lower = model.null, upper = model.full ) , 
+              direction = c("both"),
+              k = 2,
+              steps = 300 )
+

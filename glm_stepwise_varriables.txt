@@ -1,0 +1,17 @@
+Step:  AIC=4194.76
+clase ~ Visa_marca_atraso + ttarjeta_visa_tend + mplan_sueldo_min + 
+    VisaMaster_mpagospesos + VisaMaster_marca_atraso + Master_cuenta_estado + 
+    mpasivos_margen_tend + mautoservicio + tmovimientos_ultimos90dias_tend + 
+    mcuenta_corriente_Paquete_tend + VisaMaster_tconsumos_max + 
+    Visa_tconsumos + VisaMaster_mpagospesos_max + mcaja_ahorro_Paquete_min + 
+    thomebanking_avg + Master_marca_atraso_tend + VisaMaster_finiciomora_avg + 
+    Visa_Fvencimiento + ccallcenter_transacciones + Visa_mpagospesos_tend + 
+    marketing_coss_selling + Visa_fultimo_cierre_tend + Visa_fechaalta_tend + 
+    VisaMaster_mpagospesos_min + Master_tadelantosefectivo_avg + 
+    chomebanking_transacciones_avg + cliente_edad_avg + Visa_marca_atraso_tend + 
+    mrentabilidad_annual_avg + ttarjeta_visa_debitos_automaticos_tend + 
+    cprestamos_personales_tend + VisaMaster_mconsumototal_div_mlimitecompra + 
+    tplan_sueldo + tseguro_vida_mercado_abierto_avg + VisaMaster_mpagominimo_min + 
+    VisaMaster_msaldototal_min + Master_mfinanciacion_limite_tend + 
+    Master_cuenta_estado_max + Master_mfinanciacion_limite + 
+    VisaMaster_cuenta_estado

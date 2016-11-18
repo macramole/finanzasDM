@@ -52,3 +52,8 @@ checkpoint_pos_ids.2 = read.table("garber_2.txt")
 
 
 length(intersect(checkpoint_pos_ids.1$V1, checkpoint_pos_ids.2$V1))
+
+
+
+
+

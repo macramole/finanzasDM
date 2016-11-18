@@ -50,9 +50,9 @@ db.cantnulls = function(df) {
   sum(is.na(df)) #cant na
 }
 
+
 db.nonulls = function(df, nullValue = db.NULL_VALUE) {
-  db.NOT_NULL <- db.NULL_VALUE
-  df[ is.na(df) ] <- db.NOT_NULL
+  df[ is.na(df) ] <- db.NULL_VALUE
   df
 }
 
