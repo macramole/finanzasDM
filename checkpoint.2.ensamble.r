@@ -84,14 +84,14 @@ gc()
 df.checkpoint.discretized = db.discretize.soft(df.checkpoint)
 df.checkpoint.discretized = db.nonulls(df.checkpoint.discretized)
 result.ranger = predict(  model.ranger, df.checkpoint.discretized , type = "response")
-predictions.ranger = result$predictions
+predictions.ranger = result.ranger$predictions
 predictions.ranger = predictions.ranger[,2]
 
 df.checkpoint.noNulls = db.nonulls( df.checkpoint, nullValue = 0 )
-df.checkpoint.noNulls$clasebinaria1 = as.factor ( ifelse( df.checkpoint.noNulls$clase == "BAJA+2", "POS", "NEG" ) )
-df.checkpoint.noNulls = df.checkpoint.noNulls[, -claseIndex]
-newClaseIndex = which( colnames(df.checkpoint.noNulls) == "clasebinaria1" )
-colnames(df.checkpoint.noNulls)[newClaseIndex] = "clase"
+# df.checkpoint.noNulls$clasebinaria1 = as.factor ( ifelse( df.checkpoint.noNulls$clase == "BAJA+2", "POS", "NEG" ) )
+# df.checkpoint.noNulls = df.checkpoint.noNulls[, -claseIndex]
+# newClaseIndex = which( colnames(df.checkpoint.noNulls) == "clasebinaria1" )
+# colnames(df.checkpoint.noNulls)[newClaseIndex] = "clase"
 predictions.xgboost = predict(  model.xgboost, as.matrix(df.checkpoint.noNulls) )
 predictions.xgboost = matrix( data = predictions.xgboost, ncol = 2, nrow = nrow( df.checkpoint.noNulls ), byrow = T )
 predictions.xgboost = predictions.xgboost[,2]
@@ -106,3 +106,4 @@ votos.ensamble = Reduce('+', list(votos.ranger, votos.xgboost))
 names(votos.ensamble) = rownames(df.checkpoint)
 
 ids = names( Filter( function(x) { x == 2 }, votos.ensamble ) )
+write.table(ids, file = "garber_2.txt", quote = F, row.names = F)
