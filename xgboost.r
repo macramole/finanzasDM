@@ -23,15 +23,27 @@ for(  vmax_depth  in  c( 6, 10, 15 ) )
 
     tiempos = c()
     ganancias = c()
+    umbrales = c()
     
     vnround <- 1000
     
-    for( s in  1:4 ) {
+    for( s in  1:5) {
+      # 
+      # set.seed( seeds[s] )
+      # training.indexes <- createDataPartition( df$clase, p = .70, list = FALSE)
+      # df.training <- df[ training.indexes,]
+      # df.testing  <- df[-training.indexes,]
       
       set.seed( seeds[s] )
-      training.indexes <- createDataPartition( df$clase, p = .70, list = FALSE)
-      df.training <- df[ training.indexes,]
-      df.testing  <- df[-training.indexes,]
+      df.trainingAndValidation.indexes = createDataPartition( df$clase, p = .70, list = FALSE) 
+      df.trainingAndValidation = df[ df.trainingAndValidation.indexes, ]
+      df.training.indexes = createDataPartition( df.trainingAndValidation$clase, p = .70, list = FALSE) 
+      # df.training = df.trainingAndValidation
+      df.training = df.trainingAndValidation[ df.training.indexes, ]
+      df.validation = df.trainingAndValidation[ -df.training.indexes, ]
+      df.testing = df[ -df.trainingAndValidation.indexes, ]
+      rm(df.trainingAndValidation, df.trainingAndValidation.indexes, df.training.indexes)
+      
       
       t0 =  Sys.time()  
       model = xgboost(  data = as.matrix( df.training[, -claseIndex] ),
@@ -65,12 +77,21 @@ for(  vmax_depth  in  c( 6, 10, 15 ) )
       tiempos[s] <-  as.numeric(  t1 - t0, units = "secs" )
       paste(tiempos[s] / 60,"minutos")
       
+      
+      
       for ( i in 1:50 ) {
+        validation.predict = predict(model, as.matrix( df.validation[, -claseIndex] ), ntreelimit= i*20 )
+        validation.predict = matrix( data = validation.predict, ncol = 2, nrow = nrow( df.validation ), byrow = T )
+        validation.predict = validation.predict[,2]
+        
+        umbrales[i*5 + s] = umbral_ganancia_optimo( validation.predict, df.validation$clase )
+        
+        
         testing.predict = predict(model, as.matrix( df.testing[, -claseIndex] ), ntreelimit= i*20 )
         testing.predict = matrix( data = testing.predict, ncol = 2, nrow = nrow( df.testing ), byrow = T )
         testing.predict = testing.predict[,2]
         
-        ganancias[i*5 + s] = ganancia.binaria1( testing.predict,  df.testing[, claseIndex] ) / 0.3
+        ganancias[i*5 + s] = ganancia.binaria1( testing.predict,  df.testing[, claseIndex], umbrales[i*5 + s] ) / 0.3
         # cat (vmax_depth, vmin_child_weight, ganancias[s], "\n")
       }
       
@@ -91,6 +112,7 @@ for(  vmax_depth  in  c( 6, 10, 15 ) )
            mean( c(ganancias[i*5+1], ganancias[i*5+2], ganancias[i*5+3], ganancias[i*5+4] )), 
            mean(tiempos), 
            ganancias[i*5+1], ganancias[i*5+2], ganancias[i*5+3], ganancias[i*5+4], 
+           umbrales[i*5+1], umbrales[i*5+2], umbrales[i*5+3], umbrales[i*5+4], 
            "\n", sep="\t", file=log.file.xgboost, fill=FALSE, append=TRUE )
     }
     

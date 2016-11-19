@@ -7,7 +7,7 @@ ganancia = function( probs, clases, prob )
   
   for( i in 1:largo )
   {
-    if( probs[ i, "BAJA+2"]  > prob   ){ suma <- suma + if( clases[i]=="BAJA+2" ) { 7750 } else { -250 }  
+    if( probs[ i ]  > prob   ){ suma <- suma + if( clases[i]=="BAJA+2" || clases[i]=="POS" ) { 7750 } else { -250 }  
     } ;
   }
   
