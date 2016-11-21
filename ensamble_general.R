@@ -117,8 +117,8 @@ trainModels = list (
     df = dfNoNulls[trainIds, ]
     dfTest = dfNoNulls[-trainIds, ]
     
-    vnround = 400
-    vmax_depth = 15
+    vnround = 480
+    vmax_depth = 20
     vmin_child_weight = 5
     
     model = xgboost(  data = as.matrix( df[, -claseIndex] ),
@@ -173,12 +173,12 @@ ganancias = c()
 tiempos = c()
 
 # for ( p in 1:nrow(pesosEnsamble) ) {
-  p = 5
-  s = 2
+  p = 1
+  s = 1
   
   # paste(pesosEnsamble[p,], collapse = " ")
   
-  for( s in 1:5 ) {
+  # for( s in 1:5 ) {
     t0 =  Sys.time()  
     
     #armo datasets
@@ -244,7 +244,7 @@ tiempos = c()
     
     rm(predictions, votosPredictions, ensamblePrediction, df.indexes)
     gc()
-  }
+  # }
   
   log.add.ensamble("abril_importantes", paste(names(trainModels), collapse = " "), paste(pesosEnsamble[p,], collapse = " "), ganancias, tiempos)
 
