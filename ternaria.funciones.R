@@ -1,21 +1,35 @@
 ## Funciones de ganancia
 
-ganancia = function( probs, clases, prob )
+ganancia = function( probs, clases, prob = 250/8000 )
 {
   suma = 0 ;
   largo = length( clases ) ;
-  
+
   for( i in 1:largo )
   {
-    if( probs[ i ]  > prob   ){ suma <- suma + if( clases[i]=="BAJA+2" || clases[i]=="POS" ) { 7750 } else { -250 }  
+    if( probs[ i ]  > prob   ){ suma <- suma + if( clases[i]=="BAJA+2" || clases[i]=="POS" ) { 7750 } else { -250 }
     } ;
   }
-  
+
   return( suma )
+  
+  # g = apply( cbind(probs,as.numeric(clases)), MARGIN = 1, FUN = function(x) { 
+  #     if ( x[1] > prob ) {
+  #       if (x[2]=="BAJA+2" || x[2]=="POS") {
+  #         return(7750)
+  #       } else {
+  #         return(-250)
+  #       }
+  #     }
+  #     0
+  #   } )
+  # 
+  # a = c(1,2,3)
+  # Reduce(function(x) { if ( x == 1)  }, a)
 }
 
 
-umbral_ganancia_optimo = function( probs, clases)
+umbral_ganancia_optimo = function( probs, clases, rango = seq(0.02,0.1,0.001))
 {
   
   vgan_maxima = -9999999.0 ;
@@ -24,7 +38,7 @@ umbral_ganancia_optimo = function( probs, clases)
   
   #itero de 0.02 a 0.10  en incrementos de 0.01
 
-  for( i in seq(0.02,0.09,0.001) ) 
+  for( i in rango ) 
   {
     vgan = ganancia(  probs, clases, i )
     

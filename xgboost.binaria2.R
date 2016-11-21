@@ -1,11 +1,13 @@
 library(xgboost)
+library(ROCR)
 
 # df = db.getBigDataset( cual = db.BINARIA1, discret = F)
-df = db.getDatasetImportantes( cual = db.BINARIA1, discret = F )
+df = db.getDatasetImportantes( cual = db.BINARIA2, discret = F )
 db.NULL_VALUE = 0
 df = db.nonulls(df)
 
 claseIndex = which( colnames(df) == "clase" )
+claseBinariaIndex = which( colnames(df) == "clasebinaria2" )
 
 # vweights <- ifelse( df.training$clase =='BAJA+2', 31, 1 )
 
@@ -15,17 +17,22 @@ for(  vmax_depth  in  c( 6, 10, 15 ) )
 {
   for(  vmin_child_weight  in  c( 10, 6, 15 ) )
   {
+    vnround <- 1000
+    
     
     vmax_depth = 6
     vmin_child_weight = 20
-    s = 1
+    # vnround = 480
+    # s = 1
     
 
     tiempos = c()
     ganancias = c()
     umbrales = c()
+    aucTraining = c()
+    aucTesting = c()
     
-    vnround <- 1000
+    
     
     for( s in  1:5) {
       # 
@@ -35,9 +42,9 @@ for(  vmax_depth  in  c( 6, 10, 15 ) )
       # df.testing  <- df[-training.indexes,]
       
       set.seed( seeds[s] )
-      df.trainingAndValidation.indexes = createDataPartition( df$clase, p = .70, list = FALSE) 
+      df.trainingAndValidation.indexes = createDataPartition( df$clasebinaria2, p = .70, list = FALSE) 
       df.trainingAndValidation = df[ df.trainingAndValidation.indexes, ]
-      df.training.indexes = createDataPartition( df.trainingAndValidation$clase, p = .70, list = FALSE) 
+      df.training.indexes = createDataPartition( df.trainingAndValidation$clasebinaria2, p = .70, list = FALSE) 
       # df.training = df.trainingAndValidation
       df.training = df.trainingAndValidation[ df.training.indexes, ]
       df.validation = df.trainingAndValidation[ -df.training.indexes, ]
@@ -46,8 +53,8 @@ for(  vmax_depth  in  c( 6, 10, 15 ) )
       
       
       t0 =  Sys.time()  
-      model = xgboost(  data = as.matrix( df.training[, -claseIndex] ),
-                        label = as.numeric( df.training[, claseIndex] ) - 1,
+      model = xgboost(  data = as.matrix( df.training[, -c(claseIndex, claseBinariaIndex)] ),
+                        label = as.numeric( df.training[, claseBinariaIndex] ) - 1,
                         # missing = db.NULL_VALUE,
                         nrounds = vnround,
                         params = list(
@@ -72,20 +79,37 @@ for(  vmax_depth  in  c( 6, 10, 15 ) )
                           nthread = 4
                         )
                     )
-      
+      # i = 1
       for ( i in 1:50 ) {
-        validation.predict = predict(model, as.matrix( df.validation[, -claseIndex] ), ntreelimit= i*20 )
+        training.predict = predict(model, as.matrix( df.training[, -c(claseIndex, claseBinariaIndex)] ), ntreelimit= i*20 )
+        training.predict = matrix( data = training.predict, ncol = 2, nrow = nrow( df.training ), byrow = T )
+        training.predict = training.predict[,2]
+        
+        training.prediccionROC = prediction(training.predict, df.training$clasebinaria2)
+        # training.performance = performance(training.prediccionROC, measure = "tpr", x.measure = "fpr") 
+        #plot(training.performance)
+        training.auc = performance(training.prediccionROC, measure = "auc")
+        training.auc = training.auc@y.values[[1]]
+        aucTraining[i*5 + s] = training.auc
+        
+        validation.predict = predict(model, as.matrix( df.validation[, -c(claseIndex, claseBinariaIndex)] ), ntreelimit= i*20 )
         validation.predict = matrix( data = validation.predict, ncol = 2, nrow = nrow( df.validation ), byrow = T )
         validation.predict = validation.predict[,2]
         
-        umbrales[i*5 + s] = umbral_ganancia_optimo( validation.predict, df.validation$clase )
+        umbrales[i*5 + s] = umbral_ganancia_optimo( validation.predict, df.validation$clase, seq(0.3,0.5,0.001) )
         
-        
-        testing.predict = predict(model, as.matrix( df.testing[, -claseIndex] ), ntreelimit= i*20 )
+        testing.predict = predict(model, as.matrix( df.testing[, -c(claseIndex, claseBinariaIndex)] ), ntreelimit= i*20 )
         testing.predict = matrix( data = testing.predict, ncol = 2, nrow = nrow( df.testing ), byrow = T )
         testing.predict = testing.predict[,2]
         
-        ganancias[i*5 + s] = ganancia.binaria1( testing.predict,  df.testing[, claseIndex], umbrales[i*5 + s] ) / 0.3
+        testing.prediccionROC = prediction(testing.predict, df.testing$clasebinaria2)
+        # testing.performance = performance(testing.prediccionROC, measure = "tpr", x.measure = "fpr") 
+        #plot(testing.performance)
+        testing.auc = performance(testing.prediccionROC, measure = "auc")
+        testing.auc = testing.auc@y.values[[1]]
+        aucTesting[i*5 + s] = testing.auc
+        
+        ganancias[i*5 + s] = ganancia( testing.predict, df.testing[, claseIndex], umbrales[i*5 + s] ) / 0.3
         # cat (vmax_depth, vmin_child_weight, ganancias[s], "\n")
       }
       
@@ -100,20 +124,22 @@ for(  vmax_depth  in  c( 6, 10, 15 ) )
       gc()
     }
     
-    for( i in 1:50 )
-    {
-      cat( format(Sys.time(), "%Y%m%d %H%M%S"), 
-           "abril_importantes", 
-           "0",  
-           vmax_depth, 
-           vmin_child_weight, 
-           i*20, 
-           mean( c(ganancias[i*5+1], ganancias[i*5+2], ganancias[i*5+3], ganancias[i*5+4] )), 
-           mean(tiempos), 
-           ganancias[i*5+1], ganancias[i*5+2], ganancias[i*5+3], ganancias[i*5+4], 
-           umbrales[i*5+1], umbrales[i*5+2], umbrales[i*5+3], umbrales[i*5+4], 
-           "\n", sep="\t", file=log.file.xgboost, fill=FALSE, append=TRUE )
-    }
+      for( i in 1:50 )
+      {
+        cat( format(Sys.time(), "%Y%m%d %H%M%S"), 
+             "abril_importantes_binaria2", 
+             "0",  
+             vmax_depth, 
+             vmin_child_weight, 
+             i*20, 
+             mean( c(ganancias[i*5+1], ganancias[i*5+2], ganancias[i*5+3], ganancias[i*5+4], ganancias[i*5+5] )), 
+             mean(tiempos), 
+             ganancias[i*5+1], ganancias[i*5+2], ganancias[i*5+3], ganancias[i*5+4], ganancias[i*5+5], 
+             umbrales[i*5+1], umbrales[i*5+2], umbrales[i*5+3], umbrales[i*5+4], umbrales[i*5+5],
+             aucTraining[i*5+1], aucTraining[i*5+2], aucTraining[i*5+3], aucTraining[i*5+4], aucTraining[i*5+5],
+             aucTesting[i*5+1], aucTesting[i*5+2], aucTesting[i*5+3], aucTesting[i*5+4], aucTesting[i*5+5],
+             "\n", sep="\t", file=log.file.xgboost, fill=FALSE, append=TRUE )
+      }
     
     # log.add.xgboost("joined_new", vnround, vmax_depth, vmin_child_weight, tiempos, ganancias)
   }
@@ -151,3 +177,4 @@ cat(tiempos[s], " | ", ganancias[s], " | ", umbrales[s], "\n")
 
 
 #xgboost( data = dtrain, eta = 0.01, subsample = 1.0, colsample_bytree = 0.6, min_child_weight = 5, max_depth = 11, alpha = 0, lambda = 0.1, gamma = 0.01, nround= 650, num_class = 2, objective="multi:softprob", eval_metric= "merror", nthread = 8 )   SOLO CON LAS VARIABLES ORIGINALES
+

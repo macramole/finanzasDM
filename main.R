@@ -7,6 +7,11 @@ source("ganancias.R")
 source("ternaria.funciones.R")
 seeds <- c( 442619, 664579, 235813 , 502841, 351551 )
 
+#probar variables importantes + originales
+#probar tendencia 3ultimos/6ultimos
+#agregar validation al ensamble
+#que pasa con las de tendencia discretizadas con las variables que son 1 o 0
+
 
 
        ########################

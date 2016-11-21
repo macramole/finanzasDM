@@ -1,11 +1,12 @@
 library(xgboost)
 
 # df = db.getBigDataset( cual = db.BINARIA1, discret = F)
-df = db.getDatasetImportantes( cual = db.BINARIA1, discret = F )
+df = db.getDatasetImportantes( cual = db.BINARIA2, discret = F )
 db.NULL_VALUE = 0
 df = db.nonulls(df)
 
 claseIndex = which( colnames(df) == "clase" )
+claseBinariaIndex = which( colnames(df) == "clasebinaria2" )
 
 # vweights <- ifelse( df.training$clase =='BAJA+2', 31, 1 )
 
@@ -16,9 +17,9 @@ for(  vmax_depth  in  c( 6, 10, 15 ) )
   for(  vmin_child_weight  in  c( 10, 6, 15 ) )
   {
     
-    vmax_depth = 6
-    vmin_child_weight = 20
-    s = 1
+    #vmax_depth = 6
+    #vmin_child_weight = 20
+    #s = 1
     
 
     tiempos = c()
@@ -35,9 +36,9 @@ for(  vmax_depth  in  c( 6, 10, 15 ) )
       # df.testing  <- df[-training.indexes,]
       
       set.seed( seeds[s] )
-      df.trainingAndValidation.indexes = createDataPartition( df$clase, p = .70, list = FALSE) 
+      df.trainingAndValidation.indexes = createDataPartition( df$clasebinaria2, p = .70, list = FALSE) 
       df.trainingAndValidation = df[ df.trainingAndValidation.indexes, ]
-      df.training.indexes = createDataPartition( df.trainingAndValidation$clase, p = .70, list = FALSE) 
+      df.training.indexes = createDataPartition( df.trainingAndValidation$clasebinaria2, p = .70, list = FALSE) 
       # df.training = df.trainingAndValidation
       df.training = df.trainingAndValidation[ df.training.indexes, ]
       df.validation = df.trainingAndValidation[ -df.training.indexes, ]
@@ -46,8 +47,8 @@ for(  vmax_depth  in  c( 6, 10, 15 ) )
       
       
       t0 =  Sys.time()  
-      model = xgboost(  data = as.matrix( df.training[, -claseIndex] ),
-                        label = as.numeric( df.training[, claseIndex] ) - 1,
+      model = xgboost(  data = as.matrix( df.training[, -c(claseIndex, claseBinariaIndex)] ),
+                        label = as.numeric( df.training[, claseBinariaIndex] ) - 1,
                         # missing = db.NULL_VALUE,
                         nrounds = vnround,
                         params = list(
@@ -74,18 +75,18 @@ for(  vmax_depth  in  c( 6, 10, 15 ) )
                     )
       
       for ( i in 1:50 ) {
-        validation.predict = predict(model, as.matrix( df.validation[, -claseIndex] ), ntreelimit= i*20 )
+        validation.predict = predict(model, as.matrix( df.validation[, -c(claseIndex, claseBinariaIndex)] ), ntreelimit= i*20 )
         validation.predict = matrix( data = validation.predict, ncol = 2, nrow = nrow( df.validation ), byrow = T )
         validation.predict = validation.predict[,2]
         
         umbrales[i*5 + s] = umbral_ganancia_optimo( validation.predict, df.validation$clase )
         
         
-        testing.predict = predict(model, as.matrix( df.testing[, -claseIndex] ), ntreelimit= i*20 )
+        testing.predict = predict(model, as.matrix( df.testing[, -c(claseIndex, claseBinariaIndex)] ), ntreelimit= i*20 )
         testing.predict = matrix( data = testing.predict, ncol = 2, nrow = nrow( df.testing ), byrow = T )
         testing.predict = testing.predict[,2]
         
-        ganancias[i*5 + s] = ganancia.binaria1( testing.predict,  df.testing[, claseIndex], umbrales[i*5 + s] ) / 0.3
+        ganancias[i*5 + s] = ganancia.binaria2( testing.predict, df.testing[, claseIndex], umbrales[i*5 + s] ) / 0.3
         # cat (vmax_depth, vmin_child_weight, ganancias[s], "\n")
       }
       
@@ -103,7 +104,7 @@ for(  vmax_depth  in  c( 6, 10, 15 ) )
     for( i in 1:50 )
     {
       cat( format(Sys.time(), "%Y%m%d %H%M%S"), 
-           "abril_importantes", 
+           "abril_importantes_binaria2", 
            "0",  
            vmax_depth, 
            vmin_child_weight, 
@@ -151,3 +152,4 @@ cat(tiempos[s], " | ", ganancias[s], " | ", umbrales[s], "\n")
 
 
 #xgboost( data = dtrain, eta = 0.01, subsample = 1.0, colsample_bytree = 0.6, min_child_weight = 5, max_depth = 11, alpha = 0, lambda = 0.1, gamma = 0.01, nround= 650, num_class = 2, objective="multi:softprob", eval_metric= "merror", nthread = 8 )   SOLO CON LAS VARIABLES ORIGINALES
+

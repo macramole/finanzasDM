@@ -6,6 +6,10 @@ library(ranger)
 
 # abril_dataset = db.getBigDataset()
 abril_dataset = db.getDatasetImportantes()
+# abril_dataset = db.getDataset(historicas = F)
+# dfImportantes = db.getDatasetImportantes()
+# abril_dataset = cbind(abril_dataset, dfImportantes[, setdiff( colnames(dfImportantes), colnames(abril_dataset) )])
+
 # abril_dataset = db.getBigDataset(db = db.DICIEMBRE, discret = F)
 # abril_dataset = db.discretize.soft(abril_dataset)
 # abril_dataset = db.discretize.tend(abril_dataset)
@@ -16,15 +20,17 @@ db.cantnulls(abril_dataset)
 
 # head(abril_dataset)
 
+#checkpoint2 : 500  min.node.size=20 mtry=20  probabilidad_corte=0.0568
+
 400*5*3*4/60/60
 
 for ( canttrees in c(500, 800) ) {
   for ( vmin.node.size in c(100,200,300) ) {
     # for ( vmtry in c(10,30,50) ) {
-      # canttrees = 300
-      # vmin.node.size = 2200
+      canttrees = 300
+      vmin.node.size = 100
       # vmtry = 20
-      # s = 2
+      s = 1
       
       ganancias = c()
       tiempos = c()
@@ -52,8 +58,8 @@ for ( canttrees in c(500, 800) ) {
           # case.weights = vweights,
           num.threads = 4,
           min.node.size = vmin.node.size,
+          # mtry = vmtry,
           probability = T
-          # mtry = vmtry
           # save.memory = T
         )
         t1 =  Sys.time()
@@ -63,7 +69,7 @@ for ( canttrees in c(500, 800) ) {
         # write.table(model$variable.importance, file = "ranger_variable_importance_2.txt")
         
         abril_validation_prediccion  = predict(  model,  abril_dataset_validation )
-        umbrales[s]  <-  umbral_ganancia_optimo( abril_validation_prediccion$predictions,  abril_dataset_validation$clase )
+        umbrales[s]  <-  umbral_ganancia_optimo( abril_validation_prediccion$predictions[, 2],  abril_dataset_validation$clase )
         
         abril_testing_prediccion  = predict(  model, abril_dataset_testing , type = "response")
         # head(abril_testing_prediccion$predictions, n = 100)
