@@ -1,15 +1,15 @@
 library(DBI)
 # library(RcppEigen)
 library(doMC)
-registerDoMC(4)
+registerDoMC(2)
 
-# con = dbConnect(RSQLite::SQLite(), "db/producto_premium_201511_201604.sqlite")
+con = dbConnect(RSQLite::SQLite(), "db/producto_premium_201511_201604.sqlite")
 # con = dbConnect(RSQLite::SQLite(), "db/checkpoint/checkpoint.2.sqlite")
-con = dbConnect(RSQLite::SQLite(), "db/data_all.sqlite")
+# con = dbConnect(RSQLite::SQLite(), "db/data_all.sqlite")
 
 # sql = "SELECT * FROM diciembre_historicas WHERE numero_de_cliente IN ( SELECT numero_de_cliente FROM diciembre_historicas WHERE foto_mes = 201512 ) ORDER BY numero_de_cliente ASC, foto_mes ASC"
-sql = "SELECT * FROM abril_mdos_visamaster WHERE numero_de_cliente IN ( SELECT numero_de_cliente FROM abril_mdos_visamaster WHERE foto_mes = 201604 ) ORDER BY numero_de_cliente ASC, foto_mes ASC"
-# sql = "SELECT numero_de_cliente, VisaMaster_finiciomora FROM data_visamaster_new WHERE numero_de_cliente IN ( SELECT numero_de_cliente FROM data_visamaster_new WHERE foto_mes = 201604 ) AND foto_mes >= 201511 AND foto_mes <> 201512 ORDER BY numero_de_cliente ASC, foto_mes ASC"
+# sql = "SELECT * FROM abril_mdos_visamaster WHERE numero_de_cliente IN ( SELECT numero_de_cliente FROM abril_mdos_visamaster WHERE foto_mes = 201604 ) ORDER BY numero_de_cliente ASC, foto_mes ASC"
+sql = "SELECT * FROM data_visamaster_new WHERE numero_de_cliente IN ( SELECT numero_de_cliente FROM data_visamaster_new WHERE foto_mes = 201604 ) AND foto_mes >= 201511 ORDER BY numero_de_cliente ASC, foto_mes ASC"
 res = dbSendQuery(con, sql)
 df = dbFetch(res, n = -1 )
 df = df[,colnames(df) != "participa" ]
@@ -77,19 +77,33 @@ t <- foreach( currentNumCliente = unique(df$numero_de_cliente), .combine = "rbin
     
     y[ is.na(y) ] = 0
     
-    if ( sum(y) == y[1]*length(y) ) {
-      return(0)
+    #esto es lo anterior
+    # if ( sum(y) == y[1]*length(y) ) {
+    #   return(0)
+    # }
+    # 
+    # x = 0:(length(y)-1)
+    # y = scale(y, center = y[1])
+    # 
+    # data = as.data.frame( cbind(x,y) )
+    # model = lm( y ~ x, data, qr = F )
+    # # model = fastLm(y ~ x, data)
+    # # model = fastLm(X = x, y = y)
+    # 
+    # model$coefficients[2]
+    
+    result = 0
+    sumA = sum(y[1:3])
+    sumB = sum(y[4:6])
+    
+    if ( is.na(sumA) || is.nan(sumA) || sumA == 0 ) {
+      result = -999999
+    } else if ( is.na(sumB) || is.nan(sumB) || sumB == 0 ) {
+      result = 999999
+    } else {
+      result = mean( y[1:3] ) / mean( y[4:6] )
     }
-    
-    x = 0:(length(y)-1)
-    y = scale(y, center = y[1])
-    
-    data = as.data.frame( cbind(x,y) )
-    model = lm( y ~ x, data, qr = F )
-    # model = fastLm(y ~ x, data)
-    # model = fastLm(X = x, y = y)
-
-    model$coefficients[2]
+    result
     # sum(y)
   })
   c(currentNumCliente, as.vector(tendency))
@@ -100,7 +114,7 @@ t1 =  Sys.time()
 cat("Tardó ", as.numeric(t1-t0, units="hours"), "horas", "\n") #5.6 horas 180 variables
 colnames(t) = c("numero_de_cliente",columnas)
 # write.table(t, file = "db/checkpoint/checkpoint.2.tend.tsv", sep = "\t", row.names = F)
-write.table(t, file = "db/abril.tend2.tsv", sep = "\t", row.names = F)
+write.table(t, file = "db/abril.tendMean.tsv", sep = "\t", row.names = F)
 # 
 # t.df = as.data.frame(t)
 # head(t)

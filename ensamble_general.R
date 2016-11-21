@@ -173,7 +173,7 @@ ganancias = c()
 tiempos = c()
 
 # for ( p in 1:nrow(pesosEnsamble) ) {
-  p = 1
+  p = 5
   s = 2
   
   # paste(pesosEnsamble[p,], collapse = " ")
@@ -204,20 +204,37 @@ tiempos = c()
       
     }
     
-    votosPredictions = list()
+    # votosPredictions = list()
+    # 
+    # for( t in 1:length(trainModels) ) {
+    #   # predictions[[t]] = trainModels[[t]](df.indexes) * pesosEnsamble[p,t] #prediciones ya ponderadas
+    #   votosPredictions[[t]] = ifelse( predictions[[t]] > umbralesModels[t], 1, 0 )
+    #   
+    # }
     
+    # ensamblePrediction = Reduce('+', votosPredictions) #esto me queda 0 1 2 , 2 es si los dos modelos estan de acuerdo
+    
+    p = 5
+    
+    stdPredictions = list()
     for( t in 1:length(trainModels) ) {
-      # predictions[[t]] = trainModels[[t]](df.indexes) * pesosEnsamble[p,t] #prediciones ya ponderadas
-      votosPredictions[[t]] = ifelse( predictions[[t]] > umbralesModels[t], 1, 0 )
-      
+      stdPredictions[[t]] = predictions[[t]] * 250/8000 / umbralesModels[t]
+      stdPredictions[[t]] = stdPredictions[[t]] * pesosEnsamble[p,t]
     }
     
-    ensamblePrediction = Reduce('+', votosPredictions) #esto me queda 0 1 2 , 2 es si los dos modelos estan de acuerdo
+    ensamblePrediction = Reduce('+', stdPredictions)
     
-    ganancias[s] = ganancia.ensamble(ensamblePrediction, df.all[-df.indexes, ]$clase, length(trainModels) - 0.1) / 0.3 #c(0.55,0.45) 1491667
-    ganancia.ensamble(ensamblePrediction, df.all[-df.indexes, ]$clase, 0.9) / 0.3 #c(0.55,0.45) 1491667
+    # ensamblePrediction = Reduce('+', votosPredictions) #esto me queda 0 1 2 , 2 es si los dos modelos estan de acuerdo
+    
+    # ganancias[s] = ganancia.ensamble(ensamblePrediction, df.all[-df.indexes, ]$clase, length(trainModels) - 0.1) / 0.3 #c(0.55,0.45) 1491667
+    # ganancias[s] = ganancia.ensamble(ensamblePrediction, df.all[-df.indexes, ]$clase) / 0.3 #c(0.55,0.45) 1491667
+    umbral_ganancia_optimo(ensamblePrediction, df.all[-df.indexes, ]$clase)
+      ganancia.ensamble(ensamblePrediction, df.all[-df.indexes, ]$clase, 0.039) / 0.3 #c(0.55,0.45) 1491667
+    # ganancia.ensamble(ensamblePrediction, df.all[-df.indexes, ]$clase, 0.9) / 0.3 #c(0.55,0.45) 1491667
     ganancia.ensamble(predictions[[1]], df.all[-df.indexes, ]$clase, umbralesModels[1]) / 0.3 #c(0.55,0.45) 1491667
-    ganancia.ensamble(predictions[[2]], df.all[-df.indexes, ]$clase, umbralesModels[2]) / 0.3 #c(0.55,0.45) 1491667
+    # ganancia.ensamble(predictions[[2]], df.all[-df.indexes, ]$clase, umbralesModels[2]) / 0.3 #c(0.55,0.45) 1491667
+    # ganancia.ensamble(stdPredictions[[1]], df.all[-df.indexes, ]$clase, umbralesModels[2]) / 0.3 #c(0.55,0.45) 1491667
+    # ganancia.ensamble(stdPredictions[[2]], df.all[-df.indexes, ]$clase, umbralesModels[2]) / 0.3 #c(0.55,0.45) 1491667
     
     
     t1 =  Sys.time()

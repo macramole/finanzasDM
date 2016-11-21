@@ -33,6 +33,8 @@ db.getDatasetImportantes = function( cual = db.TERNARIA, discret = T ) {
     df = df[, -claseIndex]
     claseIndex = which( colnames(df) == "clasebinaria1" )
     colnames(df)[claseIndex] = "clase"
+  } else if ( cual == db.BINARIA2 ) {
+    df$clasebinaria2 = as.factor ( ifelse( df$clase == "CONTINUA", "NEG", "POS" ) )
   }
   
   if ( discret ) {
