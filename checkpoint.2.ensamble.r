@@ -46,8 +46,8 @@ dfNoNulls = dfNoNulls[, -claseIndex]
 newClaseIndex = which( colnames(dfNoNulls) == "clasebinaria1" )
 colnames(dfNoNulls)[newClaseIndex] = "clase"
 
-vnround = 400
-vmax_depth = 15
+vnround = 480
+vmax_depth = 20
 vmin_child_weight = 5
 
 model.xgboost = xgboost(  data = as.matrix( dfNoNulls[, -claseIndex] ),

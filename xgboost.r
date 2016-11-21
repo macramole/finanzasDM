@@ -1,4 +1,5 @@
 library(xgboost)
+library(ROCR)
 
 # df = db.getBigDataset( cual = db.BINARIA1, discret = F)
 df = db.getDatasetImportantes( cual = db.BINARIA1, discret = F )
@@ -11,21 +12,23 @@ claseIndex = which( colnames(df) == "clase" )
 
 20*4*3*3/60
 
-for(  vmax_depth  in  c( 5, 7, 12 ) )
+for(  vmax_depth  in  c( 4, 5, 6 ) )
 {
-  for(  vmin_child_weight  in  c( 5, 10, 20, 25, 50 ) )
+  for(  vmin_child_weight  in  c( 18, 19, 21 ) )
   {
     
-    vmax_depth = 6
-    vmin_child_weight = 20
-    s = 1
+    # vmax_depth = 5
+    # vmin_child_weight = 15
+    # s = 1
     
 
     tiempos = c()
     ganancias = c()
     umbrales = c()
+    aucTraining = c()
+    aucTesting = c()
     
-    vnround <- 1000
+    vnround <- 700
     
     for( s in  1:5) {
       # 
@@ -73,17 +76,34 @@ for(  vmax_depth  in  c( 5, 7, 12 ) )
                         )
                     )
       
-      for ( i in 1:50 ) {
+      for ( i in 1:35 ) {
+        training.predict = predict(model, as.matrix( df.training[, -claseIndex] ), ntreelimit= i*20 )
+        training.predict = matrix( data = training.predict, ncol = 2, nrow = nrow( df.training ), byrow = T )
+        training.predict = training.predict[,2]
+        
+        training.prediccionROC = prediction(training.predict, df.training$clase)
+        # training.performance = performance(training.prediccionROC, measure = "tpr", x.measure = "fpr") 
+        #plot(training.performance)
+        training.auc = performance(training.prediccionROC, measure = "auc")
+        training.auc = training.auc@y.values[[1]]
+        aucTraining[i*5 + s] = training.auc
+        
         validation.predict = predict(model, as.matrix( df.validation[, -claseIndex] ), ntreelimit= i*20 )
         validation.predict = matrix( data = validation.predict, ncol = 2, nrow = nrow( df.validation ), byrow = T )
         validation.predict = validation.predict[,2]
         
-        umbrales[i*5 + s] = umbral_ganancia_optimo( validation.predict, df.validation$clase )
-        
+        umbrales[i*5 + s] = umbral_ganancia_optimo( validation.predict, df.validation$clase, seq(0.02,0.1,0.01) )
         
         testing.predict = predict(model, as.matrix( df.testing[, -claseIndex] ), ntreelimit= i*20 )
         testing.predict = matrix( data = testing.predict, ncol = 2, nrow = nrow( df.testing ), byrow = T )
         testing.predict = testing.predict[,2]
+        
+        testing.prediccionROC = prediction(testing.predict, df.testing$clase)
+        # testing.performance = performance(testing.prediccionROC, measure = "tpr", x.measure = "fpr") 
+        #plot(testing.performance)
+        testing.auc = performance(testing.prediccionROC, measure = "auc")
+        testing.auc = testing.auc@y.values[[1]]
+        aucTesting[i*5 + s] = testing.auc
         
         ganancias[i*5 + s] = ganancia.binaria1( testing.predict,  df.testing[, claseIndex], umbrales[i*5 + s] ) / 0.3
         # cat (vmax_depth, vmin_child_weight, ganancias[s], "\n")
@@ -100,7 +120,7 @@ for(  vmax_depth  in  c( 5, 7, 12 ) )
       gc()
     }
     
-    for( i in 1:50 )
+    for( i in 1:35 )
     {
       cat( format(Sys.time(), "%Y%m%d %H%M%S"), 
            "abril_importantes", 
@@ -108,10 +128,12 @@ for(  vmax_depth  in  c( 5, 7, 12 ) )
            vmax_depth, 
            vmin_child_weight, 
            i*20, 
-           mean( c(ganancias[i*5+1], ganancias[i*5+2], ganancias[i*5+3], ganancias[i*5+4] )), 
+           mean( c(ganancias[i*5+1], ganancias[i*5+2], ganancias[i*5+3], ganancias[i*5+4], ganancias[i*5+5] )), 
            mean(tiempos), 
-           ganancias[i*5+1], ganancias[i*5+2], ganancias[i*5+3], ganancias[i*5+4], 
-           umbrales[i*5+1], umbrales[i*5+2], umbrales[i*5+3], umbrales[i*5+4], 
+           ganancias[i*5+1], ganancias[i*5+2], ganancias[i*5+3], ganancias[i*5+4], ganancias[i*5+5], 
+           umbrales[i*5+1], umbrales[i*5+2], umbrales[i*5+3], umbrales[i*5+4], umbrales[i*5+5],
+           mean( c(aucTraining[i*5+1], aucTraining[i*5+2], aucTraining[i*5+3], aucTraining[i*5+4], aucTraining[i*5+5] )),
+           mean( c(aucTesting[i*5+1], aucTesting[i*5+2], aucTesting[i*5+3], aucTesting[i*5+4], aucTesting[i*5+5] )),
            "\n", sep="\t", file=log.file.xgboost, fill=FALSE, append=TRUE )
     }
     
