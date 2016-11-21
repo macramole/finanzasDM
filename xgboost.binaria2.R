@@ -13,11 +13,11 @@ claseBinariaIndex = which( colnames(df) == "clasebinaria2" )
 
 20*4*3*3/60
 
-for(  vmax_depth  in  c( 6, 10, 15 ) )
+for(  vmax_depth  in  c( 5, 10, 15 ) )
 {
   for(  vmin_child_weight  in  c( 10, 6, 15 ) )
   {
-    vnround <- 1000
+    vnround <- 700
     
     
     vmax_depth = 6

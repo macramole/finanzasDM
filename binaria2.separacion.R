@@ -7,6 +7,10 @@ source("ternaria.funciones.R")
 
 file.out = "output_binaria2_separacion.tsv"
 
+if (!file.exists(file.out)) {
+  cat( "fecha", "dataset", "canttrees", "vmin.node.size", "aucTraining", "aucTesting", "tiempo_promedio", "ganancias" , "\n", sep="\t", file=file.out, fill=FALSE, append=FALSE )
+}
+
 df = db.getDatasetImportantes( cual = db.BINARIA2 )
 df = df[ df$clasebinaria2 == "POS", ]
 df$clase = factor( ifelse( df$clase == "BAJA+2", "POS", "NEG" ) )
