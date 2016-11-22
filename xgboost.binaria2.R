@@ -80,7 +80,7 @@ for(  vmax_depth  in  c( 5, 10, 15 ) )
                         )
                     )
       # i = 1
-      for ( i in 1:50 ) {
+      for ( i in 1:35 ) {
         training.predict = predict(model, as.matrix( df.training[, -c(claseIndex, claseBinariaIndex)] ), ntreelimit= i*20 )
         training.predict = matrix( data = training.predict, ncol = 2, nrow = nrow( df.training ), byrow = T )
         training.predict = training.predict[,2]
@@ -124,7 +124,7 @@ for(  vmax_depth  in  c( 5, 10, 15 ) )
       gc()
     }
     
-      for( i in 1:50 )
+      for( i in 1:35 )
       {
         cat( format(Sys.time(), "%Y%m%d %H%M%S"), 
              "abril_importantes_binaria2", 

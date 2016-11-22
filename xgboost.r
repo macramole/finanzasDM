@@ -12,9 +12,9 @@ claseIndex = which( colnames(df) == "clase" )
 
 20*4*3*3/60
 
-for(  vmax_depth  in  c( 4, 5, 6 ) )
+for(  vmax_depth  in  c( 5, 6 ) )
 {
-  for(  vmin_child_weight  in  c( 18, 19, 21 ) )
+  for(  vmin_child_weight  in  c( 18, 19, 21, 22 ) )
   {
     
     # vmax_depth = 5
