@@ -20,8 +20,8 @@ for(  vmax_depth  in  c( 5, 10, 15 ) )
     vnround <- 700
     
     
-    vmax_depth = 6
-    vmin_child_weight = 20
+    # vmax_depth = 6
+    # vmin_child_weight = 20
     # vnround = 480
     # s = 1
     
@@ -96,7 +96,7 @@ for(  vmax_depth  in  c( 5, 10, 15 ) )
         validation.predict = matrix( data = validation.predict, ncol = 2, nrow = nrow( df.validation ), byrow = T )
         validation.predict = validation.predict[,2]
         
-        umbrales[i*5 + s] = umbral_ganancia_optimo( validation.predict, df.validation$clase, seq(0.3,0.5,0.001) )
+        umbrales[i*5 + s] = umbral_ganancia_optimo( validation.predict, df.validation$clase, seq(0,0.5,0.005) )
         
         testing.predict = predict(model, as.matrix( df.testing[, -c(claseIndex, claseBinariaIndex)] ), ntreelimit= i*20 )
         testing.predict = matrix( data = testing.predict, ncol = 2, nrow = nrow( df.testing ), byrow = T )
